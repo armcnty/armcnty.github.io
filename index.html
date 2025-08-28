@@ -56,8 +56,85 @@
 		
         <h2 class="text-center mb-4">Our Members</h2>
 		<p class="lead text-center">
-		The consortium includes membership from leading AI institutions in Atlantic Canada, including:&nbsp; Saint Mary&rsquo;s University (SMU), Dalhousie University (DAL), the University of New Brunswick (UNB), Acadia University, Memorial University of Newfoundland (MUN), St. Francis Xavier University (StFX), University de Moncton (UMoncton), University of Prince Edward Island (UPEI), and Cape Breton University (CBU). This consortium promotes collaboration across academia and industry in Atlantic Canada.&nbsp;</p>
-        
+		<table id="myTable" aria-describedby="note">
+	    <thead>
+	      <tr>
+	        <th>Atlantic University</th>
+	        <th>Director or Project Lead</th>
+	        <th>Center/Institute</th>
+	      </tr>
+	    </thead>
+	      <tbody>
+	    <tr>
+	      <td><a href="https://www.dal.ca/" target="_blank">Dalhousie University</a></td>
+	      <td><a href="https://www.dal.ca/faculty/computerscience/faculty-staff/Frank-Rudzicz.html" target="_blank">Dr. Frank Rudzicz</a>, <a href="https://www.dal.ca/faculty/computerscience/faculty-staff/Janarthanan-Rajendran.html" target="_blank">Dr. Janarthanan Rajendran</a></td>
+	      <td><a href="https://www.dal.ca/faculty/computerscience/big-data-machine-learning.html" target="_blank">Institute for Big Data Analytics (IBDA), AI & Machine Learning, DeepSense</a></td>
+	    </tr>
+	    <tr>
+	      <td><a href="https://www.smu.ca/" target="_blank">Saint Mary’s University</a></td>
+	      <td><a href="https://www.smu.ca/researchers/sobey/profiles/michael-zhang.html" target="_blank">Dr. Michael Zhang</a></td>
+	      <td><a href="https://www.smu.ca/sobey/mban/" target="_blank">Master of Busienss Analytics (MBAN) and Graduate Diploma in Health Data Analytics (GDHDA)</a></td>
+	    </tr>
+	    <tr>
+	      <td><a href="https://www.umoncton.ca/" target="_blank">Université de Moncton</a></td>
+	      <td><a href="https://www9.umoncton.ca/umcm-akhloufi_moulay/index_en.html" target="_blank">Dr. Moulay Akhloufi</a></td>
+	      <td><a href="https://primeai.ca/" target="_blank">Perception Robotics and Intelligent Machines (PRIME)</a></td>
+	    </tr>
+	    <tr>
+	      <td><a href="https://www.unb.ca/" target="_blank">University New Brunswick</a></td>
+	      <td><a href="https://www.unb.ca/faculty-staff/directory/science-fr-chem/de-baerdemacker-stijn.html" target="_blank">Dr. Stijn De Baerdemacker</a>, <a href="https://www.unb.ca/faculty-staff/directory/computer-science/bateman-scott.html" target="_blank">Dr. Scott Bateman</a>, <a href="https://blogs.unb.ca/alumni/2024/04/aaloak-jaswal-brings-global-humanitarian-experience-as-a-technology-and-transformation-leader-to-unbs-newest-institute.php" target="_blank">Aaloak Jaswal</a></td>
+	      <td><a href="https://www.unb.ca/ridsai/" target="_blank">Research Institute in Data Science and Artificial Intelligence (RIDSAI)</a></td>
+	    </tr>
+	    <tr>
+	      <td><a href="https://www.mun.ca/" target="_blank">Memorial University</a></td>
+	      <td><a href="https://www.engr.mun.ca/~sczarnuch/" target="_blank">Dr. Stephen Czarnuch</a></td>
+	      <td><a href="https://www.mun.ca/research/cair/" target="_blank">Centre for Analytics, Informatics and Research (CAIR)</a></td>
+	    </tr>
+	    <tr>
+	      <td><a href="https://acadiau.ca" target="_blank">Acadia University</a></td>
+	      <td><a href="https://cs.acadiau.ca/people-facultystaff-amcintyre.html" target="_blank">Dr. Andrew McIntyre</a>, <a href="https://cs.acadiau.ca/dsilver.html" target="_blank">Dr. Danny Silver</a></td>
+	      <td><a href="https://aida.acadiau.ca" target="_blank">Acadia Institute for Data Analytics (AIDA)</a></td>
+	    </tr>
+	    <tr>
+	      <td><a href="https://upei.ca" target="_blank">University of PEI</a></td>
+	      <td><a href="https://islandscholar.ca/people/agodbout/" target="_blank">Dr. Andrew Godbout</a></td>
+	      <td><a href="https://www.upei.ca/programs/computer-science/" target="_blank">Program Lead Computer Science</a></td>
+	    </tr>
+	    <tr>
+	      <td><a href="https://cbu.ca" target="_blank">Cape Breton University</a></td>
+	      <td><a href="https://www.cbu.ca/faculty-staff/directory/enayat-rajabi/" target="_blank">Dr. Enayat Rajabi</a></td>
+	      <td><a href="https://www.cbu.ca/academics/business-analytics-program-structure/" target="_blank">CBU, Lead Business Analytics</a></td>
+	    </tr>
+	    <tr>
+	      <td><a href="https://stfx.ca" target="_blank">St. FX University</a></td>
+	      <td><a href="https://people.stfx.ca/jdelamer/" target="_blank">Dr. Jean-Alexis Delamer</a></td>
+	      <td><a href="https://www.stfx.ca/department/computer-science" target="_blank">Assoc. prof Data Anaytics</a></td>
+	    </tr>
+	  </tbody>
+	  </table>
+	
+	  <p id="note">Row order randomized using a Fisher–Yates shuffle each time the page loads.</p>
+	  <script>
+	    // Shuffle table rows inside <tbody> while keeping <thead> intact
+	    document.addEventListener('DOMContentLoaded', () => {
+	      const tbody = document.querySelector('#myTable tbody');
+	      if (!tbody) return;
+	
+	      // Collect current rows
+	      const rows = Array.from(tbody.querySelectorAll('tr'));
+	
+	      // Fisher–Yates shuffle
+	      for (let i = rows.length - 1; i > 0; i--) {
+	        const j = Math.floor(Math.random() * (i + 1));
+	        [rows[i], rows[j]] = [rows[j], rows[i]];
+	      }
+	
+	      // Re-append in shuffled order
+	      rows.forEach(row => tbody.appendChild(row));
+	    });
+	  </script>		
+	  </p>
+			
         <h2 class="text-center mb-4">News and Events</h2>
         <p class="lead text-center">
         <a href="https://www.smu.ca/ai-summit/index.html" target="_blank">
