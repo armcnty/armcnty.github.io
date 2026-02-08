@@ -24,6 +24,27 @@ body{
   line-height:1.5;
 }
 
+body::after {
+    content: 'CONFIDENTIAL'; /* The watermark text */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('watermark.png');  /* Optional: use an image */
+    background-repeat: repeat; /* Or no-repeat, etc. */
+    opacity: 0.3; /* Adjust transparency (0 to 1) */
+    pointer-events: none; /* Allows clicks to pass through the watermark to the content underneath */
+    z-index: -1; /* Ensures the watermark stays behind all other content */
+    display: flex; /* Centers the text */
+    align-items: center; /* Centers the text */
+    justify-content: center; /* Centers the text */
+    font-size: 10vw; /* Makes the text scale with the viewport width */
+    transform: rotate(-30deg); /* Rotates the watermark */
+    color: #ccc; /* Text color */
+    user-select: none; /* Prevents text selection */
+}
+
 a{ color:inherit; text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
