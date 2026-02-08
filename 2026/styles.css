@@ -31,8 +31,6 @@ body::after {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url('watermark.png');  /* Optional: use an image */
-    background-repeat: repeat; /* Or no-repeat, etc. */
     opacity: 0.3; /* Adjust transparency (0 to 1) */
     pointer-events: none; /* Allows clicks to pass through the watermark to the content underneath */
     z-index: -1; /* Ensures the watermark stays behind all other content */
