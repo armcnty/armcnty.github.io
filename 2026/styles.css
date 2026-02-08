@@ -25,7 +25,7 @@ body{
 }
 
 body::after {
-    content: 'UNOFFICIAL SITE'; /* The watermark text */
+    content: 'CONFIDENTIAL'; /* The watermark text */
     position: fixed;
     top: 0;
     right: 0;
