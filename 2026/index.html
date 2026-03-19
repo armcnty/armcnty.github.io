@@ -14,31 +14,35 @@
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="Atlantic AI Summit 20XX Home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">Atlantic AI Summit 20XX</span>
+      <a class="brand" href="index.html" aria-label="Atlantic AI Summit 20XX Home">
+        <img src="logo.jpg" alt="Atlantic AI Summit Logo" class="brand-logo">
+        <span class="brand-text"></span>
       </a>
 
       <!-- Desktop nav -->
       <nav class="nav nav-desktop" aria-label="Primary">
-        <a href="#speakers">Speakers</a>
-        <a href="#about">About</a>
-        <a href="#highlights">Highlights</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href="#register">Register</a>
+        <div class="menubar">
+          <a href="https://www.unb.ca/ridsai/index.html" target="_blank" rel="noopener">RIDSAI Official Page</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="organizer.html">Organizing Committee</a>
+          <a href="sponsors.html">Sponsor The Event</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <a class="btn btn-small" href="https://site.pheedloop.com/event/2026RIDSAI/home">Register</a>
       </nav>
 
       <!-- Mobile nav (no JS) -->
       <details class="nav-mobile">
         <summary aria-label="Open menu">Menu</summary>
         <nav aria-label="Mobile primary">
-          <a href="#speakers">Speakers</a>
-          <a href="#about">About</a>
-          <a href="#highlights">Highlights</a>
-          <a href="#schedule">Schedule</a>
-          <a href="#faq">FAQ</a>
-          <a class="btn btn-small" href="#register">Register</a>
+          <a href="https://www.unb.ca/ridsai/index.html">RIDSAI Official Page</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="organizer.html">Organizing Committee</a>
+          <a href="sponsors.html">Sponsor The Event</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="faq.html">FAQ</a>
+          <a class="btn btn-small" href="https://site.pheedloop.com/event/2026RIDSAI/home">Register</a>
         </nav>
       </details>
     </div>
@@ -47,275 +51,247 @@
   <main id="main">
     <!-- Hero -->
     <section id="top" class="hero">
+      <div class="wrap hero-inner"> <p class="kicker"> 2026 Atlantic AI Summit</p> </div>
+      <div class="hero-title-bg">
+        <h1>2026 <br> ATLANTIC <br> AI SUMMIT</h1>
+      </div>
       <div class="wrap hero-inner">
-        <div class="hero-copy">
-          <p class="kicker">Atlantic AI Summit • 20XX</p>
-          <h1>Atlantic AI Summit 20XX</h1>
+        <div class="hero-copy" style="color: #fff;">
           <p class="lede">
-            [ UN-OFFICIAL TEMPLATE MATERIAL -- FOR TESTING ONLY ] This summmit will be hosted by the Research Institute in Data Science & Artificial Intelligence (RIDSAI) at the 
-            University of New Brunswick, in collaboration with partners across academia, industry, and government throughout 
-            Atlantic Canada.  Join world-class researchers, builders, and visionaries shaping the next era of artificial 
-            intelligence!
+            The Atlantic AI Summit provides a regional platform for applied AI collaboration and industry adoption, 
+            connecting regional organizations with national and international leaders shaping the future of artificial intelligence.
           </p>
+
+          <ul class="meta" style="margin-bottom: 2.3rem;">
+            <li><strong style="color: #a42912;">Date:</strong> <span>June 3-5, 2026</span></li>
+            <li><strong style="color: #a42912;">Location:</strong> <span>Dineen Auditorium & Allison McCain Commons, University of New Brunswick - Fredericton, NB. Canada.</span></li>
+          </ul>
+
+          <ul class="meta2">
+            <li><strong style="color: #a42912;">Registration Closes:</strong> <span>May 20, 2026</span></li>
+            <li><strong style="color: #a42912;">Early Bird Deadline:</strong> <span>Feb 28, 2026</span></li>
+          </ul>
 
           <div class="cta-row">
-            <a class="btn" href="#register">Register</a>
-            <a class="btn btn-ghost" href="#about">Learn more</a>
+            <a class="btn" href="https://site.pheedloop.com/event/2026RIDSAI/home">Register Now</a>
           </div>
 
-          <ul class="meta">
-            <li><strong>Date:</strong> <span>June X-Y, 20XX</span></li>
-            <li><strong>Location:</strong> <span>University of New Brunswick (UNB) - Fredericton, NB. Canada.</span></li>
-          </ul>
-        </div>
-
-        <div class="hero-card" aria-label="Event overview">
-          <div class="card">
-            <h2 class="card-title">Atlantic AI Summit 20XX</h2>
-            <p class="fineprint" style="margin-bottom:.8rem;">
-              A regional conference on innovation, applied research, and collaboration.
-            </p>
-
-            <dl class="dl">
-              <div><dt>Focus</dt><dd>Research • Industry • Community</dd></div>
-              <div><dt>Format</dt><dd>In-person</dd></div>
-              <div><dt>Audience</dt><dd>Students, faculty, partners</dd></div>
-            </dl>
-
-            <a class="btn btn-wide" href="#register">Secure your spot</a>
-            <p class="fineprint">Early details released soon.</p>
+          <!-- Countdown Timer -->
+          <div class="countdown-wrapper">
+            <p class="countdown-header"> REGISTRATION CLOSES IN:</p>
+            <div class="countdown">
+              <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Days</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Hours</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutes</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Seconds</span>
+              </div>
+            </div>
           </div>
+
+          <script>
+            //event date
+            const eventDate = new Date("May 20, 2026 09:00:00").getTime();
+
+            function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = String(days).padStart(2, '0');
+            document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+            document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.querySelector('.countdown').innerHTML = '<p style="color: white; font-size: 1.5rem;">Event has started!</p>';
+            }
+            }
+
+            const countdownInterval = setInterval(updateCountdown, 1000);
+
+            updateCountdown();
+          </script>
+
         </div>
       </div>
     </section>
-
-    <!-- Speakers -->
-    <section id="speakers" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Speakers</h2>
-          <p class="section-lede">
-            A lineup of voices shaping research, innovation, and impact across Atlantic Canada and beyond.
-          </p>
-        </div>
-
-        <div class="grid-speakers">
-          <article class="speaker card">
-            <div class="avatar" aria-hidden="true">
-              <span class="avatar-initials">AA</span>
-            </div>
-            <div class="speaker-body">
-              <h3 class="speaker-name">Speaker Name</h3>
-              <p class="speaker-title">Title / Organization</p>
-              <p class="speaker-blurb">
-                One–two lines on what they’ll speak about. Keep it short for scannability.
-              </p>
-              <p class="speaker-links">
-                <a href="#">Website</a> <span aria-hidden="true">·</span> <a href="#">Profile</a>
-              </p>
-            </div>
-          </article>
-
-          <article class="speaker card">
-            <div class="avatar" aria-hidden="true">
-              <span class="avatar-initials">BB</span>
-            </div>
-            <div class="speaker-body">
-              <h3 class="speaker-name">Speaker Name</h3>
-              <p class="speaker-title">Title / Organization</p>
-              <p class="speaker-blurb">Short description of focus area or talk topic.</p>
-              <p class="speaker-links">
-                <a href="#">Website</a> <span aria-hidden="true">·</span> <a href="#">Profile</a>
-              </p>
-            </div>
-          </article>
-
-          <article class="speaker card">
-            <div class="avatar" aria-hidden="true">
-              <span class="avatar-initials">CC</span>
-            </div>
-            <div class="speaker-body">
-              <h3 class="speaker-name">Speaker Name</h3>
-              <p class="speaker-title">Title / Organization</p>
-              <p class="speaker-blurb">Short description of focus area or talk topic.</p>
-              <p class="speaker-links">
-                <a href="#">Website</a> <span aria-hidden="true">·</span> <a href="#">Profile</a>
-              </p>
-            </div>
-          </article>
-
-          <article class="speaker card">
-            <div class="avatar" aria-hidden="true">
-              <span class="avatar-initials">DD</span>
-            </div>
-            <div class="speaker-body">
-              <h3 class="speaker-name">Speaker Name</h3>
-              <p class="speaker-title">Title / Organization</p>
-              <p class="speaker-blurb">Short description of focus area or talk topic.</p>
-              <p class="speaker-links">
-                <a href="#">Website</a> <span aria-hidden="true">·</span> <a href="#">Profile</a>
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <p class="fineprint" style="margin-top:1rem;">
-          More speakers to be announced.
-        </p>
-      </div>
-    </section>
-
+    
     <!-- About -->
-    <section id="about" class="section">
-      <div class="wrap">
-        <h2>About the event</h2>
-        <p class="section-lede">
-          Replace this text with your real description. Keep it to 2–4 sentences for readability.
-        </p>
+    <section id="about" class="section" style="padding-top: 4rem;">
+      <div class="about-wrap">
+        <p class="card">
+          The Atlantic AI Summit is Atlantic Canada's flagship gathering on artificial intelligence, digital innovation, and the future of work. 
+        <br> The 2026 Summit builds on the momentum of the 2025 event, which brought together leaders from government, industry, academia, and youth teams from across the region. </p>
+        <h3 class="section-lede">Join us at the Atlantic AI Summit, from June 3-5, 2026, as we turn potential into progress.</h3>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Why attend</h3>
-            <p>Keynotes, panels, hands-on demos, and practical workshops.</p>
+            <h3>We are strengthening our focus to deliver what matters most right now:  </h3>
+            <ul>
+            <li> Applied AI</li> 
+            <li> Small and medium-sized enterprise (SME) adoption</li>
+            <li> Youth engagement</li>
+            <li> Sector-specific innovation like health, energy, climate, cybersecurity, defense, the arts, etc.</li>
+            </ul>
+            <p> The Summit strengthens Atlantic Canada's position as a hub for applied AI and digital transformation.</p>
           </div>
           <div class="card">
-            <h3>Who it’s for</h3>
-            <p>Academia, industry, government, and community partners.</p>
+            <h3>It provides a forum for:   </h3>
+            <ul>
+            <li> Collaboration</li> 
+            <li> Knowledge sharing</li>
+            <li> Industry readiness</li>
+            <p> While connecting regional organizations with national and international experts.</p>
+            </ul>
           </div>
           <div class="card">
-            <h3>What you’ll get</h3>
-            <p>Connections, ideas, and pathways to collaboration.</p>
+            <h3>Our goals are clear and ambitious: </h3>
+            <ul>
+            <li> We want to position Atlantic Canada as a recognized leader in applied AI and data-driven innovation. </li> 
+            <li> Support our SMEs through live demonstrations, interactive workshops, and hands-on engagement.</li>
+            <li> We are committed to building our youth and post-secondary talent pipelines by hosting: </li>
+              <ul> <li> An expanded Student Innovation Challenge </li></ul>
+              <ul> <li> A special connector event to match bright talent with exciting private-sector opportunities. </li> </ul>
+            <li> Sector-specific innovation like health, energy, climate, cybersecurity, defense, the arts, etc. </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Your summit experience</h3>
+            <p>Our sessions are designed for both technical and non-technical audiences and ensure accessibility for students, professionals and industry leaders.</p>
+          </div>
+          <div class="card">
+            <h3>Who we've designed this for</h3>
+            <p>This Summit is for you if you are: </p>
+            <ul>
+            <li> An industry leader or innovator shaping what's next. </li> 
+            <li> A government or public sector partner building our future.</li>
+            <li> A researcher or academic institution pushing boundaries. </li>
+            <li> An SME exploring how AI can transform your business. </li>
+            <li> A student or early-career professional launching your journey. </li>
+            <li> A community or economic development organization fostering growth. </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>What participants can expect to take away</h3>
+            <p>The 2026 Atlantic AI Summit is designed to deliver practical value and lasting momentum beyond the event itself. 
+              Participants can expect outcomes that include: </p>
+            <ul>
+            <li> New connections and collaborations across industry, government, academia, and the creative community, leading to concrete project ideas and partnerships. </li> 
+            <li> Increased readiness among Atlantic Canadian SMEs to adopt applied AI through exposure to real-world use cases, demonstrations, and hands-on sessions.</li>
+            <li> Clearer pathways for students and early-career professionals to connect with employers, innovators, and applied research opportunities. </li>
+            <li> Greater visibility for Atlantic Canada's AI capabilities, talent, and success stories at the national and international level. </li>
+            <li> Momentum toward pilot projects, applied research, and commercialization efforts rooted in regional priorities and needs. </li>
+            </ul>
+            <p>Together, these outcomes support long-term economic growth, workforce development, and the responsible adoption of AI across Atlantic Canada.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Highlights -->
-    <section id="highlights" class="section section-alt">
-      <div class="wrap">
-        <h2>Highlights</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>Speakers</h3>
-            <p>Short bios and photos (optional). Keep it simple and readable.</p>
+        <div class="card">
+            <h3>Together, we will:  </h3>
+            <ul>
+            <li> Strengthen regional innovation and cross-provincial collaboration.</li> 
+            <li> Accelerate AI adoption among Atlantic Canadian firms.</li>
+            <li> Expand youth engagement and workforce readiness.</li>
+            <li> Increase visibility for Atlantic-based companies and researchers.</li>
+            <li> Support long-term economic growth through new partnerships and pilot projects.</li>
+            </ul>
           </div>
-          <div class="card">
-            <h3>Workshops</h3>
-            <p>Hands-on sessions. Describe the skill outcomes in one sentence each.</p>
-          </div>
-          <div class="card">
-            <h3>Demos</h3>
-            <p>Showcase projects, posters, and prototypes.</p>
-          </div>
-          <div class="card">
-            <h3>Community</h3>
-            <p>Meetups, socials, and opportunities for cross-sector collaboration.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Schedule -->
-    <section id="schedule" class="section">
-      <div class="wrap">
-        <h2>Schedule</h2>
-        <p class="section-lede">A draft schedule (edit to match your page).</p>
-
-        <div class="timeline">
-          <div class="slot">
-            <div class="time">09:00</div>
-            <div class="what">
-              <h3>Registration + coffee</h3>
-              <p>Arrivals, badges, and informal networking.</p>
-            </div>
-          </div>
-          <div class="slot">
-            <div class="time">10:00</div>
-            <div class="what">
-              <h3>Keynote</h3>
-              <p>Opening keynote and welcome.</p>
-            </div>
-          </div>
-          <div class="slot">
-            <div class="time">11:15</div>
-            <div class="what">
-              <h3>Panels / talks</h3>
-              <p>Parallel sessions across themes.</p>
-            </div>
-          </div>
-          <div class="slot">
-            <div class="time">12:30</div>
-            <div class="what">
-              <h3>Lunch</h3>
-              <p>On-site options and local recommendations.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Register -->
-    <section id="register" class="section section-cta">
-      <div class="wrap cta">
-        <div>
-          <h2>Register</h2>
-          <p class="section-lede">
-            HTML/CSS-only site: use an external form endpoint (Netlify Forms / Formspree) or a mailto link.
-          </p>
-        </div>
-
-        <form class="form" action="#" method="post">
-          <label>
-            Name
-            <input name="name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Message (optional)
-            <textarea name="message" rows="4"></textarea>
-          </label>
-          <button class="btn btn-wide" type="submit">Send</button>
-          <p class="fineprint">Or email: <a href="mailto:info@example.com">info@example.com</a></p>
-        </form>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section">
-      <div class="wrap">
-        <h2>FAQ</h2>
-
-        <div class="faq">
-          <details class="card">
-            <summary>Where is it held?</summary>
-            <p>Venue details go here.</p>
-          </details>
-
-          <details class="card">
-            <summary>Is there a student rate?</summary>
-            <p>Pricing details go here.</p>
-          </details>
-
-          <details class="card">
-            <summary>Can I present a poster/demo?</summary>
-            <p>Submission details go here.</p>
-          </details>
-        </div>
       </div>
     </section>
   </main>
 
+  <!-- Partners Section -->
+  <section class="partners-section">
+    <div class="wrap">
+      <h3 class="partners-title">Our Partners</h3>
+      <div class="partners-grid">
+        <div class="partner-logo">
+          <img src="logos/ACADIA.jpeg" alt="Partner 1">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/ACENET.png" alt="Partner 2">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/Cape Brenton University.jpg" alt="Partner 3">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/CentreOfExcellence.png" alt="Partner 4">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/dalhousie university.png" alt="Partner 5">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/GNB.png" alt="Partner 6">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/memorial university.png" alt="Partner 7">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/Saint Marys University.jpg" alt="Partner 8">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/university of moncton.jpg" alt="Partner 9">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/University of PEI.png" alt="Partner 10">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>© 20XX AI Atlantic 20XX. All rights reserved.</p>
-      <nav aria-label="Footer">
-        <a href="#top">Top</a>
-        <a href="#register">Register</a>
-        <a href="mailto:template@info.com">Contact</a>
-      </nav>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="logos/unb ridsai.jpg" alt="UNB RIDSAI Logo" class="footer-logo">
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">UNB RIDSAI</h4>
+          <p class="footer-address">
+            Faculty of Computer Science <br>
+            University of New Brunswick <br>
+            Information Technology Centre <br> 
+            550 Windsor Street, room ITC305 CS <br>
+            Fredericton, NB <br> E3B 5A3
+          </p>
+          <p class="footer-contact">
+            <strong>General inquiries:</strong> <a href="mailto:ridsai@unb.ca">ridsai@unb.ca</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Connect</h4>
+          <ul class="footer-social">
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/showcase/ridsai/" target="_blank" rel="noopener">UNB Research Institute in Data Science and Artificial Intelligence</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Atlantic AI Summit. All rights reserved.</p>
+        <nav aria-label="Footer">
+          <a href="index.html">Home</a>
+          <span class="footer-separator" aria-hidden="true">|</span>
+          <a href="sponsors.html">Sponsors</a>
+          <span class="footer-separator" aria-hidden="true">|</span>
+          <a href="mailto:ridsai@unb.ca">Contact</a>
+        </nav>
+      </div>
     </div>
   </footer>
 </body>
