@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlantic AI Summit 20XX</title>
+  <meta name="description" content="Atlantic AI Summit 20XX — speakers, schedule, and registration." />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="robots" content="noindex">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Atlantic AI Summit 20XX Home">
+        <img src="logo.jpg" alt="Atlantic AI Summit Logo" class="brand-logo">
+        <span class="brand-text"></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="nav nav-desktop" aria-label="Primary">
+        <div class="menubar">
+          <a href="https://www.unb.ca/ridsai/index.html" target="_blank" rel="noopener">RIDSAI Official Page</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="organizer.html">Organizing Committee</a>
+          <a href="sponsors.html">Sponsor The Event</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <a class="btn btn-small" href="https://site.pheedloop.com/event/2026RIDSAI/home">Register</a>
+      </nav>
+
+      <!-- Mobile nav (no JS) -->
+      <details class="nav-mobile">
+        <summary aria-label="Open menu">Menu</summary>
+        <nav aria-label="Mobile primary">
+          <a href="https://www.unb.ca/ridsai/index.html">RIDSAI Official Page</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="organizer.html">Organizing Committee</a>
+          <a href="sponsors.html">Sponsor The Event</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="faq.html">FAQ</a>
+          <a class="btn btn-small" href="https://site.pheedloop.com/event/2026RIDSAI/home">Register</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="top" class="hero">
+      <div class="wrap hero-inner"> <p class="kicker"> 2026 Atlantic AI Summit</p> </div>
+      <div class="hero-title-bg">
+        <h1>2026 <br> ATLANTIC <br> AI SUMMIT</h1>
+      </div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy" style="color: #fff;">
+          <p class="lede">
+            The Atlantic AI Summit provides a regional platform for applied AI collaboration and industry adoption, 
+            connecting regional organizations with national and international leaders shaping the future of artificial intelligence.
+          </p>
+
+          <ul class="meta" style="margin-bottom: 2.3rem;">
+            <li><strong style="color: #a42912;">Date:</strong> <span>June 3-5, 2026</span></li>
+            <li><strong style="color: #a42912;">Location:</strong> <span>Dineen Auditorium & Allison McCain Commons, University of New Brunswick - Fredericton, NB. Canada.</span></li>
+          </ul>
+
+          <ul class="meta2">
+            <li><strong style="color: #a42912;">Registration Closes:</strong> <span>May 20, 2026</span></li>
+            <li><strong style="color: #a42912;">Early Bird Deadline:</strong> <span>Feb 28, 2026</span></li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn" href="https://site.pheedloop.com/event/2026RIDSAI/home">Register Now</a>
+          </div>
+
+          <!-- Countdown Timer -->
+          <div class="countdown-wrapper">
+            <p class="countdown-header"> REGISTRATION CLOSES IN:</p>
+            <div class="countdown">
+              <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Days</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Hours</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutes</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Seconds</span>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            //event date
+            const eventDate = new Date("May 20, 2026 09:00:00").getTime();
+
+            function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = String(days).padStart(2, '0');
+            document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+            document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.querySelector('.countdown').innerHTML = '<p style="color: white; font-size: 1.5rem;">Event has started!</p>';
+            }
+            }
+
+            const countdownInterval = setInterval(updateCountdown, 1000);
+
+            updateCountdown();
+          </script>
+
+        </div>
+      </div>
+    </section>
+    
+    <!-- About -->
+    <section id="about" class="section" style="padding-top: 4rem;">
+      <div class="about-wrap">
+        <p class="card">
+          The Atlantic AI Summit is Atlantic Canada's flagship gathering on artificial intelligence, digital innovation, and the future of work. 
+        <br> The 2026 Summit builds on the momentum of the 2025 event, which brought together leaders from government, industry, academia, and youth teams from across the region. </p>
+        <h3 class="section-lede">Join us at the Atlantic AI Summit, from June 3-5, 2026, as we turn potential into progress.</h3>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>We are strengthening our focus to deliver what matters most right now:  </h3>
+            <ul>
+            <li> Applied AI</li> 
+            <li> Small and medium-sized enterprise (SME) adoption</li>
+            <li> Youth engagement</li>
+            <li> Sector-specific innovation like health, energy, climate, cybersecurity, defense, the arts, etc.</li>
+            </ul>
+            <p> The Summit strengthens Atlantic Canada's position as a hub for applied AI and digital transformation.</p>
+          </div>
+          <div class="card">
+            <h3>It provides a forum for:   </h3>
+            <ul>
+            <li> Collaboration</li> 
+            <li> Knowledge sharing</li>
+            <li> Industry readiness</li>
+            <p> While connecting regional organizations with national and international experts.</p>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Our goals are clear and ambitious: </h3>
+            <ul>
+            <li> We want to position Atlantic Canada as a recognized leader in applied AI and data-driven innovation. </li> 
+            <li> Support our SMEs through live demonstrations, interactive workshops, and hands-on engagement.</li>
+            <li> We are committed to building our youth and post-secondary talent pipelines by hosting: </li>
+              <ul> <li> An expanded Student Innovation Challenge </li></ul>
+              <ul> <li> A special connector event to match bright talent with exciting private-sector opportunities. </li> </ul>
+            <li> Sector-specific innovation like health, energy, climate, cybersecurity, defense, the arts, etc. </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Your summit experience</h3>
+            <p>Our sessions are designed for both technical and non-technical audiences and ensure accessibility for students, professionals and industry leaders.</p>
+          </div>
+          <div class="card">
+            <h3>Who we've designed this for</h3>
+            <p>This Summit is for you if you are: </p>
+            <ul>
+            <li> An industry leader or innovator shaping what's next. </li> 
+            <li> A government or public sector partner building our future.</li>
+            <li> A researcher or academic institution pushing boundaries. </li>
+            <li> An SME exploring how AI can transform your business. </li>
+            <li> A student or early-career professional launching your journey. </li>
+            <li> A community or economic development organization fostering growth. </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>What participants can expect to take away</h3>
+            <p>The 2026 Atlantic AI Summit is designed to deliver practical value and lasting momentum beyond the event itself. 
+              Participants can expect outcomes that include: </p>
+            <ul>
+            <li> New connections and collaborations across industry, government, academia, and the creative community, leading to concrete project ideas and partnerships. </li> 
+            <li> Increased readiness among Atlantic Canadian SMEs to adopt applied AI through exposure to real-world use cases, demonstrations, and hands-on sessions.</li>
+            <li> Clearer pathways for students and early-career professionals to connect with employers, innovators, and applied research opportunities. </li>
+            <li> Greater visibility for Atlantic Canada's AI capabilities, talent, and success stories at the national and international level. </li>
+            <li> Momentum toward pilot projects, applied research, and commercialization efforts rooted in regional priorities and needs. </li>
+            </ul>
+            <p>Together, these outcomes support long-term economic growth, workforce development, and the responsible adoption of AI across Atlantic Canada.</p>
+          </div>
+        </div>
+        <div class="card">
+            <h3>Together, we will:  </h3>
+            <ul>
+            <li> Strengthen regional innovation and cross-provincial collaboration.</li> 
+            <li> Accelerate AI adoption among Atlantic Canadian firms.</li>
+            <li> Expand youth engagement and workforce readiness.</li>
+            <li> Increase visibility for Atlantic-based companies and researchers.</li>
+            <li> Support long-term economic growth through new partnerships and pilot projects.</li>
+            </ul>
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Partners Section -->
+  <section class="partners-section">
+    <div class="wrap">
+      <h3 class="partners-title">Our Partners</h3>
+      <div class="partners-grid">
+        <div class="partner-logo">
+          <img src="logos/ACADIA.jpeg" alt="Partner 1">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/ACENET.png" alt="Partner 2">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/Cape Brenton University.jpg" alt="Partner 3">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/CentreOfExcellence.png" alt="Partner 4">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/dalhousie university.png" alt="Partner 5">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/GNB.png" alt="Partner 6">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/memorial university.png" alt="Partner 7">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/Saint Marys University.jpg" alt="Partner 8">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/university of moncton.jpg" alt="Partner 9">
+        </div>
+        <div class="partner-logo">
+          <img src="logos/University of PEI.png" alt="Partner 10">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="logos/UNB_RIDSAI-RGB-W.png" alt="UNB RIDSAI Logo" class="footer-logo">
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">UNB RIDSAI</h4>
+          <p class="footer-address">
+            Faculty of Computer Science <br>
+            University of New Brunswick <br>
+            Information Technology Centre <br> 
+            550 Windsor Street, room ITC305 CS <br>
+            Fredericton, NB <br> E3B 5A3
+          </p>
+          <p class="footer-contact">
+            <strong>General inquiries:</strong> <a href="mailto:ridsai@unb.ca">ridsai@unb.ca</a>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Connect</h4>
+          <ul class="footer-social">
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/showcase/ridsai/" target="_blank" rel="noopener">UNB Research Institute in Data Science and Artificial Intelligence</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Atlantic AI Summit. All rights reserved.</p>
+        <nav aria-label="Footer">
+          <a href="index.html">Home</a>
+          <span class="footer-separator" aria-hidden="true">|</span>
+          <a href="sponsors.html">Sponsors</a>
+          <span class="footer-separator" aria-hidden="true">|</span>
+          <a href="mailto:ridsai@unb.ca">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
