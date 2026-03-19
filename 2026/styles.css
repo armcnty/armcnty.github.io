@@ -33,7 +33,6 @@ body{
 }
 
 body::after {
-    content: 'CONFIDENTIAL'; /* The watermark text */
     position: fixed;
     top: 0;
     right: 0;
@@ -1422,7 +1421,7 @@ input:focus, textarea:focus{
 }
 
 .footer-logo {
-  width: 200px;
+  width: 350px;
   height: auto;
   margin-bottom: 1rem;
 }
