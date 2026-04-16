@@ -769,6 +769,38 @@ input:focus, textarea:focus{
 }
 
 /* 2x2 Grid for Main Sections */
+.about-wrap .section-lede {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(to right, rgba(164, 41, 18, 0.03), transparent);
+  border-left: 4px solid var(--accent1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.about-wrap .section-lede:hover {
+  background: linear-gradient(to right, rgba(164, 41, 18, 0.06), transparent);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(164, 41, 18, 0.1);
+}
+
+.about-wrap h3.section-lede {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent1);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(164, 41, 18, 0.08), rgba(210, 43, 67, 0.08));
+  border: none;
+  border-radius: 16px;
+  margin: 3rem 0;
+  box-shadow: 0 8px 24px rgba(164, 41, 18, 0.12);
+}
+
+/* 2x2 Grid for Main Sections */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
