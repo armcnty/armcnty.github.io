@@ -734,6 +734,9 @@ input:focus, textarea:focus{
   text-align: center;
 }
 
+/* About Section Styles */
+
+/* Section Lede Styles */
 .about-wrap .section-lede {
   font-size: 1.15rem;
   line-height: 1.8;
@@ -765,7 +768,65 @@ input:focus, textarea:focus{
   box-shadow: 0 8px 24px rgba(164, 41, 18, 0.12);
 }
 
+/* 2x2 Grid for Main Sections */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.about-grid .about-card {
+  background: linear-gradient(135deg, #ffffff, #fafbfc);
+  border: 2px solid rgba(164, 41, 18, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-grid .about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.about-grid .about-card:hover::before {
+  transform: scaleX(1);
+}
+
+.about-grid .about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(164, 41, 18, 0.15);
+  border-color: var(--accent1);
+}
+
+.about-grid .about-card h3 {
+  font-size: 1.4rem;
+  color: var(--accent1);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid rgba(164, 41, 18, 0.1);
+}
+
+.about-grid .about-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* 3-Column Grid for Why It Matters */
 .about-wrap .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin: 3rem 0;
 }
@@ -774,10 +835,13 @@ input:focus, textarea:focus{
   background: linear-gradient(135deg, #ffffff, #fafbfc);
   border: 2px solid rgba(164, 41, 18, 0.1);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 2rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-wrap .card::before {
@@ -809,6 +873,13 @@ input:focus, textarea:focus{
   font-weight: 700;
   position: relative;
   padding-bottom: 1rem;
+}
+
+.about-wrap .card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
 }
 
 .about-wrap .card ul {
@@ -860,19 +931,59 @@ input:focus, textarea:focus{
   font-size: 1rem;
 }
 
-/* Section Divider */
-.about-wrap > p.section-lede:last-of-type {
+/* CTA Card */
+.about-wrap .about-cta {
+  text-align: center;
   background: linear-gradient(135deg, rgba(164, 41, 18, 0.08), rgba(210, 43, 67, 0.08));
   border: 2px solid rgba(164, 41, 18, 0.2);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-top: 3rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  box-shadow: 0 8px 24px rgba(164, 41, 18, 0.12);
+  margin-top: 2rem;
 }
 
+.about-wrap .about-cta h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.about-wrap .about-cta .section-lede {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  padding: 0;
+  background: none;
+  border-left: none;
+}
+
+.section-title-highlight {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text);
+  margin: 3rem 0;
+  padding: 1rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: block;
+}
+
+.section-title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  border-radius: 2px;
+}
+
+/* Responsive Styles */
 @media (max-width: 900px) {
+  .about-wrap .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .about-wrap .section-lede {
     font-size: 1.05rem;
     padding: 1rem;
@@ -889,6 +1000,18 @@ input:focus, textarea:focus{
   
   .about-wrap .card h3 {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-wrap .grid-3 {
+    grid-template-columns: 1fr;
   }
 }
 
