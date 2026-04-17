@@ -501,7 +501,6 @@ input:focus, textarea:focus{
   border-color: rgba(99,102,241,.35);
 }
 
-/* Fine print */
 .fineprint{ color:var(--muted); font-size:.95rem; margin:.1rem 0 0; }
 
 /* Speakers */
@@ -527,6 +526,10 @@ input:focus, textarea:focus{
   align-items:center;
   animation: fadeIn 0.3s ease;
   transition: transform 0.75s ease, box-shadow 0.3s ease, height 0.4s ease-in-out;
+}
+
+.speaker.card {
+  scroll-margin-top: 250px;
 }
 
 .speaker-blurb {
