@@ -501,115 +501,8 @@ input:focus, textarea:focus{
   border-color: rgba(99,102,241,.35);
 }
 
+/* Fine print */
 .fineprint{ color:var(--muted); font-size:.95rem; margin:.1rem 0 0; }
-
-/* Speakers */
-.section-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:1rem;
-  flex-wrap:wrap;
-}
-
-.grid-speakers{
-  display:grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
-  animation: fadeIn 0.3s ease;
-}
-
-.speaker{
-  display:flex;
-  gap: 1rem;
-  align-items:center;
-  animation: fadeIn 0.3s ease;
-  transition: transform 0.75s ease, box-shadow 0.3s ease, height 0.4s ease-in-out;
-}
-
-.speaker.card {
-  scroll-margin-top: 250px;
-}
-
-.speaker-blurb {
-  margin: 1.2rem 0 1.4rem;
-  color: var(--gray-600);
-  font-size: 0.95rem;
-  display: none;  
-  line-height: 1.6;
-  animation: fadeIn 0.3s ease;
-}
-
-.speaker:hover .speaker-blurb {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-.avatar{
-  width: 150px;
-  height: 200px;
-  border-radius: 10%;
-  overflow: hidden;
-  background-color: #f0f2f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  flex-shrink: 0;
-}
-
-.avatar-image{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.speaker-name {
-  margin: 0 0 8px 0;
-  font-size: 1.5rem;
-  color: #1e293b;
-}
-
-.speaker-title {
-  margin: 0 0 12px 0;
-  font-size: 1rem;
-  color: #475569;
-  font-weight: 500;
-}
-
-.speaker-blurb{
-  margin: 0 0 .6rem;
-  color: var(--muted);
-}
-
-.speaker-links{
-  margin: 0;
-  color: var(--muted);
-  font-size: .95rem;
-}
-
-.speaker-links a{
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(15,23,42,.18);
-}
-.speaker-links a:hover{
-  border-bottom-color: rgba(15,23,42,.35);
-}
-
-/* FAQ */
-.faq{ display:grid; gap: .8rem; }
-.faq details summary{
-  cursor:pointer;
-  font-weight:700;
-  list-style:none;
-  animation: fadeIn 0.3s ease;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.faq details summary::-webkit-details-marker{ display:none; }
-.faq details p{ color:var(--muted); margin:.6rem 0 0; }
 
 /* Partners Section */
 .partners-section {
@@ -740,38 +633,6 @@ input:focus, textarea:focus{
 /* About Section Styles */
 
 /* Section Lede Styles */
-.about-wrap .section-lede {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: var(--text);
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: linear-gradient(to right, rgba(164, 41, 18, 0.03), transparent);
-  border-left: 4px solid var(--accent1);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.about-wrap .section-lede:hover {
-  background: linear-gradient(to right, rgba(164, 41, 18, 0.06), transparent);
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(164, 41, 18, 0.1);
-}
-
-.about-wrap h3.section-lede {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--accent1);
-  text-align: center;
-  padding: 2rem 1.5rem;
-  background: linear-gradient(135deg, rgba(164, 41, 18, 0.08), rgba(210, 43, 67, 0.08));
-  border: none;
-  border-radius: 16px;
-  margin: 3rem 0;
-  box-shadow: 0 8px 24px rgba(164, 41, 18, 0.12);
-}
-
-/* 2x2 Grid for Main Sections */
 .about-wrap .section-lede {
   font-size: 1.15rem;
   line-height: 1.8;
@@ -1516,6 +1377,10 @@ input:focus, textarea:focus{
   color: var(--text);
 }
 
+
+
+
+
 .modal {
   display: none;
   position: fixed;
@@ -1590,10 +1455,10 @@ input:focus, textarea:focus{
 }
 
 .modal.show {
-  display: block;  
+  display: block;
 }
 
-/* Modal body typography */
+/* Modal body typography - matching screenshot */
 .modal-body h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -1636,7 +1501,7 @@ input:focus, textarea:focus{
   margin-bottom: 1.2rem;
 }
 
-/* Add a subtle separator line */
+/* Optional: Add a subtle separator line */
 .modal-body hr {
   margin: 1.5rem 0;
   border: none;
@@ -1644,37 +1509,6 @@ input:focus, textarea:focus{
   background: linear-gradient(90deg, transparent, rgba(164, 41, 18, 0.2), transparent);
 }
 
-/* Speaker details link styling */
-.speaker-details-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--accent1);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  font-family: inherit;
-  position: relative;
-}
-
-.speaker-details-link::after {
-  content: '→';
-  margin-left: 4px;
-  transition: transform 0.2s ease;
-  display: inline-block;
-}
-
-.speaker-details-link:hover {
-  color: var(--accent2);
-}
-
-.speaker-details-link:hover::after {
-  transform: translateX(4px);
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -1709,9 +1543,110 @@ input:focus, textarea:focus{
   text-align: left;
 }
 
+/* Different sizes for different screens */
 @media (max-width: 768px) {
   .modal-image {
     width: 90px;
     height: 90px;
   }
 }
+
+/* ── Speaker grid ── */
+
+.grid-speakers{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .grid-speakers { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+  .grid-speakers { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  .grid-speakers { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Individual speaker card ── */
+/* Speakers */
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.speaker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.speaker:hover {
+  transform: translateY(-4px);
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* ── Speaker text ── */
+.speaker-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.speaker-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.speaker-about {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #475569;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.speaker-details-link {
+  display: none; /* hidden — clicking the whole card opens modal */
+}
+
+.modal-speaking {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  width: 100%;
+  text-align: left;
+}
+.speaking-title { margin-right: 0.4rem; }
+.speaking-link { color: #2563eb; text-decoration: underline; }
