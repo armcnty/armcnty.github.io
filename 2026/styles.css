@@ -1650,3 +1650,36 @@ input:focus, textarea:focus{
 }
 .speaking-title { margin-right: 0.4rem; }
 .speaking-link { color: #2563eb; text-decoration: underline; }
+
+
+/* Hotel Accommodation Notice */
+.hotel-notice {
+  margin: 1.5rem 0 1rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.hotel-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.hotel-link {
+  color: var(--accent1);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.hotel-link:hover {
+  color: var(--accent2);
+  text-decoration: underline;
+  transform: translateX(2px);
+}
