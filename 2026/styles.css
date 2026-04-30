@@ -1635,6 +1635,20 @@ input:focus, textarea:focus{
   line-height: 1.4;
 }
 
+.speaker-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.chair-title {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
 .speaker-details-link {
   display: none; /* hidden — clicking the whole card opens modal */
 }
