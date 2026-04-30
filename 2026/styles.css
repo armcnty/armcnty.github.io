@@ -471,6 +471,28 @@ grid-area: h3;
 .what h3{ margin:.1rem 0 .25rem; }
 .what p{ margin:0; }
 
+.track {
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-block;
+  min-width: 115px;
+}
+
+.track.ms,
+.track.hs,
+.track.ce {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.what h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
 /* CTA / form */
 .cta{
   display:grid;
