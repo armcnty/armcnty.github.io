@@ -1516,6 +1516,14 @@ input:focus, textarea:focus{
   display: none !important;
 }
 
+.modal-body #modal-bio {
+  /* font-size: 0.95rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.2rem; */
+  white-space: pre-line;  /* This converts \n to line breaks */
+}
+
 .modal-body p {
   font-size: 1rem;
   line-height: 1.7;
