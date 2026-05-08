@@ -120,8 +120,24 @@ a:hover{ text-decoration:underline; }
   box-shadow: 0 0 0 4px rgba(99,102,241,.10);
 }
 
-.nav a{ color:var(--muted); }
+.nav a{ 
+  color:var(--muted);
+  position: relative;
+}
 .nav a:hover{ color:var(--text); text-decoration:none; }
+.nav a.active {
+  color: var(--accent1);
+  font-weight: 600;
+}
+.nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 12%;
+  width: 80%;
+  height: 2px;
+  background: var(--accent1);
+}
 
 .nav-desktop{ display:flex; gap:1.2rem; align-items:center; }
 .nav-mobile{ display:none; }
