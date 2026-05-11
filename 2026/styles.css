@@ -1358,6 +1358,24 @@ input:focus, textarea:focus{
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
+.sponsortheevent-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  background: transparent;
+  color: var(--accent1);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.sponsortheevent-btn:hover {
+  text-decoration: none;
+  border-bottom-color: var(--accent1);
+}
+
 .sponsors-list {
   margin-top: 4rem;
   padding-top: 2.5rem;
