@@ -12,6 +12,11 @@
   /* Accent gradient used for buttons/marks */
   --accent1: #a42912; /* red-600 */
   --accent2: #D22B43; /* rose-500 */ 
+
+  --brand:       #8b1c1c;
+  --brand-light: #f9f0f0;
+  --brand-mid:   #c94a3a;
+  --brand-muted: #f2e4e4;
 }
 
 @font-face {
