@@ -214,7 +214,7 @@
                   <div class="slot">
                     <div class="time">9:15 AM</div>
                     <div class="slot-body">
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d2-keynote">
                         <div class="session-type">Keynote</div>
                         <h3 class="card-title">Opening Keynote</h3>
                       </div>
@@ -233,12 +233,12 @@
                   <div class="slot">
                     <div class="time">10:45 AM</div>
                     <div class="slot-body multi">
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d2-people-first">
                         <div class="session-type">Academic Session</div>
                         <h3 class="card-title">Keeping People First in AI</h3>
                         <p class="card-desc">This academic session focuses on prioritizing human-centered values in the development and deployment of artificial intelligence, ensuring ethical considerations and societal needs remain at the core of AI innovation.</p>
                       </div>
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d2-games">
                         <div class="session-type">Panel</div>
                         <h3 class="card-title">The Opportunity AI Brings to Building a New Games Industry</h3>
                         <p class="card-desc">Exploring how AI is reshaping game development, from design to distribution in Atlantic Canada and beyond.</p>
@@ -258,12 +258,12 @@
                   <div class="slot">
                     <div class="time">01:30 PM</div>
                     <div class="slot-body multi">
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d2-impact">
                         <div class="session-type">Panel</div>
                         <h3 class="card-title">Turning AI into Impact: A Cross-Sector View on What's Working—and What's Not</h3>
                         <p class="card-desc">Leaders from health, education, government, and industry share candid lessons from real AI deployments.</p>
                       </div>
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d2-principled">
                         <div class="session-type">Academic Session</div>
                         <h3 class="card-title">Using AI in a Principled Way</h3>
                         <p class="card-desc">This session examines the multifaceted challenge of ethical AI adoption—covering responsibility and control, equitable access, localized classroom applications, and evolving university models—to ensure principled, practical, and future-ready implementation.</p>
@@ -283,12 +283,12 @@
                   <div class="slot">
                     <div class="time">03:30 PM</div>
                     <div class="slot-body multi">
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d2-capacity">
                         <div class="session-type">Session</div>
                         <h3 class="card-title">Building Capacity</h3>
                         <p class="card-desc">This session is focused on building organizational AI capacity and practical skills.</p>
                       </div>
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d2-healthcare">
                         <div class="session-type">Academic Session</div>
                         <h3 class="card-title">AI in Healthcare</h3>
                         <p class="card-desc">This session tackles critical challenges and innovations in healthcare AI—from contestable, human-centered multi-agent systems and interoperability to governance and predictive patient flow optimization—aiming to improve clinical outcomes, system efficiency, and responsible oversight.</p>
@@ -304,7 +304,7 @@
                       </div>
                     </div>
                   </div>
-
+  
                 </div>
               </div>
 
@@ -318,6 +318,34 @@
           white-space: nowrap;
           flex-shrink: 0;
           opacity: 0.85;
+        }
+
+        .sched-card[data-session] {
+          cursor: pointer;
+          transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .sched-card[data-session]:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+        .sched-card[data-session]:focus-visible {
+          outline: 2px solid var(--accent1, var(--brand));
+          outline-offset: 3px;
+        }
+       
+        /* Time/date meta line inside the modal */
+        .session-modal-meta {
+          font-size: 0.95rem;
+          color: #666;
+          font-weight: 600;
+          margin: 0 0 0.5rem 0 !important;
+        }
+       
+        /* Hide empty elements so modals without a "type" don't show empty space */
+        #session-modal-type:empty,
+        #session-modal-meta:empty,
+        #session-modal-desc:empty {
+          display: none;
         }
         
         </style>
@@ -453,6 +481,19 @@
               </div>
               
             </div>
+
+            <div id="session-modal-container" class="modal">
+              <div class="modal-content">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <div class="modal-body">
+                  <h3 id="session-modal-type"></h3>
+                  <h2 id="session-modal-title"></h2>
+                  <p id="session-modal-meta" class="session-modal-meta"></p>
+                  <hr>
+                  <p id="session-modal-desc"></p>
+                </div>
+              </div>
+            </div>
   
           <script>
             // Tab switching
@@ -507,6 +548,108 @@
                 });
               });
           </script>
+
+          <script>
+            const sessionData = {
+
+              'd2-keynote': {
+                type: 'Keynote',
+                title: 'Opening Keynote',
+                meta: 'Thursday, June 4 · 9:15 AM – 10:15 AM',
+                desc: 'A keynote setting the stage for the conference. Speaker details to be announced.'
+              },
+
+              'd2-people-first': {
+                type: 'Academic Session',
+                title: 'Keeping People First in AI',
+                meta: 'Thursday, June 4 · 10:45 AM – 12:15 PM',
+                desc: 'This academic session focuses on prioritizing human-centered values in the development and deployment of artificial intelligence, ensuring ethical considerations and societal needs remain at the core of AI innovation.'
+              },
+              'd2-games': {
+                type: 'Panel',
+                title: 'The Opportunity AI Brings to Building a New Games Industry',
+                meta: 'Thursday, June 4 · 10:45 AM – 12:15 PM',
+                desc: 'Exploring how AI is reshaping game development, from design to distribution in Atlantic Canada and beyond.'
+              },
+              'd2-impact': {
+                type: 'Panel',
+                title: "Turning AI into Impact: A Cross-Sector View on What's Working—and What's Not",
+                meta: 'Thursday, June 4 · 1:30 PM – 3:00 PM',
+                desc: 'Leaders from health, education, government, and industry share candid lessons from real AI deployments.'
+              },
+              'd2-principled': {
+                type: 'Academic Session',
+                title: 'Using AI in a Principled Way',
+                meta: 'Thursday, June 4 · 1:30 PM – 3:00 PM',
+                desc: 'This session examines the multifaceted challenge of ethical AI adoption—covering responsibility and control, equitable access, localized classroom applications, and evolving university models—to ensure principled, practical, and future-ready implementation.'
+              },
+
+              'd2-capacity': {
+                type: 'Session',
+                title: 'Building Capacity',
+                meta: 'Thursday, June 4 · 3:30 PM – 5:00 PM',
+                desc: 'This session is focused on building organizational AI capacity and practical skills.'
+              },
+              'd2-healthcare': {
+                type: 'Academic Session',
+                title: 'AI in Healthcare',
+                meta: 'Thursday, June 4 · 3:30 PM – 5:00 PM',
+                desc: 'This session tackles critical challenges and innovations in healthcare AI—from contestable, human-centered multi-agent systems and interoperability to governance and predictive patient flow optimization—aiming to improve clinical outcomes, system efficiency, and responsible oversight.'
+              },
+            };
+          
+            const sessionModal = document.getElementById('session-modal-container');
+            const sessionCloseBtn = sessionModal.querySelector('.modal-close');
+          
+            function openSessionModal() {
+              sessionModal.classList.add('show');
+              document.body.style.overflow = 'hidden';
+            }
+          
+            function closeSessionModal() {
+              sessionModal.classList.remove('show');
+              document.body.style.overflow = '';
+            }
+          
+            sessionCloseBtn.addEventListener('click', closeSessionModal);
+          
+            window.addEventListener('click', function (event) {
+              if (event.target === sessionModal) closeSessionModal();
+            });
+          
+            document.addEventListener('keydown', function (event) {
+              if (event.key === 'Escape' && sessionModal.classList.contains('show')) {
+                closeSessionModal();
+              }
+            });
+          
+            document.querySelectorAll('.sched-card[data-session]').forEach(card => {
+              if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+              if (!card.hasAttribute('role')) card.setAttribute('role', 'button');
+          
+              const trigger = function () {
+                const id = card.getAttribute('data-session');
+                const data = sessionData[id];
+                if (!data) return;
+          
+                document.getElementById('session-modal-type').textContent = data.type || '';
+                document.getElementById('session-modal-title').textContent = data.title || '';
+                document.getElementById('session-modal-meta').textContent = data.meta || '';
+                document.getElementById('session-modal-desc').textContent = data.desc || '';
+          
+                openSessionModal();
+              };
+          
+              card.addEventListener('click', trigger);
+              card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  trigger();
+                }
+              });
+            });
+          </script>
+          
         </div>
       </section>
     </main>
