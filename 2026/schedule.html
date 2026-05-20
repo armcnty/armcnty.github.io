@@ -233,7 +233,6 @@
 
                   </div>
 
-                
               </div>
   
               <!-- DAY 2 -->
@@ -389,6 +388,7 @@
           margin: 0 0 0.5rem 0 !important;
         }
        
+        /* Hide empty elements so modals without a "type" don't show empty space */
         #session-modal-type:empty,
         #session-modal-meta:empty,
         #session-modal-desc:empty {
@@ -396,124 +396,124 @@
         }
 
         /* =========================================================
-           SESSION MODAL — schedule details (accordion)
-      ========================================================= */
-        #session-modal-schedule:empty { display: none; }
-        
-        #session-modal-schedule .session-location {
-          font-size: 0.95rem;
-          color: #555;
-          margin: 0.75rem 0 0.5rem 0;
-        }
-        
-        #session-modal-schedule .session-sublist-label {
-          font-size: 0.95rem;
-          color: #555;
-          margin: 1rem 0 0.5rem 0;
-        }
-        
-        /* Accordion container */
-        #session-modal-schedule .presentations-list {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-        
-        /* Each item */
-        #session-modal-schedule .presentation-item {
-          border: 1px solid #e6e6e6;
-          border-radius: 8px;
-          overflow: hidden;
-          background: #fafafa;
-        }
-        
-        /* The clickable button */
-        #session-modal-schedule .presentation-btn {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 10px;
-          padding: 12px 14px;
-          background: transparent;
-          border: none;
-          text-align: left;
-          font-size: 0.95rem;
-          font-weight: 500;
-          color: #111;
-          cursor: pointer;
-          line-height: 1.4;
-          transition: background 0.15s ease;
-        }
-        #session-modal-schedule .presentation-btn:hover,
-        #session-modal-schedule .presentation-btn:focus-visible {
-          background: #f1f1f1;
-          outline: none;
-        }
-        
-        /* Chevron */
-        #session-modal-schedule .presentation-chevron {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          width: 18px;
-          height: 18px;
-          transition: transform 0.2s ease;
-        }
-        #session-modal-schedule .presentation-chevron svg {
-          width: 10px;
-          height: 6px;
-          fill: #a42912;
-        }
-        #session-modal-schedule .presentation-btn[aria-expanded="true"] .presentation-chevron {
-          transform: rotate(180deg);
-        }
-        
-        /* Hidden by default; open class reveals */
-        #session-modal-schedule .presentation-desc {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.25s ease, padding 0.25s ease;
-          padding: 0 14px;
-          background: #fff;
-          border-top: 1px solid transparent;
-        }
-        #session-modal-schedule .presentation-desc.open {
-          max-height: 500px;
-          padding: 12px 14px 14px 14px;
-          border-top-color: #e6e6e6;
-        }
-        
-        #session-modal-schedule .presentation-desc p {
-          margin: 0 0 8px 0;
-          font-size: 0.9rem;
-          line-height: 1.5;
-          color: #333;
-        }
-        
-        /* Speaker link */
-        #session-modal-schedule .speaker-tag {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 6px 10px;
-          border-radius: 999px;
-          background: rgba(164, 41, 18, 0.08);
-          color: #a42912;
-          text-decoration: none;
-          font-size: 0.85rem;
-          font-weight: 500;
-          transition: background 0.15s ease;
-        }
-        #session-modal-schedule .speaker-tag:hover {
-          background: rgba(164, 41, 18, 0.15);
-        }
-        #session-modal-schedule .speaker-tag svg {
-          width: 14px;
-          height: 14px;
-          fill: currentColor;
-        }
+   SESSION MODAL — schedule details (accordion)
+   ========================================================= */
+#session-modal-schedule:empty { display: none; }
+
+#session-modal-schedule .session-location {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+#session-modal-schedule .session-sublist-label {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* Accordion container */
+#session-modal-schedule .presentations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Each item */
+#session-modal-schedule .presentation-item {
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+/* The clickable button */
+#session-modal-schedule .presentation-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #111;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: background 0.15s ease;
+}
+#session-modal-schedule .presentation-btn:hover,
+#session-modal-schedule .presentation-btn:focus-visible {
+  background: #f1f1f1;
+  outline: none;
+}
+
+/* Chevron */
+#session-modal-schedule .presentation-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+#session-modal-schedule .presentation-chevron svg {
+  width: 10px;
+  height: 6px;
+  fill: #a42912;
+}
+#session-modal-schedule .presentation-btn[aria-expanded="true"] .presentation-chevron {
+  transform: rotate(180deg);
+}
+
+/* Hidden by default; open class reveals */
+#session-modal-schedule .presentation-desc {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, padding 0.25s ease;
+  padding: 0 14px;
+  background: #fff;
+  border-top: 1px solid transparent;
+}
+#session-modal-schedule .presentation-desc.open {
+  max-height: 500px;
+  padding: 12px 14px 14px 14px;
+  border-top-color: #e6e6e6;
+}
+
+#session-modal-schedule .presentation-desc p {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Speaker link */
+#session-modal-schedule .speaker-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(164, 41, 18, 0.08);
+  color: #a42912;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+#session-modal-schedule .speaker-tag:hover {
+  background: rgba(164, 41, 18, 0.15);
+}
+#session-modal-schedule .speaker-tag svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
         
         </style>
   
@@ -662,6 +662,7 @@
                   <p id="session-modal-meta" class="session-modal-meta"></p>
                   <hr>
                   <p id="session-modal-desc"></p>
+                  <div id="session-modal-schedule"></div>
                 </div>
               </div>
             </div>
