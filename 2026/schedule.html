@@ -331,7 +331,7 @@
                   <div class="slot">
                     <div class="time">03:30 PM</div>
                     <div class="slot-body multi">
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d2-sovereign">
                         <div class="session-type">Panel</div>
                         <h3 class="card-title">Sovereign Energy Data: the missing infrastructure for AI-ready electrification</h3>
                         <p class="card-desc"></p>
@@ -389,11 +389,130 @@
           margin: 0 0 0.5rem 0 !important;
         }
        
-        /* Hide empty elements so modals without a "type" don't show empty space */
         #session-modal-type:empty,
         #session-modal-meta:empty,
         #session-modal-desc:empty {
           display: none;
+        }
+
+        /* =========================================================
+           SESSION MODAL — schedule details (accordion)
+      ========================================================= */
+        #session-modal-schedule:empty { display: none; }
+        
+        #session-modal-schedule .session-location {
+          font-size: 0.95rem;
+          color: #555;
+          margin: 0.75rem 0 0.5rem 0;
+        }
+        
+        #session-modal-schedule .session-sublist-label {
+          font-size: 0.95rem;
+          color: #555;
+          margin: 1rem 0 0.5rem 0;
+        }
+        
+        /* Accordion container */
+        #session-modal-schedule .presentations-list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        
+        /* Each item */
+        #session-modal-schedule .presentation-item {
+          border: 1px solid #e6e6e6;
+          border-radius: 8px;
+          overflow: hidden;
+          background: #fafafa;
+        }
+        
+        /* The clickable button */
+        #session-modal-schedule .presentation-btn {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          padding: 12px 14px;
+          background: transparent;
+          border: none;
+          text-align: left;
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: #111;
+          cursor: pointer;
+          line-height: 1.4;
+          transition: background 0.15s ease;
+        }
+        #session-modal-schedule .presentation-btn:hover,
+        #session-modal-schedule .presentation-btn:focus-visible {
+          background: #f1f1f1;
+          outline: none;
+        }
+        
+        /* Chevron */
+        #session-modal-schedule .presentation-chevron {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          width: 18px;
+          height: 18px;
+          transition: transform 0.2s ease;
+        }
+        #session-modal-schedule .presentation-chevron svg {
+          width: 10px;
+          height: 6px;
+          fill: #a42912;
+        }
+        #session-modal-schedule .presentation-btn[aria-expanded="true"] .presentation-chevron {
+          transform: rotate(180deg);
+        }
+        
+        /* Hidden by default; open class reveals */
+        #session-modal-schedule .presentation-desc {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.25s ease, padding 0.25s ease;
+          padding: 0 14px;
+          background: #fff;
+          border-top: 1px solid transparent;
+        }
+        #session-modal-schedule .presentation-desc.open {
+          max-height: 500px;
+          padding: 12px 14px 14px 14px;
+          border-top-color: #e6e6e6;
+        }
+        
+        #session-modal-schedule .presentation-desc p {
+          margin: 0 0 8px 0;
+          font-size: 0.9rem;
+          line-height: 1.5;
+          color: #333;
+        }
+        
+        /* Speaker link */
+        #session-modal-schedule .speaker-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 10px;
+          border-radius: 999px;
+          background: rgba(164, 41, 18, 0.08);
+          color: #a42912;
+          text-decoration: none;
+          font-size: 0.85rem;
+          font-weight: 500;
+          transition: background 0.15s ease;
+        }
+        #session-modal-schedule .speaker-tag:hover {
+          background: rgba(164, 41, 18, 0.15);
+        }
+        #session-modal-schedule .speaker-tag svg {
+          width: 14px;
+          height: 14px;
+          fill: currentColor;
         }
         
         </style>
@@ -615,13 +734,47 @@
                 type: 'Academic Session',
                 title: 'Keeping People First in AI',
                 meta: 'Thursday, June 4 · 10:45 AM – 12:15 PM',
-                desc: 'This academic session focuses on prioritizing human-centered values in the development and deployment of artificial intelligence, ensuring ethical considerations and societal needs remain at the core of AI innovation.'
+                desc: 'This academic session focuses on prioritizing human-centered values in the development and deployment of artificial intelligence, ensuring ethical considerations and societal needs remain at the core of AI innovation.',
+                location: 'Head Hall',
+                sessions: [
+                  {
+                    title: 'Beyond Search: Interactive Information Retrieval in the Age of Agentic AI',
+                    speaker: 'Ga Wu',
+                    speakerId: 'gwu',
+                    desc: `For decades, information retrieval systems have followed a simple paradigm: users issue queries and receive ranked lists of results. With the emergence of large language models, this paradigm is rapidly evolving toward agentic systems that can interact with users, reason over information, and dynamically retrieve knowledge through conversation. In this talk, I present lessons from deploying a series of real-world interactive retrieval systems developed with industry partners including Harrison Healthcare, TD Research (Layer6 AI), DeepSense, and Broady AI. 
+                    These projects span diverse applications such as conversational mental health diagnostic assistants, utility-driven large-scale retrieval-augmented generation platforms, Indigenous culture question-answering systems, and startup–investor preference matching tools. Across these systems, agentic AI significantly improved user experience, transparency, and the precision and satisfaction of retrieved information. However, moving from research prototypes to production revealed major practical challenges: frequently prompting large language models often became bottlenecks for scalability, latency, cost efficiency, and system stability.
+                    Drawing from these deployments, I discuss key design lessons, architectural considerations, and emerging principles for building scalable, reliable, and trustworthy interactive information retrieval systems in the era of agentic AI.`
+                  },
+                  {
+                    title: `Your AI Agent Can't Give Reasons. Can You?`,
+                    speaker: 'Andrew Buzzell',
+                    speakerId: 'abuzzell',
+                    desc: `Everybody's building AI agents now. How should we structure the work we give these systems, and what happens to the humans working alongside them over time? A great deal of what we want to do with AI turns out to be normatively complex: correctness depends not just on effective computation but on values, context, and judgment. We care about reasons, not just outcomes. Drawing on ideas from philosophy and anthropology, I argue this has implications for the architectural principles we apply to the AI systems we are building, and for whether those systems leave humans with genuine direction over the work, or gradually render oversight performative and obsolete. 
+                    \n\nThis is a shift away from standard questions about explainable and black box AI, from the question "can it explain itself?" to "can the humans in the human-AI ensembles still give reasons for what they do?".`
+                  },
+                  {
+                    title: 'Collaboration in AI as a Pathway to Trustworthy Adoption',
+                    speaker: 'Andres Rojas',
+                    speakerId: 'arojas',
+                    desc: `Traditional software development has long favoured closed, proprietary models, but AI may be a fundamentally better fit for collaborative development. Its foundations are academic and public by nature, its pace of change exceeds what any single institution can track alone, its core techniques don't fall under IP protection, and trust in AI systems requires transparency rather than assertion. Critically, this is not a binary proposition: what we advocate is openness in the reference implementations, which any organisation can inspect, adapt, and build on privately, as well as the existence of credible open alternatives to frontier models, to provide independent benchmarks necessary to evaluate claims from closed systems. 
+                    Vector Institute has spent eight years testing co-development approaches with 200+ organisations across 550+ use cases, resulting in 250,000 hours of development time contributed by our partners, demonstrating that this type of collaboration accelerates adoption and builds the trust that isolated development cannot. 
+                    Canada is now positioned to scale this model through its National AI Institutes, neutral third-parties with the academic grounding, cross-sector reach, and institutional independence to make open AI development a credible and governed alternative.`
+                  },
+                  {
+                    title: "AI Can Generate Code. That's Why Computer Science Matters More Than Ever",
+                    speaker: 'Stuart Thiel',
+                    speakerId: 'sthiel',
+                    desc: `We've heard this story before. When the Internet made technical knowledge easier to access, people said computer science expertise would matter less. When Stack Overflow made solutions searchable and shareable, the same claim returned. Today, generative AI has made it faster and easier to produce code, and once again people are asking whether formal computer science education is becoming obsolete.
+                          This talk argues the opposite. The easier it becomes to produce code, the more important it becomes to understand computation in depth. Computer science has never been just about writing programs; it spans correctness, abstraction, algorithms, complexity, systems, design, security, maintainability, and consequences. Some of that work is visible in the public-facing software people use every day, but much of it happens in subtler mathematical, theoretical, and infrastructural spaces, where progress depends on identifying and solving problems at the edge of what we currently understand. Generative AI can produce plausible output, but plausibility isn't progress, output isn't accountability, and neither replaces understanding.`
+                  }
+                ]
               },
               'd2-games': {
                 type: 'Panel',
                 title: 'The Opportunity AI Brings to Building a New Games Industry',
                 meta: 'Thursday, June 4 · 10:45 AM – 12:15 PM',
                 desc: 'Exploring how AI is reshaping game development, from design to distribution in Atlantic Canada and beyond.'
+                
               },
               'd2-impact': {
                 type: 'Panel',
@@ -630,13 +783,50 @@
                 desc: 'Leaders from health, education, government, and industry share candid lessons from real AI deployments.'
               },
               'd2-principled': {
-                type: 'Academic Session',
+                type: 'Talks',
                 title: 'Using AI in a Principled Way',
                 meta: 'Thursday, June 4 · 1:30 PM – 3:00 PM',
-                desc: 'This session examines the multifaceted challenge of ethical AI adoption—covering responsibility and control, equitable access, localized classroom applications, and evolving university models—to ensure principled, practical, and future-ready implementation.'
+                desc: 'This session examines the multifaceted challenge of ethical AI adoption—covering responsibility and control, equitable access, localized classroom applications, and evolving university models—to ensure principled, practical, and future-ready implementation.',
+                location: 'Head Hall',
+                sessions: [
+                  {
+                    title: 'Responsible AI: from Understanding to Control',
+                    speaker: 'Mahtab Sarvmaili',
+                    speakerId: 'msarvmaili',
+                    desc: `This talk presents a research perspective on Responsible AI centered on the progression from understanding machine learning systems to controlling their behavior. It begins by examining how AI systems can be understood through Explainable AI (XAI), and why explainability is essential for transparency, accountability, and trust. The presentation will review major directions in explainability for machine learning, including interpretable models, global and local explanation methods, and data-centric approaches, and will discuss our work on post-hoc, model-agnostic, and data-centric methods for explaining complex black-box models. It will then argue that explainability, while fundamental, is only one component of trustworthy AI, which also requires reliability, faithfulness, safety, privacy, and adaptability. From this foundation, the talk will move to the problem of control, considering how AI systems may be guided, edited, or made to unlearn specific information in privacy-preserving and minimally invasive ways. 
+                    \nThe final part of the talk will address the new challenges introduced by large language models and agentic systems, including questions of verification, controllability, information routing, autonomy, and responsible deployment, and will highlight these as important open problems for the next generation of Responsible AI research.`
+                  },
+                  {
+                    title: `Access is Not Enough`,
+                    speaker: 'Chris Power ',
+                    speakerId: 'cpower',
+                    desc: `The talk makes a practical case that accessibility compliance is different from accessible design and that AI systems which restructure activities without accounting for what users value create both reputational and product risk. 
+                    This talk will introduce researchers and UX teams to a concrete diagnostic model they can apply without needing deep familiarity with accessibility and disability studies.`
+                  },
+                  {
+                    title: 'Global Insights, Local Action: Responsible AI Use in the New Brunswick Classroom',
+                    speaker: 'Sarah Rankin, Amanda Comeau, Ryan Donaghy',
+                    speakerId: 'srankin',
+                    desc: `This session explores how global frameworks for responsible and ethical AI in education are shaping local action in New Brunswick classrooms. Drawing on guidance from UNESCO, the OECD, the European Commission, and other leading organizations, the presentation highlights key global trends such as AI literacy, curriculum reform, and system wide professional learning. It then showcases New Brunswick’s Digital and AI Framework, including its innovative “With, Through, About, and Without AI” approach and the integration of AI across K–12 digital literacy and curriculum documents. 
+                    Centering the human elements of teaching and learning, this session demonstrates how New Brunswick is positioning itself as a leader in purposeful, ethical, and future focused AI use in education.`
+                  },
+                  {
+                    title: "From Dyadic Trust to Trust Ecology: Reframing Trust in AI-Augmented Decision Systems",
+                    speaker: 'Rachel Hor',
+                    speakerId: 'rhor',
+                    desc: `Trust failures in AI-augmented decisions are not technical failures — they are diagnostic failures. Existing instruments are structurally blind to the problem: 74% of trust frameworks in AI-augmented decision contexts remain pairwise (Hor et al., 2026; Campbell Collaboration cl2.20260007.R1; 66 studies, N = 31,198). A pre-registered meta-analysis of 17 studies (N = 9,084) found no significant pooled effect of transparency on cognitive trust (g = 0.082, p = 0.585, I² = 99.5%). The heterogeneity argues not for better transparency tools but for a different unit of analysis. A trust asymmetry documented across 13 studies sharpens the case: AI transparency simultaneously increases cognitive confidence in the system while eroding affective trust in the human decision-maker — a cross-dimensional dynamic no dyadic instrument detects. 
+                    The Trust Ecology Framework (TEF) repositions the unit of analysis from dyadic pairs to the socio-algorithmic system as a whole — an emergent property of three mutually constitutive dimensions: AI Explicability, Human Stewardship, and Systemic Legitimacy. The Trust Triad Scale (TTS) operationalizes this architecture through items adapted from Lee and See (2004), Mayer et al. (1995), and Colquitt (2001), supplemented by novel Interconnected Trust items detecting cascade dynamics. Validation is underway through a sequential explanatory mixed-methods design; data collection is currently in field. Phase 1 findings and preliminary instrument diagnostics will be presented. The theoretical contribution is an ontological move from dyadic to triadic, static to processual, additive to emergent — extending Rousseau et al. (1998) into socio-algorithmic contexts. The practical contribution is an open-access Trust Triad Toolkit operationalizing EU AI Act Article 13 trustworthiness obligations. Photo `
+                  }
+                ]  
               },
 
               'd2-capacity': {
+                type: 'Session',
+                title: 'Building Capacity',
+                meta: 'Thursday, June 4 · 3:30 PM – 5:00 PM',
+                desc: 'This session is focused on building organizational AI capacity and practical skills.'
+              },
+              'd2-sovereign': {
                 type: 'Session',
                 title: 'Building Capacity',
                 meta: 'Thursday, June 4 · 3:30 PM – 5:00 PM',
@@ -646,7 +836,43 @@
                 type: 'Academic Session',
                 title: 'AI in Healthcare',
                 meta: 'Thursday, June 4 · 3:30 PM – 5:00 PM',
-                desc: 'This session tackles critical challenges and innovations in healthcare AI—from contestable, human-centered multi-agent systems and interoperability to governance and predictive patient flow optimization—aiming to improve clinical outcomes, system efficiency, and responsible oversight.'
+                desc: 'This session tackles critical challenges and innovations in healthcare AI—from contestable, human-centered multi-agent systems and interoperability to governance and predictive patient flow optimization—aiming to improve clinical outcomes, system efficiency, and responsible oversight.',
+                location: 'Head Hall',
+                sessions: [
+                  {
+                    title: 'Agentic AI for Intelligent MRI Appointment Rescheduling in Healthcare Operations',
+                    speaker: 'Yilin Huang',
+                    speakerId: 'yhuang',
+                    desc: `Magnetic Resonance Imaging (MRI) scheduling inefficiencies, particularly patient no-shows and last-minute cancellations, contribute significantly to scanner idle time, reduced operational throughput, and delays in patient care. To address this challenge, we explore and propose a novel agentic AI solution built on the LangChain ecosystem to optimize hospital MRI scheduling workflows by automating key tasks, including patient communication and appointment rescheduling. Specifically, the proposed system adopts the Model Context Protocol (MCP), Pandas, and LangChain to manage external tools, interact with appointment schedule in CSV format, and create intelligent AI Agents, respectively. For example, when a patient fails to attend a scheduled MRI appointment, an MCP tool can be invoked to automatically identify eligible patients booked later that day, contact them about the newly available time slot, process their responses, and update the appointment schedule accordingly. 
+                    This approach reduces the need for staff to manually call patients one by one, thereby improving operational efficiency, lowering MRI scanner idle rates, and supporting more timely access to imaging services. `
+                  },
+                  {
+                    title: `The Role of AI and Interopability of Health Information Systems`,
+                    speaker: 'Ron Parker ',
+                    speakerId: 'rparker',
+                    desc: `A significant success factor in the implementation of information technology is the level and quality of engagement with the users and beneficiaries of those technology solutions. This is a significant challenge for Health Care services delivery as, at a systemic level, there are many organizations and disciplines that much be engaged to ensure success. Persuading an entire ecosystem to participate and have a shared commitment of their human, financial, and time resources towards a shared goal requires good governance and managed change to achieve sustained trust and confidence. 
+
+                    The addition of Artificial Intelligence and intelligent agents as actors and peers in health care has great promise. But, at the same time, requires even greater emphasis and shared understanding of the roles of human and AI actors to build confidence and trust in how they are introduced and work together.  This presentation will explore some of the emergent thinking in the social psychology of introducing AI, particularly in the very complex health care ecosystem.  It will also emphasize the importance of adapting thoughtful governance to help achieve and sustain that trust.`
+                  },
+                  {
+                    title: 'AI Governance in Healthcare',
+                    speaker: 'Arslan Idrees, Peter Bak',
+                    speakerId: 'aidrees',
+                    desc: `This session explores how healthcare leaders can approach AI and emerging agentic systems with a focus on trust, safety, transparency, and accountability. Attendees will gain a high-level perspective on how to evaluate AI responsibly, align innovation with clinical realities, and build the governance needed for meaningful impact in healthcare settings. Session will also cover how a platform-based approach can help organizations orchestrate data, workflows, models, and agents more consistently and safely across the enterprise.`
+                  },
+                  {
+                    title: "AI at the Speed of Trust: Implementing Innovation in Real Health Systems",
+                    speaker: 'Jen Woodland',
+                    speakerId: 'jwoodland',
+                    desc: `AI is moving quickly, but in health systems the hardest question is not simply what can we build? - it is what can be responsibly implemented, trusted, sustained, and scaled? This talk will explore how applied AI can move from exciting prototypes to real-world health-system value by combining sovereign infrastructure, clinically grounded use cases, implementation science, and human-centred adoption. Drawing on emerging work in healthcare AI, clinical workflow redesign, and responsible implementation, the team will discuss what Atlantic Canada needs to turn AI potential into practical, ethical, and system-ready innovation.`
+                  },
+                  {
+                    title: "Optimizing Patient Flow: Machine Learning Approaches for Hospital Discharge Prediction ",
+                    speaker: 'Richard Levesque',
+                    speakerId: 'jwoodland',
+                    desc: `This research project focuses on developing and evaluating artificial intelligence (AI) tools to improve hospital discharge planning within the Vitalité Health Network in New Brunswick, Canada. By using machine learning (ML) models trained on anonymized historical hospital data, the project aims to accurately predict patients’ length of stay and discharge dates both at admission and throughout hospitalization. The study also develops a Natural Language Processing (NLP) model to standardize and classify clinical diagnoses. These models are integrated into hospital systems and tested in real clinical settings to assess their impact on patient flow, resource utilization, and healthcare efficiency. Ultimately, the project seeks to reduce hospital overcrowding, shorten wait times, lower healthcare costs, and enhance the quality of patient care. `
+                  }
+                ]  
               },
             };
           
@@ -683,12 +909,56 @@
                 const id = card.getAttribute('data-session');
                 const data = sessionData[id];
                 if (!data) return;
-          
+
                 document.getElementById('session-modal-type').textContent = data.type || '';
                 document.getElementById('session-modal-title').textContent = data.title || '';
                 document.getElementById('session-modal-meta').textContent = data.meta || '';
                 document.getElementById('session-modal-desc').textContent = data.desc || '';
-          
+
+                // Render optional schedule details (location + expandable sessions)
+                const scheduleEl = document.getElementById('session-modal-schedule');
+                if (data.location || (data.sessions && data.sessions.length)) {
+                  let html = '';
+
+                  if (data.location) {
+                    html += '<p class="session-location"><strong>Location:</strong> ' + data.location + '</p>';
+                  }
+
+                  if (data.sessions && data.sessions.length) {
+                    html += '<p class="session-sublist-label"><strong>Sessions:</strong></p>';
+                    html += '<div class="presentations-list">';
+                    data.sessions.forEach(function (s) {
+                      html += '<div class="presentation-item">';
+                      html +=   '<button class="presentation-btn" aria-expanded="false" onclick="togglePresentation(this)">';
+                      html +=     s.title;
+                      html +=     '<span class="presentation-chevron">';
+                      html +=       '<svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>';
+                      html +=     '</span>';
+                      html +=   '</button>';
+                      html +=   '<div class="presentation-desc">';
+                      if (s.desc) {
+                        html += '<p>' + s.desc + '</p>';
+                      }
+                      if (s.speaker) {
+                        const href = s.speakerId ? 'speakers.html#' + s.speakerId : 'speakers.html';
+                        html += '<a class="speaker-tag" href="' + href + '">';
+                        html +=   '<svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>';
+                        html +=   'Speaker: ' + s.speaker;
+                        html += '</a>';
+                      }
+                      html +=   '</div>';
+                      html += '</div>';
+                    });
+                    html += '</div>';
+                  }
+
+                  scheduleEl.innerHTML = html;
+                  scheduleEl.style.display = '';
+                } else {
+                  scheduleEl.innerHTML = '';
+                  scheduleEl.style.display = 'none';
+                }
+
                 openSessionModal();
               };
           
