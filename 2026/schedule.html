@@ -534,11 +534,11 @@
                   <div class="slot">
                     <div class="time">9:15 AM</div>
                     <div class="slot-body multi">
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d3-adoptionpanel">
                         <div class="session-type">Panel</div>
                         <h3 class="card-title">What actually works: AI adoption lesson from NB businesses</h3>
                       </div>
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d3-aiadoption">
                         <div class="session-type">Talks</div>
                         <h3 class="card-title">Strategies for AI Adoption</h3>
                       </div>
@@ -562,7 +562,7 @@
                         <h3 class="card-title">Turning AI into Impact: A Cross-Sector View on What's Working—and What's Not</h3>
                         <p class="card-desc">Leaders from health, education, government, and industry share candid lessons from real AI deployments.</p>
                       </div>
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d3-governance">
                         <div class="session-type">Talks</div>
                         <h3 class="card-title">AI Governance and Ethics</h3>
                         <p class="card-desc"></p>
@@ -582,9 +582,9 @@
                   <div class="slot">
                     <div class="time">01:00 PM</div>
                     <div class="slot-body multi">
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d3-everywhere">
                         <div class="session-type">Talks</div>
-                        <h3 class="card-title">Academic Session</h3>
+                        <h3 class="card-title">AI Everywhere!!!</h3>
                         <p class="card-desc"></p>
                       </div>
                       <div class="sched-card session">
@@ -612,7 +612,7 @@
                         <h3 class="card-title">Positioning Education for AI</h3>
                         <p class="card-desc"></p>
                       </div>
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d3-robotics">
                         <div class="session-type">Talks</div>
                         <h3 class="card-title">Robotics and Sensors</h3>
                         <p class="card-desc"></p>
@@ -714,7 +714,23 @@
                 type: 'Keynote',
                 title: 'Opening Keynote',
                 meta: 'Thursday, June 4 · 9:15 AM – 10:15 AM',
-                desc: 'A keynote setting the stage for the conference. Speaker details to be announced.'
+                desc: 'A keynote setting the stage for the conference.',
+                sessions: [
+                  {
+                    title: 'Meet the Moment: Staying in the Game When Technology Changes Everything',
+                    speaker: 'Michael M Karch',
+                    speakerId: 'mkarch',
+                    desc: `Every generation encounters a technological moment that reshapes the human story. The Industrial Revolution introduced powerful general-purpose technologies—electricity, mechanization, and mass production—that created prosperity and convenience at a scale never before imagined. Yet progress also carried unintended consequences: environmental degradation, social upheaval, and widening inequality.
+
+Today we stand at a similar inflection point. Artificial intelligence, robotics, and biotechnology represent the next wave of transformative technologies. The question is no longer whether these tools will change our world—but whether we will learn to shape them wisely.
+
+In this inspiring 45-minute TED-style keynote, orthopedic surgeon, innovator, and bestselling author of The Paradox of Progress: The Roses and Thorns of Artificial Intelligence, Dr. Michael Karch challenges audiences to rethink the role of technology in human life. Drawing on more than 30 years of experience in surgery, innovation, humanitarian disaster response, and working as a team physician for the United States Ski and Snowboard Teams, he reframes AI as the most powerful tool humanity has ever created—one capable of augmenting human judgment, creativity, and compassion.
+
+Blending history, personal stories, and practical insight, the talk invites audiences to move from “know-it-all” to “learn-it-all,” embrace human-centered AI, and take responsibility for shaping the future—ensuring that in the next chapter of progress, humans remain the protagonists.
+
+Versions of this keynote have been delivered and received praise at MIT sAIpiens Day in Cambridge, MA, The Georgetown University School of Medicine in Washington, DC, the University of Delaware Connected Autonomous Research Lab in Newark, DE, the International Hip Preservation Society in Fukuoka, Japan, and the DePuy Synthes National Sales Meeting in Orlando, Florida. `
+                  }
+                ]
               },
 
               'd2-people-first': {
@@ -766,7 +782,7 @@
               'd2-impact': {
                 type: 'Panel',
                 title: "Turning AI into Impact: A Cross-Sector View on What's Working—and What's Not",
-                meta: 'Thursday, June 4 · 11:15 AM – 12:30 PM',
+                meta: 'Thursday, June 5 · 11:15 AM – 12:30 PM',
                 desc: 'Leaders from health, education, government, and industry share candid lessons from real AI deployments.'
               },
               'd2-principled': {
@@ -861,6 +877,145 @@
                   }
                 ]  
               },
+
+              'd3-adoptionpanel': {
+                type: 'Panel',
+                title: 'What actually works: AI adoption lesson from NB businesses',
+                meta: 'Friday, June 5 · 9:15 AM – 10:45 AM',
+                desc: '',
+                location: 'Head Hall'
+              },
+              'd3-aiadoption': {
+                type: 'Talks',
+                title: 'Strategies for AI Adoption',
+                meta: 'Friday, June 5 · 9:15 AM – 10:45 AM',
+                desc: '',
+                location: 'Head Hall',
+                sessions: [
+                  {
+                    title: 'From Pilots to Productivity: How Small Businesses Can Actually Adopt AI',
+                    speaker: 'Tony Sheehan',
+                    speakerId: 'tsheehan',
+                    desc: `Many Atlantic Canadian companies have started exploring AI in small ways. They have tried new features in Microsoft 365, asked ChatGPT a few questions, or experimented with meeting transcription tools. These early steps show curiosity and openness to change, but most businesses have not yet turned that exploration into lasting impact.
+
+In this short talk, Tony Sheehan, Co-Founder and CTO of NorthBound Advisory, will share what helps small and mid-sized organizations move from trying AI to truly adopting it. Through practical examples from across Atlantic Canada, Tony will highlight three simple lessons on how any business can start building real productivity gains with AI.`
+                  },
+                  {
+                    title: `How AI has transformed Smartskins Roadmap, how we work and hire`,
+                    speaker: 'Ryan Proudfoot ',
+                    speakerId: 'rproudfoot',
+                  },
+                  {
+                    title: 'Beyond the AI Consultant: The Rise of the Managed Intelligence Provider (MIP)',
+                    speaker: 'Charles Gervais',
+                    speakerId: 'cgervais',
+                    desc: `Every major technology shift produces a new class of provider. The cloud era gave us Managed Service Providers. The AI era is producing something fundamentally different, and most organizations don't yet have a name for what they actually need.
+\n\nCharles introduces the Managed Intelligence Provider: a new vendor category that takes ongoing responsibility for how an organization thinks: 1. Capturing expert judgment, 2. Encoding decision logic, and 3. Continuously improving the intelligence infrastructure that drives real business outcomes. Not a software vendor. Not a consultancy. Something new.
+\n\nThis session makes the case for why traditional IT providers and consultancies are structurally unable to fill this role, what it takes to deliver managed intelligence in practice, and what the rise of the MIP means for the broader innovation ecosystem.`
+                  },
+                  {
+                    title: "How Task-Level AI Discovery Turns Adoption into Transformation",
+                    speaker: 'Jon Barry',
+                    speakerId: 'jbarry',
+                    desc: `AI is an enabler of tasks. So why are we not using tasks as the foundational level for understanding how to transform using AI?
+Anthropic's Economic Index — independent research analyzing real-world AI usage — finds that AI takes hold at the task layer, not the job layer. MNP Digital's own research, surveying 250 Canadian business leaders, finds 48% in operational AI use and only 4% transformational. The 44-point gap is the cost of strategy and execution never meeting at the task.
+Most AI adoption conversations start at the tool, the use case, or the role. All three are at the wrong altitude. Strategy without task-level grounding produces decks. Tasks without strategy produce disconnected pilots. Task-Level AI Discovery decomposes work to the unit where AI actually operates, then rolls it up — across the four AI value drivers of productivity, growth, risk-trust-governance, and insights — into transformation roadmaps that survive contact with the actual work.`
+                  },
+                ]  
+              },
+              'd3-governance': {
+                type: 'Panel',
+                title: 'AI Governance and Ethics',
+                meta: 'Friday, June 5 · 11:15 AM – 12:30 PM',
+                desc: '',
+                location: 'Head Hall',
+              },
+
+              'd3-everywhere': {
+                type: 'Talks',
+                title: 'AI Everywhere!!!',
+                meta: 'Friday, June 5 · 1:00 PM – 02:15 PM',
+                desc: '',
+                location: 'Head Hall',
+                sessions: [
+                  {
+                    title: 'AI-Driven Construction Intelligence: From Design Understanding to Manufacturing Optimization',
+                    speaker: 'Andrew Fisher',
+                    speakerId: 'afisher',
+                    desc: `This presentation will showcase an applied AI pipeline for construction that connects drawing interpretation, material estimation, and manufacturing optimization. It will demonstrate how computer vision, neural networks, and evolutionary algorithms can work together to turn 2D building plans into actionable 3D models, quantity estimates, and fabrication-ready panel layouts. The presentation is aimed at both researchers and practitioners, with a focus on how integrated AI systems can improve efficiency, decision-making, and real-world adoption in construction workflows.`
+                  },
+                  {
+                    title: `Managing applied AI/DS Research Projects with Industry Partners`,
+                    speaker: 'Danny Silver',
+                    speakerId: 'dsilver',
+                  },
+                  {
+                    title: 'AI for Municipal Use Cases',
+                    speaker: 'Aladine Bin Sayed',
+                    speakerId: 'asayed',
+                    desc: `The presentation would highlight concrete tools and use cases we have developed, including:
+                            \nMonitoring and impact analysis of climate action initiatives (including GHG reduction and environmental indicators), combined with AI-driven prioritization using decision-support approaches.
+                            \nAI-assisted discovery of funding opportunities aligned with municipal projects.
+                            \n\nThe goal would be to provide a hands-on, applied perspective, showing how AI can directly support municipalities in planning, decision-making, and accessing funding`
+                  },
+                  {
+                    title: "The Future of Universities in the Age of AI: Netflix, LinkedIn, Apprenticeships or Something Else?",
+                    speaker: 'Shadi Aljendi',
+                    speakerId: 'saljendi',
+                    desc: `The Future of Universities in the Age of AI: Netflix, LinkedIn, Apprenticeships or Something Else?
+As artificial intelligence reshapes industries, jobs, and the pace of change, universities are facing a defining moment. Learners increasingly expect education that is flexible, personalized, career-relevant, and available throughout their lives, not only during a traditional degree experience. At the same time, employers are demanding faster skill development, stronger human capabilities, and closer alignment between education and workforce needs.
+ 
+This presentation explores how universities may evolve in the age of AI by borrowing lessons from modern models of engagement, skills signaling, and experiential learning. What can higher education learn from platforms that personalize user experiences, ecosystems that connect learning to careers, and models that emphasize real-world practice and mentorship?
+ 
+The session will examine how AI can enable adaptive learning, intelligent student support, skills-based pathways, faster curriculum renewal, and stronger connections to labour market demand. It will also discuss why human skills such as leadership, communication, creativity, critical thinking, and ethical judgment may become even more valuable in an AI-driven economy.
+ 
+Attendees will leave with a forward-looking perspective on how universities, especially agile online institutions, can help build the future workforce and redefine lifelong learning in the years ahead."`
+                  },
+                ]  
+              },
+
+              'd3-robotics': {
+                type: 'Talks',
+                title: 'Robotics and Sensors',
+                meta: 'Friday, June 5 · 2:30 PM – 03:00 PM',
+                desc: '',
+                location: 'Head Hall',
+                sessions: [
+                  {
+                    title: 'Endeavoring the Accelerated Discovery with Self-Driving Labs ',
+                    speaker: 'Han Hao',
+                    speakerId: 'hhao',
+                    desc: `Contemporary materials discovery requires intricate sequences of synthesis, fabrication and functional characterization that often span multiple locations with specialized expertise and instrumentation. In our collaborative effort of campaign, we present a cloud-based solution enabling AI-guided, asynchronous, and delocalized design–make–test-analyze cycles to integrate these workflows. We applied a building-block strategy for assembling molecular function enables automated synthesis on geographically distributed yet connected platforms, orchestrated by a central cloud platform, with the integration of an AI-based experiment planner and an in-line property characterization module to accelerate the discovery of top-performing organic solid-state laser molecules as demonstrated by the best ever thin-film device performance. Empowered by asynchronous integration of five laboratories across the globe, this workflow provides a blueprint for delocalizing – and democratizing – scientific discovery, in which we are endeavoring a global community of accelerated material discovery and self-driving laboratories based on the framework of the Acceleration Consortium at the University of Toronto. With our collective joint effort of seven SDLs, we aim to accelerate the discovery of materials and molecules needed for a sustainable future, with the power of artificial intelligence, robotics, and advanced computing—to reduce the time and cost of bringing advanced materials to market. `
+                  },
+                  {
+                    title: `Directional Winds in AI for Science & Engineering`,
+                    speaker: 'Jon Belof',
+                    speakerId: 'jbelof',
+                    desc: `The union of AI tools with HPC simulation of the physical sciences will revolutionize scientific discovery and dramatically accelerate engineering processes.   As the role of AI becomes ever more important to automation, advanced manufacturing, energy and simulation itself, newly emerging hybrid AI + HPC formalisms – such as those built on agentic AI – hold enormous potential to amplify the impact of simulation even further.  Along this path, AI tools will permeate every stage of HPC and computational methods more broadly.  These directional winds have massive implications to the very foundations of sovereignty – technology and progress, energy, economic competitiveness, and national defense & security will be changed forever.
+ 
+In this talk, we will focus on science and technology impacts that are emerging from AI and some real-world highlights of this intersection will be reviewed.  AI for Science and Engineering use cases that have emerged in the community will illustrate both the opportunities and challenges facing sovereign AI efforts and, in particular, how the “tectonic plates” beneath our compute paradigms are shifting.   To enable nations to cross this bridge to an AI for Science-enabled future, new AI tools are being advanced by AMD and a view of the near future in AI for Science system architectures will be shared, starting with the deployment of the first sovereign AI factories now being built by AMD across the globe.`,
+                  },
+                  {
+                    title: 'Unlocking Embodied AI Through Real-Time Edge Inference with NVIDIA',
+                    speaker: 'James Cameron',
+                    speakerId: 'jcameron',
+                    desc: `The next great frontier for artificial intelligence is the physical world. While we often focus on the massive data centres required to train AI, the true bottleneck for robotics is inference. This session explores this by looking at the ML systems required to deploy complex AI models directly onto physical machines. We will explore the challenges of edge computing, the necessity of ultra-low latency inference, and how platforms within the NVIDIA ecosystem are enabling robots to process sensor data and make complex decisions in real-time.`
+                  },
+                  {
+                    title: "Streaming data analytics using sensor data",
+                    speaker: 'Sazia Mahfuz',
+                    speakerId: 'smahfuz',
+                    desc: `Streaming data analytics enables real-time insights from continuously generated sensor data produced by Internet of Things (IoT) devices like wearable technologies and smart sensing systems. This talk highlights several research directions that apply deep learning techniques to analyze streaming sensor data across diverse application domains. These include the classification of road conditions using vehicular sensor data to improve transportation safety and human activity recognition using wearable sensors through deep learning architectures. The talk also presents healthcare-focused applications like REM sleep stage classification using transfer learning and an overview of wearable and EEG-based seizure detection using machine learning methods. The talk also presents soil moisture prediction using deep learning models for smart agriculture. Together, these examples demonstrate how streaming data analytics and deep learning approaches can transform large-scale sensor data into actionable insights for intelligent, real-time decision-making across transportation, healthcare, and environmental monitoring systems. `
+                  },
+                  {
+                    title: "Explainability is Insufficient: Navigating Contestable Futures in Human-Centered Multi-Agent Healthcare AI ",
+                    speaker: 'Hung Cao',
+                    speakerId: 'hcao',
+                    desc: `In an era where multi-agent AI systems are revolutionizing healthcare—enabling collaborative decision-making for diagnostics, care planning, and resource allocation—ensuring trust and human oversight remains a critical challenge. Traditional explainable AI falls short in these complex, emergent environments, offering insights without avenues for challenge or correction. In this invited talk, we will argue that contestability—empowering users to transparently interrogate, intervene in, and amend AI decisions—is essential for building trustworthy multi-agent algorithmic care. Drawing from recent regulatory mandates and gaps in current frameworks, we will introduce the Contestable Adaptive Network-of-Experts (CANOE), a human-in-the-loop system designed for aging-in-place scenarios. CANOE leverages role-specific agents, quantitative bipolar argumentation, and iterative contestation to deliver evidence-based, adaptable care plans while safeguarding clinical judgment, bridging explainability to true accountability in AI-driven futures. We will also explore practical deployment strategies, including workflow integration and governance, and discuss broader implications for ethical AI across high-stakes domains. `
+                  },
+                ]  
+              },
+              
             };
           
             const sessionModal = document.getElementById('session-modal-container');
