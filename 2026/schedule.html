@@ -380,7 +380,6 @@
           outline-offset: 3px;
         }
        
-        /* Time/date meta line inside the modal */
         .session-modal-meta {
           font-size: 0.95rem;
           color: #666;
@@ -388,16 +387,13 @@
           margin: 0 0 0.5rem 0 !important;
         }
        
-        /* Hide empty elements so modals without a "type" don't show empty space */
         #session-modal-type:empty,
         #session-modal-meta:empty,
         #session-modal-desc:empty {
           display: none;
         }
 
-        /* =========================================================
-   SESSION MODAL — schedule details (accordion)
-   ========================================================= */
+        /* SESSION MODAL */
 #session-modal-schedule:empty { display: none; }
 
 #session-modal-schedule .session-location {
@@ -412,14 +408,12 @@
   margin: 1rem 0 0.5rem 0;
 }
 
-/* Accordion container */
 #session-modal-schedule .presentations-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Each item */
 #session-modal-schedule .presentation-item {
   border: 1px solid #e6e6e6;
   border-radius: 8px;
@@ -427,7 +421,6 @@
   background: #fafafa;
 }
 
-/* The clickable button */
 #session-modal-schedule .presentation-btn {
   width: 100%;
   display: flex;
@@ -451,7 +444,6 @@
   outline: none;
 }
 
-/* Chevron */
 #session-modal-schedule .presentation-chevron {
   display: inline-flex;
   align-items: center;
@@ -470,7 +462,6 @@
   transform: rotate(180deg);
 }
 
-/* Hidden by default; open class reveals */
 #session-modal-schedule .presentation-desc {
   max-height: 0;
   overflow: hidden;
@@ -697,21 +688,16 @@
               }
             }
 
-            // Sub-tab switching for Youth/Connector events
               const subTabButtons = document.querySelectorAll('.sub-tab-btn');
               const subTabPanes = document.querySelectorAll('.sub-tab-pane');
 
               subTabButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                  // Remove active class from all sub-tab buttons
                   subTabButtons.forEach(btn => btn.classList.remove('active'));
-                  // Add active class to clicked button
                   button.classList.add('active');
                   
-                  // Hide all sub-tab panes
                   subTabPanes.forEach(pane => pane.classList.remove('active'));
                   
-                  // Show the selected sub-tab pane
                   const subTabId = button.getAttribute('data-subtab');
                   const activePane = document.getElementById(subTabId);
                   if (activePane) {
