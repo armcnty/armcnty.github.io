@@ -350,6 +350,25 @@
                     </div>
                   </div>
 
+                  <div class="slot">
+                    <div class="time">04:05 PM</div>
+                    <div class="slot-body multi">
+                      <div class="sched-card session" data-session="">
+                        <div class="session-type">Panel</div>
+                        <h3 class="card-title">Panel</h3>
+                        <p class="card-desc"></p>
+                        <span class="card-more">more details...</span>
+                      </div>
+                      <div class="sched-card session" data-session="d2-robotics">
+                        <div class="session-type">Talks</div>
+                        <h3 class="card-title">Robotics and Sensors</h3>
+                        <p class="card-desc"></p>
+                        <span class="card-more">more details...</span>
+                      </div>
+                    </div>
+                  </div>
+
+
                   <div class="slot end-of-day">
                     <div class="time">05:20 PM</div>
                     <div class="slot-body">
@@ -559,9 +578,10 @@
                   <div class="slot">
                     <div class="time">9:45 AM</div>
                     <div class="slot-body multi">
-                      <div class="sched-card session" data-session="d3-adoptionpanel">
+                      <div class="sched-card session" data-session="d3-impact">
                         <div class="session-type">Panel</div>
-                        <h3 class="card-title">What actually works: AI adoption lesson from NB businesses</h3>
+                        <h3 class="card-title">Turning AI into Impact: A Cross-Sector View on What's Working—and What's Not</h3>
+                        <p class="card-desc">Leaders from health, education, government, and industry share candid lessons from real AI deployments.</p>
                         <span class="card-more">more details...</span>
                       </div>
                       <div class="sched-card session" data-session="d3-aiadoption">
@@ -584,10 +604,10 @@
                   <div class="slot">
                     <div class="time">11:30 AM</div>
                     <div class="slot-body multi">
-                      <div class="sched-card session" data-session="d2-impact">
+                      <div class="sched-card session" data-session="d3-education">
                         <div class="session-type">Panel</div>
-                        <h3 class="card-title">Turning AI into Impact: A Cross-Sector View on What's Working—and What's Not</h3>
-                        <p class="card-desc">Leaders from health, education, government, and industry share candid lessons from real AI deployments.</p>
+                        <h3 class="card-title">Positioning Education for AI</h3>
+                        <p class="card-desc"></p>
                         <span class="card-more">more details...</span>
                       </div>
                       <div class="sched-card session" data-session="d3-governance">
@@ -617,9 +637,9 @@
                         <p class="card-desc"></p>
                         <span class="card-more">more details...</span>
                       </div>
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d3-boost">
                         <div class="session-type">Panel</div>
-                        <h3 class="card-title">Panel</h3>
+                        <h3 class="card-title">Digital Boost 3.0 – Learnings from 104 New Brunswick businesses on a pathway to applied AI</h3>
                         <p class="card-desc"></p>
                         <span class="card-more">more details...</span>
                       </div>
@@ -628,25 +648,6 @@
 
                   
 
-                  <!--<div class="slot">
-                    <div class="time">01:45 PM</div>
-                    <div class="slot-body multi">
-                      <div class="sched-card session">
-                        <div class="session-type">Panel</div>
-                        <h3 class="card-title">Positioning Education for AI</h3>
-                        <p class="card-desc"></p>
-                        <span class="card-more">more details...</span>
-                      </div>
-                      <div class="sched-card session" data-session="d3-robotics">
-                        <div class="session-type">Talks</div>
-                        <h3 class="card-title">Robotics and Sensors</h3>
-                        <p class="card-desc"></p>
-                        <span class="card-more">more details...</span>
-                      </div>
-                    </div>
-                  </div>-->
-
-                  
 
                   <div class="slot end-of-day">
                     <div class="time">02:30 PM</div>
@@ -731,7 +732,7 @@
               'd2-keynote': {
                 type: 'Keynote',
                 title: 'Opening Keynote',
-                meta: 'Thursday, June 4 · 9:05 AM – 10:00 AM',
+                meta: 'Thursday, June 4 · 8:45 AM – 09:45 AM',
                 desc: 'A keynote setting the stage for the conference.',
                 sessions: [
                   {
@@ -755,7 +756,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
               'd2-people-first': {
                 type: 'Talks',
                 title: 'Keeping People First in AI',
-                meta: 'Thursday, June 4 · 10:30 AM – 12:00 PM',
+                meta: 'Thursday, June 4 · 10:15 AM – 11:45 AM',
                 desc: 'This academic session focuses on prioritizing human-centered values in the development and deployment of artificial intelligence, ensuring ethical considerations and societal needs remain at the core of AI innovation.',
                 location: 'Head Hall',
                 sessions: [
@@ -782,32 +783,41 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                     Vector Institute has spent eight years testing co-development approaches with 200+ organisations across 550+ use cases, resulting in 250,000 hours of development time contributed by our partners, demonstrating that this type of collaboration accelerates adoption and builds the trust that isolated development cannot. 
                     Canada is now positioned to scale this model through its National AI Institutes, neutral third-parties with the academic grounding, cross-sector reach, and institutional independence to make open AI development a credible and governed alternative.`
                   },
+
                   {
-                    title: "AI Can Generate Code. That's Why Computer Science Matters More Than Ever",
-                    speaker: 'Stuart Thiel',
-                    speakerId: 'sthiel',
-                    desc: `We've heard this story before. When the Internet made technical knowledge easier to access, people said computer science expertise would matter less. When Stack Overflow made solutions searchable and shareable, the same claim returned. Today, generative AI has made it faster and easier to produce code, and once again people are asking whether formal computer science education is becoming obsolete.
-                          This talk argues the opposite. The easier it becomes to produce code, the more important it becomes to understand computation in depth. Computer science has never been just about writing programs; it spans correctness, abstraction, algorithms, complexity, systems, design, security, maintainability, and consequences. Some of that work is visible in the public-facing software people use every day, but much of it happens in subtler mathematical, theoretical, and infrastructural spaces, where progress depends on identifying and solving problems at the edge of what we currently understand. Generative AI can produce plausible output, but plausibility isn't progress, output isn't accountability, and neither replaces understanding.`
-                  }
+                    title: 'From Models to Decisions: Agentic AI for Marketing Mix Optimization',
+                    speaker: 'Amir Tavasoli',
+                    speakerId: 'atavasoli',
+                    desc: ``
+                  },
+
+                  {
+                    title: 'Managing applied AI/DS Research Projects with Industry Partners',
+                    speaker: 'Daniel Silver',
+                    speakerId: 'dsilver',
+                    desc: ``
+                  },
+
                 ]
               },
               'd2-games': {
                 type: 'Panel',
                 title: 'The Opportunity AI Brings to Building a New Games Industry',
-                meta: 'Thursday, June 4 · 10:45 AM – 12:15 PM',
-                desc: 'Exploring how AI is reshaping game development, from design to distribution in Atlantic Canada and beyond.'
+                meta: 'Thursday, June 4 · 10:15 AM – 11:45 AM',
+                desc: 'Exploring how AI is reshaping game development, from design to distribution in Atlantic Canada and beyond.',
+                location: 'Dineen'
                 
               },
-              'd2-impact': {
+              'd3-impact': {
                 type: 'Panel',
                 title: "Turning AI into Impact: A Cross-Sector View on What's Working—and What's Not",
-                meta: 'Thursday, June 5 · 10:45 AM – 12:00 PM',
+                meta: 'Thursday, June 5 · 9:45 AM – 11:15 AM',
                 desc: 'Leaders from health, education, government, and industry share candid lessons from real AI deployments.'
               },
               'd2-principled': {
                 type: 'Talks',
                 title: 'Using AI in a Principled Way',
-                meta: 'Thursday, June 4 · 1:30 PM – 3:00 PM',
+                meta: 'Thursday, June 4 · 12:45 PM – 2:15 PM',
                 desc: 'This session examines the multifaceted challenge of ethical AI adoption—covering responsibility and control, equitable access, localized classroom applications, and evolving university models—to ensure principled, practical, and future-ready implementation.',
                 location: 'Head Hall',
                 sessions: [
@@ -833,11 +843,23 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                     Centering the human elements of teaching and learning, this session demonstrates how New Brunswick is positioning itself as a leader in purposeful, ethical, and future focused AI use in education.`
                   },
                   {
+                    title: "Common Ground: The Challenges, Opportunities and Future of Artificial Intelligence",
+                    speaker: 'Rose Boudreau, Sana Kashgouli ',
+                    speakerId: 'rboudreau',
+                    desc: `The loudest conversations about AI tend to fixate on what we stand to lose. Jobs, agency, authenticity, the shape of daily work. Those concerns deserve serious engagement, but they have crowded out a more useful question: what is the work that genuinely needs doing, and where can AI carry weight that human attention cannot reach on its own?
+
+In this session, Rose Boudreau and Sana Kashgouli, co-leaders of CGI's AIx (AI Experience Lab), walk through the current landscape of AI controversy and offer a different frame for the future of work. The fears of mass displacement assume a fixed pool of meaningful labour. The reality looks different. Geopolitical instability, climate adaptation, macroeconomic restructuring, and an aging global population with shrinking workforces have produced a backlog of necessary work that current human capacity cannot address. At the same time, the institutions of everyday society still need to run.
+
+This is the common ground the talk explores. AI deployed thoughtfully extends human capability into problems that have outpaced traditional approaches, while sustaining the systems we already depend on. The opportunity is to move the conversation from anxiety about replacement toward a deliberate practice of augmentation, one that asks AI to handle what scale and complexity have made unmanageable and frees human judgment for the questions that benefit from it.
+
+Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations before deploying them with clients across Atlantic Canada and beyond, Rose and Sana share practical examples of where this shift is already underway and what it asks of leaders, builders, and the communities AI ultimately serves.`
+                  },
+                  {
                     title: "From Dyadic Trust to Trust Ecology: Reframing Trust in AI-Augmented Decision Systems",
                     speaker: 'Rachel Hor',
                     speakerId: 'rhor',
                     desc: `Trust failures in AI-augmented decisions are not technical failures — they are diagnostic failures. Existing instruments are structurally blind to the problem: 74% of trust frameworks in AI-augmented decision contexts remain pairwise (Hor et al., 2026; Campbell Collaboration cl2.20260007.R1; 66 studies, N = 31,198). A pre-registered meta-analysis of 17 studies (N = 9,084) found no significant pooled effect of transparency on cognitive trust (g = 0.082, p = 0.585, I² = 99.5%). The heterogeneity argues not for better transparency tools but for a different unit of analysis. A trust asymmetry documented across 13 studies sharpens the case: AI transparency simultaneously increases cognitive confidence in the system while eroding affective trust in the human decision-maker — a cross-dimensional dynamic no dyadic instrument detects. 
-                    The Trust Ecology Framework (TEF) repositions the unit of analysis from dyadic pairs to the socio-algorithmic system as a whole — an emergent property of three mutually constitutive dimensions: AI Explicability, Human Stewardship, and Systemic Legitimacy. The Trust Triad Scale (TTS) operationalizes this architecture through items adapted from Lee and See (2004), Mayer et al. (1995), and Colquitt (2001), supplemented by novel Interconnected Trust items detecting cascade dynamics. Validation is underway through a sequential explanatory mixed-methods design; data collection is currently in field. Phase 1 findings and preliminary instrument diagnostics will be presented. The theoretical contribution is an ontological move from dyadic to triadic, static to processual, additive to emergent — extending Rousseau et al. (1998) into socio-algorithmic contexts. The practical contribution is an open-access Trust Triad Toolkit operationalizing EU AI Act Article 13 trustworthiness obligations. Photo `
+                    The Trust Ecology Framework (TEF) repositions the unit of analysis from dyadic pairs to the socio-algorithmic system as a whole — an emergent property of three mutually constitutive dimensions: AI Explicability, Human Stewardship, and Systemic Legitimacy. The Trust Triad Scale (TTS) operationalizes this architecture through items adapted from Lee and See (2004), Mayer et al. (1995), and Colquitt (2001), supplemented by novel Interconnected Trust items detecting cascade dynamics. Validation is underway through a sequential explanatory mixed-methods design; data collection is currently in field. Phase 1 findings and preliminary instrument diagnostics will be presented. The theoretical contribution is an ontological move from dyadic to triadic, static to processual, additive to emergent — extending Rousseau et al. (1998) into socio-algorithmic contexts. The practical contribution is an open-access Trust Triad Toolkit operationalizing EU AI Act Article 13 trustworthiness obligations. `
                   }
                 ]  
               },
@@ -845,19 +867,19 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
               'd2-capacity': {
                 type: 'Panel',
                 title: 'Building Capacity for AI',
-                meta: 'Thursday, June 4 · 1:30 PM – 3:00 PM',
+                meta: 'Thursday, June 4 · 12:45 PM – 2:15 PM',
                 desc: 'This session is focused on building organizational AI capacity and practical skills.'
               },
               'd2-sovereign': {
                 type: 'Panel',
                 title: 'Sovereign Energy Data: the missing infrastructure for AI-ready electrification',
-                meta: 'Thursday, June 4 · 3:30 PM – 5:00 PM',
+                meta: 'Thursday, June 4 · 2:30 PM – 4:00 PM',
                 desc: 'This session is focused on building organizational AI capacity and practical skills.'
               },
               'd2-healthcare': {
                 type: 'Talks',
                 title: 'AI in Healthcare',
-                meta: 'Thursday, June 4 · 3:30 PM – 5:00 PM',
+                meta: 'Thursday, June 4 · 2:30 PM – 4:00 PM',
                 desc: 'This session tackles critical challenges and innovations in healthcare AI—from contestable, human-centered multi-agent systems and interoperability to governance and predictive patient flow optimization—aiming to improve clinical outcomes, system efficiency, and responsible oversight.',
                 location: 'Head Hall',
                 sessions: [
@@ -907,7 +929,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
               'd3-aiadoption': {
                 type: 'Talks',
                 title: 'Strategies for AI Adoption',
-                meta: 'Friday, June 5 · 9:15 AM – 10:45 AM',
+                meta: 'Friday, June 5 · 9:45 AM – 11:15 AM',
                 desc: '',
                 location: 'Head Hall',
                 sessions: [
@@ -945,7 +967,23 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
               'd3-governance': {
                 type: 'Panel',
                 title: 'AI Governance and Ethics',
-                meta: 'Friday, June 5 · 11:15 AM – 12:30 PM',
+                meta: 'Friday, June 5 · 11:30 AM – 12:45 PM',
+                desc: '',
+                location: 'Head Hall',
+              },
+
+              'd3-education': {
+                type: 'Panel',
+                title: 'Positioning Education for AI',
+                meta: 'Friday, June 5 · 11:30 AM – 12:45 PM',
+                desc: '',
+                location: 'Head Hall',
+              },
+
+              'd3-boost': {
+                type: 'Panel',
+                title: 'Digital Boost 3.0 – Learnings from 104 New Brunswick businesses on a pathway to applied AI',
+                meta: 'Friday, June 5 · 1:00 PM – 02:30 PM',
                 desc: '',
                 location: 'Head Hall',
               },
@@ -953,7 +991,7 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
               'd3-everywhere': {
                 type: 'Talks',
                 title: 'AI Everywhere!!!',
-                meta: 'Friday, June 5 · 1:00 PM – 02:15 PM',
+                meta: 'Friday, June 5 · 1:00 PM – 02:30 PM',
                 desc: '',
                 location: 'Head Hall',
                 sessions: [
@@ -964,9 +1002,11 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                     desc: `This presentation will showcase an applied AI pipeline for construction that connects drawing interpretation, material estimation, and manufacturing optimization. It will demonstrate how computer vision, neural networks, and evolutionary algorithms can work together to turn 2D building plans into actionable 3D models, quantity estimates, and fabrication-ready panel layouts. The presentation is aimed at both researchers and practitioners, with a focus on how integrated AI systems can improve efficiency, decision-making, and real-world adoption in construction workflows.`
                   },
                   {
-                    title: `Managing applied AI/DS Research Projects with Industry Partners`,
-                    speaker: 'Danny Silver',
-                    speakerId: 'dsilver',
+                    title: "AI Can Generate Code. That's Why Computer Science Matters More Than Ever",
+                    speaker: 'Stuart Thiel',
+                    speakerId: 'sthiel',
+                    desc: `We've heard this story before. When the Internet made technical knowledge easier to access, people said computer science expertise would matter less. When Stack Overflow made solutions searchable and shareable, the same claim returned. Today, generative AI has made it faster and easier to produce code, and once again people are asking whether formal computer science education is becoming obsolete.
+                          This talk argues the opposite. The easier it becomes to produce code, the more important it becomes to understand computation in depth. Computer science has never been just about writing programs; it spans correctness, abstraction, algorithms, complexity, systems, design, security, maintainability, and consequences. Some of that work is visible in the public-facing software people use every day, but much of it happens in subtler mathematical, theoretical, and infrastructural spaces, where progress depends on identifying and solving problems at the edge of what we currently understand. Generative AI can produce plausible output, but plausibility isn't progress, output isn't accountability, and neither replaces understanding.`
                   },
                   {
                     title: 'AI for Municipal Use Cases',
@@ -976,6 +1016,13 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                             \nMonitoring and impact analysis of climate action initiatives (including GHG reduction and environmental indicators), combined with AI-driven prioritization using decision-support approaches.
                             \nAI-assisted discovery of funding opportunities aligned with municipal projects.
                             \n\nThe goal would be to provide a hands-on, applied perspective, showing how AI can directly support municipalities in planning, decision-making, and accessing funding`
+                  },
+                  {
+                    title: "Explainability is Insufficient: Navigating Contestable Futures in Human-Centered Multi-Agent Healthcare AI ",
+                    speaker: 'Hung Cao',
+                    affiliation: 'University of New Brunswick',
+                    speakerId: 'hcao',
+                    desc: `In an era where multi-agent AI systems are revolutionizing healthcare—enabling collaborative decision-making for diagnostics, care planning, and resource allocation—ensuring trust and human oversight remains a critical challenge. Traditional explainable AI falls short in these complex, emergent environments, offering insights without avenues for challenge or correction. In this invited talk, we will argue that contestability—empowering users to transparently interrogate, intervene in, and amend AI decisions—is essential for building trustworthy multi-agent algorithmic care. Drawing from recent regulatory mandates and gaps in current frameworks, we will introduce the Contestable Adaptive Network-of-Experts (CANOE), a human-in-the-loop system designed for aging-in-place scenarios. CANOE leverages role-specific agents, quantitative bipolar argumentation, and iterative contestation to deliver evidence-based, adaptable care plans while safeguarding clinical judgment, bridging explainability to true accountability in AI-driven futures. We will also explore practical deployment strategies, including workflow integration and governance, and discuss broader implications for ethical AI across high-stakes domains. `
                   },
                   {
                     title: "The Future of Universities in the Age of AI: Netflix, LinkedIn, Apprenticeships or Something Else?",
@@ -993,10 +1040,10 @@ Attendees will leave with a forward-looking perspective on how universities, esp
                 ]  
               },
 
-              'd3-robotics': {
+              'd2-robotics': {
                 type: 'Talks',
                 title: 'Robotics and Sensors',
-                meta: 'Friday, June 5 · 2:30 PM – 03:00 PM',
+                meta: 'Thursday, June 4 · 4:05 PM – 05:20 PM',
                 desc: '',
                 location: 'Head Hall',
                 sessions: [
@@ -1028,13 +1075,7 @@ In this talk, we will focus on science and technology impacts that are emerging 
                     speakerId: 'smahfuz',
                     desc: `Streaming data analytics enables real-time insights from continuously generated sensor data produced by Internet of Things (IoT) devices like wearable technologies and smart sensing systems. This talk highlights several research directions that apply deep learning techniques to analyze streaming sensor data across diverse application domains. These include the classification of road conditions using vehicular sensor data to improve transportation safety and human activity recognition using wearable sensors through deep learning architectures. The talk also presents healthcare-focused applications like REM sleep stage classification using transfer learning and an overview of wearable and EEG-based seizure detection using machine learning methods. The talk also presents soil moisture prediction using deep learning models for smart agriculture. Together, these examples demonstrate how streaming data analytics and deep learning approaches can transform large-scale sensor data into actionable insights for intelligent, real-time decision-making across transportation, healthcare, and environmental monitoring systems. `
                   },
-                  {
-                    title: "Explainability is Insufficient: Navigating Contestable Futures in Human-Centered Multi-Agent Healthcare AI ",
-                    speaker: 'Hung Cao',
-                    affiliation: 'University of New Brunswick',
-                    speakerId: 'hcao',
-                    desc: `In an era where multi-agent AI systems are revolutionizing healthcare—enabling collaborative decision-making for diagnostics, care planning, and resource allocation—ensuring trust and human oversight remains a critical challenge. Traditional explainable AI falls short in these complex, emergent environments, offering insights without avenues for challenge or correction. In this invited talk, we will argue that contestability—empowering users to transparently interrogate, intervene in, and amend AI decisions—is essential for building trustworthy multi-agent algorithmic care. Drawing from recent regulatory mandates and gaps in current frameworks, we will introduce the Contestable Adaptive Network-of-Experts (CANOE), a human-in-the-loop system designed for aging-in-place scenarios. CANOE leverages role-specific agents, quantitative bipolar argumentation, and iterative contestation to deliver evidence-based, adaptable care plans while safeguarding clinical judgment, bridging explainability to true accountability in AI-driven futures. We will also explore practical deployment strategies, including workflow integration and governance, and discuss broader implications for ethical AI across high-stakes domains. `
-                  },
+                  
                 ]  
               },
               
