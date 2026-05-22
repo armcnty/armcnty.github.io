@@ -357,7 +357,7 @@
                         <div class="session-type">Panel</div>
                         <h3 class="card-title">Panel</h3>
                         <p class="card-desc"></p>
-                        <span class="card-more">more details...</span>
+                        <!-- <span class="card-more">more details...</span> -->
                       </div>
                       <div class="sched-card session" data-session="d2-robotics">
                         <div class="session-type">Talks</div>
@@ -532,6 +532,16 @@
   height: 14px;
   fill: currentColor;
 }
+
+#session-modal-schedule .speakers-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 0.5rem 0;
+}
+#session-modal-schedule .speakers-chip-list .speaker-tag {
+  margin: 0;
+}
         
         </style>
   
@@ -560,7 +570,7 @@
                   <div class="slot">
                     <div class="time">08:30 AM</div>
                     <div class="slot-body">
-                      <div class="sched-card session">
+                      <div class="sched-card session" data-session="d3-keynote">
                         <div class="session-type">Keynote</div>
                         <h3 class="card-title"> Keynote</h3>
                         <span class="card-more">more details...</span>
@@ -753,6 +763,14 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                 ]
               },
 
+              'd3-keynote': {
+                type: 'Keynote',
+                title: 'Opening Keynote',
+                meta: 'Thursday, June 4 · 8:45 AM – 09:45 AM',
+                desc: 'A keynote setting the stage for the conference.'
+                
+              },
+
               'd2-people-first': {
                 type: 'Talks',
                 title: 'Keeping People First in AI',
@@ -763,6 +781,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   {
                     title: 'Beyond Search: Interactive Information Retrieval in the Age of Agentic AI',
                     speaker: 'Ga Wu',
+                    affiliation: 'Dalhousie University',
                     speakerId: 'gwu',
                     desc: `For decades, information retrieval systems have followed a simple paradigm: users issue queries and receive ranked lists of results. With the emergence of large language models, this paradigm is rapidly evolving toward agentic systems that can interact with users, reason over information, and dynamically retrieve knowledge through conversation. In this talk, I present lessons from deploying a series of real-world interactive retrieval systems developed with industry partners including Harrison Healthcare, TD Research (Layer6 AI), DeepSense, and Broady AI. 
                     These projects span diverse applications such as conversational mental health diagnostic assistants, utility-driven large-scale retrieval-augmented generation platforms, Indigenous culture question-answering systems, and startup–investor preference matching tools. Across these systems, agentic AI significantly improved user experience, transparency, and the precision and satisfaction of retrieved information. However, moving from research prototypes to production revealed major practical challenges: frequently prompting large language models often became bottlenecks for scalability, latency, cost efficiency, and system stability.
@@ -771,6 +790,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   {
                     title: `Your AI Agent Can't Give Reasons. Can You?`,
                     speaker: 'Andrew Buzzell',
+                    affiliation: 'University of Western Ontario',
                     speakerId: 'abuzzell',
                     desc: `Everybody's building AI agents now. How should we structure the work we give these systems, and what happens to the humans working alongside them over time? A great deal of what we want to do with AI turns out to be normatively complex: correctness depends not just on effective computation but on values, context, and judgment. We care about reasons, not just outcomes. Drawing on ideas from philosophy and anthropology, I argue this has implications for the architectural principles we apply to the AI systems we are building, and for whether those systems leave humans with genuine direction over the work, or gradually render oversight performative and obsolete. 
                     \n\nThis is a shift away from standard questions about explainable and black box AI, from the question "can it explain itself?" to "can the humans in the human-AI ensembles still give reasons for what they do?".`
@@ -778,6 +798,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   {
                     title: 'Collaboration in AI as a Pathway to Trustworthy Adoption',
                     speaker: 'Andres Rojas',
+                    affiliation: 'Vector Institute',
                     speakerId: 'arojas',
                     desc: `Traditional software development has long favoured closed, proprietary models, but AI may be a fundamentally better fit for collaborative development. Its foundations are academic and public by nature, its pace of change exceeds what any single institution can track alone, its core techniques don't fall under IP protection, and trust in AI systems requires transparency rather than assertion. Critically, this is not a binary proposition: what we advocate is openness in the reference implementations, which any organisation can inspect, adapt, and build on privately, as well as the existence of credible open alternatives to frontier models, to provide independent benchmarks necessary to evaluate claims from closed systems. 
                     Vector Institute has spent eight years testing co-development approaches with 200+ organisations across 550+ use cases, resulting in 250,000 hours of development time contributed by our partners, demonstrating that this type of collaboration accelerates adoption and builds the trust that isolated development cannot. 
@@ -787,6 +808,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   {
                     title: 'From Models to Decisions: Agentic AI for Marketing Mix Optimization',
                     speaker: 'Amir Tavasoli',
+                    affiliation: 'Sobeys/Empire',
                     speakerId: 'atavasoli',
                     desc: ``
                   },
@@ -794,6 +816,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   {
                     title: 'Managing applied AI/DS Research Projects with Industry Partners',
                     speaker: 'Daniel Silver',
+                    affiliation: 'Acadia University ',
                     speakerId: 'dsilver',
                     desc: ``
                   },
@@ -804,9 +827,15 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                 type: 'Panel',
                 title: 'The Opportunity AI Brings to Building a New Games Industry',
                 meta: 'Thursday, June 4 · 10:15 AM – 11:45 AM',
-                desc: 'Exploring how AI is reshaping game development, from design to distribution in Atlantic Canada and beyond.',
-                location: 'Dineen'
-                
+                desc: `Exploring how AI is reshaping game development, from design to distribution in Atlantic Canada and beyond.`,
+                location: 'Dineen',
+                speakers: [
+                  { name: 'Josh Waite (Moderator)',   affiliation: 'Knowledge Park', speakerId: 'jwaite' },
+                  { name: 'Matt Toner',   affiliation: 'Shred Capital', speakerId: 'mtoner' },
+                  { name: 'Amir Satvat', affiliation: 'Tencent Games', speakerId: 'asatvat' },
+                  { name: 'Kate Edwards', affiliation: 'SetJetters', speakerId: 'kedwards' },
+                  { name: 'Manny Hachey', affiliation: 'Xsolla', speakerId: 'mhachey' },
+                ]
               },
               'd3-impact': {
                 type: 'Panel',
@@ -824,6 +853,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   {
                     title: 'Responsible AI: from Understanding to Control',
                     speaker: 'Mahtab Sarvmaili',
+                    affiliation: 'University of New Brunswick',
                     speakerId: 'msarvmaili',
                     desc: `This talk presents a research perspective on Responsible AI centered on the progression from understanding machine learning systems to controlling their behavior. It begins by examining how AI systems can be understood through Explainable AI (XAI), and why explainability is essential for transparency, accountability, and trust. The presentation will review major directions in explainability for machine learning, including interpretable models, global and local explanation methods, and data-centric approaches, and will discuss our work on post-hoc, model-agnostic, and data-centric methods for explaining complex black-box models. It will then argue that explainability, while fundamental, is only one component of trustworthy AI, which also requires reliability, faithfulness, safety, privacy, and adaptability. From this foundation, the talk will move to the problem of control, considering how AI systems may be guided, edited, or made to unlearn specific information in privacy-preserving and minimally invasive ways. 
                     \nThe final part of the talk will address the new challenges introduced by large language models and agentic systems, including questions of verification, controllability, information routing, autonomy, and responsible deployment, and will highlight these as important open problems for the next generation of Responsible AI research.`
@@ -831,6 +861,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   {
                     title: `Access is Not Enough`,
                     speaker: 'Chris Power ',
+                    affiliation: 'University of Prince Edward Island ',
                     speakerId: 'cpower',
                     desc: `The talk makes a practical case that accessibility compliance is different from accessible design and that AI systems which restructure activities without accounting for what users value create both reputational and product risk. 
                     This talk will introduce researchers and UX teams to a concrete diagnostic model they can apply without needing deep familiarity with accessibility and disability studies.`
@@ -857,6 +888,7 @@ Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations
                   {
                     title: "From Dyadic Trust to Trust Ecology: Reframing Trust in AI-Augmented Decision Systems",
                     speaker: 'Rachel Hor',
+                    affiliation: `Saint Mary's University`,
                     speakerId: 'rhor',
                     desc: `Trust failures in AI-augmented decisions are not technical failures — they are diagnostic failures. Existing instruments are structurally blind to the problem: 74% of trust frameworks in AI-augmented decision contexts remain pairwise (Hor et al., 2026; Campbell Collaboration cl2.20260007.R1; 66 studies, N = 31,198). A pre-registered meta-analysis of 17 studies (N = 9,084) found no significant pooled effect of transparency on cognitive trust (g = 0.082, p = 0.585, I² = 99.5%). The heterogeneity argues not for better transparency tools but for a different unit of analysis. A trust asymmetry documented across 13 studies sharpens the case: AI transparency simultaneously increases cognitive confidence in the system while eroding affective trust in the human decision-maker — a cross-dimensional dynamic no dyadic instrument detects. 
                     The Trust Ecology Framework (TEF) repositions the unit of analysis from dyadic pairs to the socio-algorithmic system as a whole — an emergent property of three mutually constitutive dimensions: AI Explicability, Human Stewardship, and Systemic Legitimacy. The Trust Triad Scale (TTS) operationalizes this architecture through items adapted from Lee and See (2004), Mayer et al. (1995), and Colquitt (2001), supplemented by novel Interconnected Trust items detecting cascade dynamics. Validation is underway through a sequential explanatory mixed-methods design; data collection is currently in field. Phase 1 findings and preliminary instrument diagnostics will be presented. The theoretical contribution is an ontological move from dyadic to triadic, static to processual, additive to emergent — extending Rousseau et al. (1998) into socio-algorithmic contexts. The practical contribution is an open-access Trust Triad Toolkit operationalizing EU AI Act Article 13 trustworthiness obligations. `
@@ -886,6 +918,7 @@ Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations
                   {
                     title: 'Agentic AI for Intelligent MRI Appointment Rescheduling in Healthcare Operations',
                     speaker: 'Yilin Huang',
+                    affiliation: `Saint Mary's University`,
                     speakerId: 'yhuang',
                     desc: `Magnetic Resonance Imaging (MRI) scheduling inefficiencies, particularly patient no-shows and last-minute cancellations, contribute significantly to scanner idle time, reduced operational throughput, and delays in patient care. To address this challenge, we explore and propose a novel agentic AI solution built on the LangChain ecosystem to optimize hospital MRI scheduling workflows by automating key tasks, including patient communication and appointment rescheduling. Specifically, the proposed system adopts the Model Context Protocol (MCP), Pandas, and LangChain to manage external tools, interact with appointment schedule in CSV format, and create intelligent AI Agents, respectively. For example, when a patient fails to attend a scheduled MRI appointment, an MCP tool can be invoked to automatically identify eligible patients booked later that day, contact them about the newly available time slot, process their responses, and update the appointment schedule accordingly. 
                     This approach reduces the need for staff to manually call patients one by one, thereby improving operational efficiency, lowering MRI scanner idle rates, and supporting more timely access to imaging services. `
@@ -893,6 +926,7 @@ Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations
                   {
                     title: `The Role of AI and Interopability of Health Information Systems`,
                     speaker: 'Ron Parker ',
+                    affiliation: `Parker DHC`,
                     speakerId: 'rparker',
                     desc: `A significant success factor in the implementation of information technology is the level and quality of engagement with the users and beneficiaries of those technology solutions. This is a significant challenge for Health Care services delivery as, at a systemic level, there are many organizations and disciplines that much be engaged to ensure success. Persuading an entire ecosystem to participate and have a shared commitment of their human, financial, and time resources towards a shared goal requires good governance and managed change to achieve sustained trust and confidence. 
 
@@ -907,12 +941,14 @@ Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations
                   {
                     title: "AI at the Speed of Trust: Implementing Innovation in Real Health Systems",
                     speaker: 'Jen Woodland',
+                    affiliation: `Parker DHC`,
                     speakerId: 'jwoodland',
                     desc: `AI is moving quickly, but in health systems the hardest question is not simply what can we build? - it is what can be responsibly implemented, trusted, sustained, and scaled? This talk will explore how applied AI can move from exciting prototypes to real-world health-system value by combining sovereign infrastructure, clinically grounded use cases, implementation science, and human-centred adoption. Drawing on emerging work in healthcare AI, clinical workflow redesign, and responsible implementation, the team will discuss what Atlantic Canada needs to turn AI potential into practical, ethical, and system-ready innovation.`
                   },
                   {
                     title: "Optimizing Patient Flow: Machine Learning Approaches for Hospital Discharge Prediction ",
                     speaker: 'Richard Levesque',
+                    affiliation: `Vitalité Health Network`,
                     speakerId: 'jwoodland',
                     desc: `This research project focuses on developing and evaluating artificial intelligence (AI) tools to improve hospital discharge planning within the Vitalité Health Network in New Brunswick, Canada. By using machine learning (ML) models trained on anonymized historical hospital data, the project aims to accurately predict patients’ length of stay and discharge dates both at admission and throughout hospitalization. The study also develops a Natural Language Processing (NLP) model to standardize and classify clinical diagnoses. These models are integrated into hospital systems and tested in real clinical settings to assess their impact on patient flow, resource utilization, and healthcare efficiency. Ultimately, the project seeks to reduce hospital overcrowding, shorten wait times, lower healthcare costs, and enhance the quality of patient care. `
                   }
@@ -936,6 +972,7 @@ Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations
                   {
                     title: 'From Pilots to Productivity: How Small Businesses Can Actually Adopt AI',
                     speaker: 'Tony Sheehan',
+                    affiliation: `NorthBound Advisory`,
                     speakerId: 'tsheehan',
                     desc: `Many Atlantic Canadian companies have started exploring AI in small ways. They have tried new features in Microsoft 365, asked ChatGPT a few questions, or experimented with meeting transcription tools. These early steps show curiosity and openness to change, but most businesses have not yet turned that exploration into lasting impact.
 
@@ -944,11 +981,13 @@ In this short talk, Tony Sheehan, Co-Founder and CTO of NorthBound Advisory, wil
                   {
                     title: `How AI has transformed Smartskins Roadmap, how we work and hire`,
                     speaker: 'Ryan Proudfoot ',
+                    affiliation: `Smartskin Technology`,
                     speakerId: 'rproudfoot',
                   },
                   {
                     title: 'Beyond the AI Consultant: The Rise of the Managed Intelligence Provider (MIP)',
                     speaker: 'Charles Gervais',
+                    affiliation: `iTransform`,
                     speakerId: 'cgervais',
                     desc: `Every major technology shift produces a new class of provider. The cloud era gave us Managed Service Providers. The AI era is producing something fundamentally different, and most organizations don't yet have a name for what they actually need.
 \n\nCharles introduces the Managed Intelligence Provider: a new vendor category that takes ongoing responsibility for how an organization thinks: 1. Capturing expert judgment, 2. Encoding decision logic, and 3. Continuously improving the intelligence infrastructure that drives real business outcomes. Not a software vendor. Not a consultancy. Something new.
@@ -957,6 +996,7 @@ In this short talk, Tony Sheehan, Co-Founder and CTO of NorthBound Advisory, wil
                   {
                     title: "How Task-Level AI Discovery Turns Adoption into Transformation",
                     speaker: 'Jon Barry',
+                    affiliation: `MNP`,
                     speakerId: 'jbarry',
                     desc: `AI is an enabler of tasks. So why are we not using tasks as the foundational level for understanding how to transform using AI?
 Anthropic's Economic Index — independent research analyzing real-world AI usage — finds that AI takes hold at the task layer, not the job layer. MNP Digital's own research, surveying 250 Canadian business leaders, finds 48% in operational AI use and only 4% transformational. The 44-point gap is the cost of strategy and execution never meeting at the task.
@@ -998,12 +1038,14 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                   {
                     title: 'AI-Driven Construction Intelligence: From Design Understanding to Manufacturing Optimization',
                     speaker: 'Andrew Fisher',
+                    affiliation: `University of New Brunswick`,
                     speakerId: 'afisher',
                     desc: `This presentation will showcase an applied AI pipeline for construction that connects drawing interpretation, material estimation, and manufacturing optimization. It will demonstrate how computer vision, neural networks, and evolutionary algorithms can work together to turn 2D building plans into actionable 3D models, quantity estimates, and fabrication-ready panel layouts. The presentation is aimed at both researchers and practitioners, with a focus on how integrated AI systems can improve efficiency, decision-making, and real-world adoption in construction workflows.`
                   },
                   {
                     title: "AI Can Generate Code. That's Why Computer Science Matters More Than Ever",
                     speaker: 'Stuart Thiel',
+                    affiliation: `University of Fredericton`,
                     speakerId: 'sthiel',
                     desc: `We've heard this story before. When the Internet made technical knowledge easier to access, people said computer science expertise would matter less. When Stack Overflow made solutions searchable and shareable, the same claim returned. Today, generative AI has made it faster and easier to produce code, and once again people are asking whether formal computer science education is becoming obsolete.
                           This talk argues the opposite. The easier it becomes to produce code, the more important it becomes to understand computation in depth. Computer science has never been just about writing programs; it spans correctness, abstraction, algorithms, complexity, systems, design, security, maintainability, and consequences. Some of that work is visible in the public-facing software people use every day, but much of it happens in subtler mathematical, theoretical, and infrastructural spaces, where progress depends on identifying and solving problems at the edge of what we currently understand. Generative AI can produce plausible output, but plausibility isn't progress, output isn't accountability, and neither replaces understanding.`
@@ -1011,6 +1053,7 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                   {
                     title: 'AI for Municipal Use Cases',
                     speaker: 'Aladine Bin Sayed',
+                    affiliation: `CCNB-INNOV`,
                     speakerId: 'asayed',
                     desc: `The presentation would highlight concrete tools and use cases we have developed, including:
                             \nMonitoring and impact analysis of climate action initiatives (including GHG reduction and environmental indicators), combined with AI-driven prioritization using decision-support approaches.
@@ -1050,12 +1093,14 @@ Attendees will leave with a forward-looking perspective on how universities, esp
                   {
                     title: 'Endeavoring the Accelerated Discovery with Self-Driving Labs ',
                     speaker: 'Han Hao',
+                    affiliation: `University of Toronto`,
                     speakerId: 'hhao',
                     desc: `Contemporary materials discovery requires intricate sequences of synthesis, fabrication and functional characterization that often span multiple locations with specialized expertise and instrumentation. In our collaborative effort of campaign, we present a cloud-based solution enabling AI-guided, asynchronous, and delocalized design–make–test-analyze cycles to integrate these workflows. We applied a building-block strategy for assembling molecular function enables automated synthesis on geographically distributed yet connected platforms, orchestrated by a central cloud platform, with the integration of an AI-based experiment planner and an in-line property characterization module to accelerate the discovery of top-performing organic solid-state laser molecules as demonstrated by the best ever thin-film device performance. Empowered by asynchronous integration of five laboratories across the globe, this workflow provides a blueprint for delocalizing – and democratizing – scientific discovery, in which we are endeavoring a global community of accelerated material discovery and self-driving laboratories based on the framework of the Acceleration Consortium at the University of Toronto. With our collective joint effort of seven SDLs, we aim to accelerate the discovery of materials and molecules needed for a sustainable future, with the power of artificial intelligence, robotics, and advanced computing—to reduce the time and cost of bringing advanced materials to market. `
                   },
                   {
                     title: `Directional Winds in AI for Science & Engineering`,
                     speaker: 'Jon Belof',
+                    affiliation: `AMD`,
                     speakerId: 'jbelof',
                     desc: `The union of AI tools with HPC simulation of the physical sciences will revolutionize scientific discovery and dramatically accelerate engineering processes.   As the role of AI becomes ever more important to automation, advanced manufacturing, energy and simulation itself, newly emerging hybrid AI + HPC formalisms – such as those built on agentic AI – hold enormous potential to amplify the impact of simulation even further.  Along this path, AI tools will permeate every stage of HPC and computational methods more broadly.  These directional winds have massive implications to the very foundations of sovereignty – technology and progress, energy, economic competitiveness, and national defense & security will be changed forever.
  
@@ -1139,11 +1184,24 @@ In this talk, we will focus on science and technology impacts that are emerging 
 
               // Render optional schedule details (location + expandable sessions)
               const scheduleEl = document.getElementById('session-modal-schedule');
-              if (data.location || (data.sessions && data.sessions.length)) {
+              if (data.location || (data.speakers && data.speakers.length) || (data.sessions && data.sessions.length)) {
                 let html = '';
 
                 if (data.location) {
                   html += '<p class="session-location"><strong>Location:</strong> ' + data.location + '</p>';
+                }
+
+                if (data.speakers && data.speakers.length) {
+                  html += '<p class="session-sublist-label"><strong>Speakers:</strong></p>';
+                  html += '<div class="speakers-chip-list">';
+                  data.speakers.forEach(function (sp) {
+                    const href = sp.speakerId ? 'speakers.html#' + sp.speakerId : 'speakers.html';
+                    html += '<a class="speaker-tag" href="' + href + '">';
+                    html +=   '<svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>';
+                    html += sp.name + (sp.affiliation ? ' - ' + sp.affiliation : '');
+                    html += '</a>';
+                  });
+                  html += '</div>';
                 }
 
                 if (data.sessions && data.sessions.length) {
