@@ -455,7 +455,14 @@ grid-area: h3;
   border-color: var(--accent1);
 }
 .card-title{ margin:0 0 .7rem; font-size:1.2rem; }
-
+.card-more{
+  text-align: right;
+  font-size: small;
+  text-decoration: underline;
+}
+.card-more:hover{
+  text-decoration: none;
+}
 .grid-3{
   display:grid;
   grid-template-columns: repeat(1, 1fr);

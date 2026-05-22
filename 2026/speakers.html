@@ -674,7 +674,7 @@
         Dr. Karch is the author of the bestselling book, "The Paradox of Progress: The Roses and Thorns of Artificial Intelligence," a globally informed exploration of technology ethics.`,
         image: 'speakers/Karch OR photo.jpg',
         sessionName: 'Meet the Moment: Staying in the Game When Technology Changes Everything',  
-        sessionLink: 'schedule.html#day2'
+        sessionLink: 'd2-keynote'
       },
 
       'hrahnama': {
@@ -1175,9 +1175,55 @@ Anand is known for bringing a pragmatic, business-focused perspective to innovat
     function closeModal() {
       speakerModal.classList.remove('show');
       document.body.style.overflow = '';
+
+      // Clear known speaker hash/query deep links when modal closes.
+      const hashSpeakerId = window.location.hash.replace('#', '');
+      const querySpeakerId = new URLSearchParams(window.location.search).get('speaker');
+      if (speakerData[hashSpeakerId] || (querySpeakerId && speakerData[querySpeakerId])) {
+        history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    function openSpeakerModal(speakerId, updateUrl = true) {
+      const speaker = speakerData[speakerId];
+      if (!speaker) return;
+
+      document.getElementById('modal-name').textContent = speaker.name;
+      document.getElementById('modal-about').textContent = speaker.about;
+      document.getElementById('modal-bio').textContent = speaker.bio;
+
+      const modalImage = document.getElementById('modal-image');
+      if (speaker.image) {
+        modalImage.src = speaker.image;
+        modalImage.alt = speaker.name;
+        modalImage.style.display = 'block';
+      } else {
+        modalImage.style.display = 'none';
+      }
+
+      const sessionLink = document.getElementById('modal-session-link');
+      if (speaker.sessionName && speaker.sessionLink) {
+        sessionLink.textContent = speaker.sessionName;
+        sessionLink.href = "schedule.html#"+speaker.sessionLink;
+        document.getElementById('modal-speaking').style.display = 'block';
+      } else {
+        document.getElementById('modal-speaking').style.display = 'none';
+      }
+
+      if (updateUrl) {
+        history.replaceState(null, '', '#' + speakerId);
+      }
+
+      openModal();
     }
 
     closeBtn.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && speakerModal.classList.contains('show')) {
+        closeModal();
+      }
+    });
 
     window.addEventListener('click', function(event) {
       if (event.target === speakerModal) closeModal();
@@ -1186,34 +1232,18 @@ Anand is known for bringing a pragmatic, business-focused perspective to innovat
     document.querySelectorAll('.speaker.card').forEach(card => {
       card.addEventListener('click', function() {
         const speakerId = this.getAttribute('data-speaker');
-        const speaker = speakerData[speakerId];
-        if (!speaker) return;
-
-        document.getElementById('modal-name').textContent = speaker.name;
-        document.getElementById('modal-about').textContent = speaker.about;
-        document.getElementById('modal-bio').textContent = speaker.bio;
-
-        const modalImage = document.getElementById('modal-image');
-        if (speaker.image) {
-          modalImage.src = speaker.image;
-          modalImage.alt = speaker.name;
-          modalImage.style.display = 'block';
-        } else {
-          modalImage.style.display = 'none';
-        }
-
-        const sessionLink = document.getElementById('modal-session-link');
-        if (speaker.sessionName && speaker.sessionLink) {
-          sessionLink.textContent = speaker.sessionName;
-          sessionLink.href = speaker.sessionLink;
-          document.getElementById('modal-speaking').style.display = 'block';
-        } else {
-          document.getElementById('modal-speaking').style.display = 'none';
-        }
-
-        openModal();
+        openSpeakerModal(speakerId);
       });
     });
+
+    // Support opening a specific speaker directly via URL, e.g.:
+    // speakers.html#gwu or speakers.html?speaker=gwu
+    const querySpeakerId = new URLSearchParams(window.location.search).get('speaker');
+    const hashSpeakerId = window.location.hash.replace('#', '');
+    const initialSpeakerId = querySpeakerId || hashSpeakerId;
+    if (initialSpeakerId && speakerData[initialSpeakerId]) {
+      openSpeakerModal(initialSpeakerId, false);
+    }
 
   </script>
 
