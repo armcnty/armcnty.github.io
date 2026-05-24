@@ -776,7 +776,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                 title: 'Keeping People First in AI',
                 meta: 'Thursday, June 4 · 10:15 AM – 11:45 AM',
                 desc: 'This academic session focuses on prioritizing human-centered values in the development and deployment of artificial intelligence, ensuring ethical considerations and societal needs remain at the core of AI innovation.',
-                location: 'Head Hall',
+                location: 'McCain Atrium (2nd Floor)',
                 sessions: [
                   {
                     title: 'Beyond Search: Interactive Information Retrieval in the Age of Agentic AI',
@@ -829,8 +829,9 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                 meta: 'Thursday, June 4 · 10:15 AM – 11:45 AM',
                 desc: `Exploring how AI is reshaping game development, from design to distribution in Atlantic Canada and beyond.`,
                 location: 'Dineen',
+                moderator: { name: 'Josh Waite', affiliation: 'Knowledge Park', speakerId: 'jwaite' },
                 speakers: [
-                  { name: 'Josh Waite (Moderator)',   affiliation: 'Knowledge Park', speakerId: 'jwaite' },
+                  { name: 'Josh Waite',   affiliation: 'Knowledge Park', speakerId: 'jwaite' },
                   { name: 'Matt Toner',   affiliation: 'Shred Capital', speakerId: 'mtoner' },
                   { name: 'Amir Satvat', affiliation: 'Tencent Games', speakerId: 'asatvat' },
                   { name: 'Kate Edwards', affiliation: 'SetJetters', speakerId: 'kedwards' },
@@ -848,7 +849,7 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                 title: 'Using AI in a Principled Way',
                 meta: 'Thursday, June 4 · 12:45 PM – 2:15 PM',
                 desc: 'This session examines the multifaceted challenge of ethical AI adoption—covering responsibility and control, equitable access, localized classroom applications, and evolving university models—to ensure principled, practical, and future-ready implementation.',
-                location: 'Head Hall',
+                location: 'McCain Atrium (2nd Floor)',
                 sessions: [
                   {
                     title: "AI Can Generate Code. That's Why Computer Science Matters More Than Ever",
@@ -913,7 +914,7 @@ Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations
                 title: 'AI in Healthcare',
                 meta: 'Thursday, June 4 · 2:30 PM – 4:00 PM',
                 desc: 'This session tackles critical challenges and innovations in healthcare AI—from contestable, human-centered multi-agent systems and interoperability to governance and predictive patient flow optimization—aiming to improve clinical outcomes, system efficiency, and responsible oversight.',
-                location: 'Head Hall',
+                location: 'McCain Atrium (2nd Floor)',
                 sessions: [
                   {
                     title: 'Agentic AI for Intelligent MRI Appointment Rescheduling in Healthcare Operations',
@@ -960,14 +961,15 @@ Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations
                 title: 'What actually works: AI adoption lesson from NB businesses',
                 meta: 'Friday, June 5 · 9:15 AM – 10:45 AM',
                 desc: '',
-                location: 'Head Hall'
+                location: 'McCain Atrium (2nd Floor)'
               },
               'd3-aiadoption': {
                 type: 'Talks',
                 title: 'Strategies for AI Adoption',
                 meta: 'Friday, June 5 · 9:45 AM – 11:15 AM',
                 desc: '',
-                location: 'Head Hall',
+                moderator: { name: 'Danny Silver', affiliation: 'Acadia University'},
+                location: 'McCain Atrium (2nd Floor)',
                 sessions: [
                   {
                     title: 'From Pilots to Productivity: How Small Businesses Can Actually Adopt AI',
@@ -1009,7 +1011,7 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                 title: 'AI Governance and Ethics',
                 meta: 'Friday, June 5 · 11:30 AM – 12:45 PM',
                 desc: '',
-                location: 'Head Hall',
+                location: 'McCain Atrium (2nd Floor)',
               },
 
               'd3-education': {
@@ -1017,7 +1019,7 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                 title: 'Positioning Education for AI',
                 meta: 'Friday, June 5 · 11:30 AM – 12:45 PM',
                 desc: '',
-                location: 'Head Hall',
+                location: 'McCain Atrium (2nd Floor)',
               },
 
               'd3-boost': {
@@ -1025,7 +1027,7 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                 title: 'Digital Boost 3.0 – Learnings from 104 New Brunswick businesses on a pathway to applied AI',
                 meta: 'Friday, June 5 · 1:00 PM – 02:30 PM',
                 desc: '',
-                location: 'Head Hall',
+                location: 'McCain Atrium (2nd Floor)',
               },
 
               'd3-everywhere': {
@@ -1033,7 +1035,7 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                 title: 'AI Everywhere!!!',
                 meta: 'Friday, June 5 · 1:00 PM – 02:30 PM',
                 desc: '',
-                location: 'Head Hall',
+                location: 'McCain Atrium (2nd Floor)',
                 sessions: [
                   {
                     title: 'AI-Driven Construction Intelligence: From Design Understanding to Manufacturing Optimization',
@@ -1089,7 +1091,7 @@ Attendees will leave with a forward-looking perspective on how universities, esp
                 title: 'Robotics and Sensors',
                 meta: 'Thursday, June 4 · 4:05 PM – 05:20 PM',
                 desc: '',
-                location: 'Head Hall',
+                location: 'McCain Atrium (2nd Floor)',
                 sessions: [
                   {
                     title: 'Endeavoring the Accelerated Discovery with Self-Driving Labs ',
@@ -1183,13 +1185,27 @@ In this talk, we will focus on science and technology impacts that are emerging 
               document.getElementById('session-modal-meta').textContent = data.meta || '';
               document.getElementById('session-modal-desc').textContent = data.desc || '';
 
-              // Render optional schedule details (location + expandable sessions)
+              // Render optional schedule details (location, moderator, and expandable sessions)
               const scheduleEl = document.getElementById('session-modal-schedule');
               if (data.location || (data.speakers && data.speakers.length) || (data.sessions && data.sessions.length)) {
                 let html = '';
 
                 if (data.location) {
                   html += '<p class="session-location"><strong>Location:</strong> ' + data.location + '</p>';
+                }
+
+                if (data.moderator) {
+                  const moderator = typeof data.moderator === 'string' ? { name: data.moderator } : data.moderator;
+                  html += '<p class="session-moderator"><strong>Moderator:</strong> ';
+                  if (moderator.speakerId) {
+                    html += '<a class="speaker-link-inline" href="speakers.html#' + moderator.speakerId + '">';
+                    html += moderator.name;
+                    html += '</a>';
+                  } else {
+                    html += moderator.name;
+                  }
+                  html += moderator.affiliation ? ' - ' + moderator.affiliation : '';
+                  html += '</p>';
                 }
 
                 if (data.speakers && data.speakers.length) {
