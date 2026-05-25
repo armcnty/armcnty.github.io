@@ -309,9 +309,9 @@
                     <div class="time">12:45 PM</div>
                     <div class="slot-body multi">
                       <div class="sched-card session" data-session="d2-capacity">
-                        <div class="session-type">Panel</div>
+                        <div class="session-type">Talks</div>
                         <h3 class="card-title">Building Capacity for AI</h3>
-                        <p class="card-desc">This panek is focused on building organizational AI capacity and practical skills.</p>
+                        <p class="card-desc">This session is focused on building organizational AI capacity and practical skills.</p>
                         <span class="card-more">more details...</span>
                       </div>                      
                       <div class="sched-card session" data-session="d2-principled">
@@ -621,7 +621,7 @@
                         <span class="card-more">more details...</span>
                       </div>
                       <div class="sched-card session" data-session="d3-governance">
-                        <div class="session-type">Talks</div>
+                        <div class="session-type">Panel</div>
                         <h3 class="card-title">AI Governance and Ethics</h3>
                         <p class="card-desc"></p>
                         <span class="card-more">more details...</span>
@@ -899,16 +899,68 @@ Drawing on the AIx Lab's work validating AI capabilities on CGI's own operations
               },
 
               'd2-capacity': {
-                type: 'Panel',
+                type: 'Talks',
                 title: 'Building Capacity for AI',
                 meta: 'Thursday, June 4 · 12:45 PM – 2:15 PM',
-                desc: 'This session is focused on building organizational AI capacity and practical skills.'
+                desc: 'This session is focused on building organizational AI capacity and practical skills.',
+                location: '',
+                sessions: [
+                  {
+                    title: "Investing in sovereign digital infrastructure requires investing in compute, data and people ",
+                    speaker: 'Michael Schull',
+                    affiliation: `Digital Research Alliance of Canada`,
+                    speakerId: 'mschull',
+                    desc: `While strengthening Canada’s research compute capacity – including for AI research- requires more compute, it is critical that we also focus on two other equally important elements: data and people.
+
+Canada must move quickly, with purpose and a vision that goes beyond investment in compute infrastructure alone to include the data and the talent required to power research and innovation and respond to the opportunities of AI compute in research for the benefit of Canadians. The Digital Research Alliance of Canada’s cohesive, collaborative and Canadian led approach ensures Canadian researchers have the infrastructure, services and support they need to deliver the world class discoveries that we are known for.`
+                  },
+                  {
+                    title: `Canada’s Radar Moment`,
+                    speaker: 'Duncan McSporran ',
+                    affiliation: 'Vimy Forge',
+                    speakerId: 'dmcsporran',
+                    desc: `Artificial Intelligence represents a responsible evolution in how Canada defends its sovereignty, strengthens its security, and supports those who serve. Rooted in our national values of accountability, professionalism, and respect for law, Canada’s defence use of AI is not about automating warfare—it is about enhancing human judgment through better data, sharper insight, and faster, more ethical decision-making. Guided by the Department of National Defence’s AI Strategy and the principles of trusted, inclusive technology, this approach ensures that Canadian soldiers, sailors, and aviators remain empowered, not replaced, by intelligent systems. In doing so, Canada positions itself to safeguard its territory, meet global commitments with integrity and leading with Canadian developed innovation in an increasingly data-driven world.`
+                  },
+                  {
+                    title: 'Discover, Validate, and Launch - Supporting AI Startup',
+                    speaker: 'Brogan Reiger, Emily Fenton',
+                    affiliation: 'AI2Market',
+                    speakerId: 'breiger',
+                    desc: `AI2Market supports post-secondary students and recent graduates in accelerating innovation, driving commercial success, and unlocking the market potential of their ideas through the AI adoption. The program guides participants through a structured pathway — Discover, Validate, and Launch — helping them move from early-stage ideation to the development of market-ready ventures. Within the ongoing pilot, AI2Market has already seen early successes in supporting venture creation, validating AI-driven ideas, and helping participants progress toward real-world commercialization.`
+                  },
+                  {
+                    title: "AI’s Dual Nature: Rethinking Infrastructure for a Sustainable Future ",
+                    speaker: 'Misty Wade Hovey',
+                    affiliation: 'EcoAdvisors',
+                    speakerId: 'mhovey',
+                    desc: `As AI rapidly reshapes economies and industries, its future is increasingly defined not by limitless digital possibility, but by very real physical constraints—energy, water, land, and the natural systems that sustain them. This session explores a critical question: how do we use, deploy, and scale AI in ways that strengthen—rather than weaken—the natural infrastructure that sustains us? 
+Bringing together insights from climate science, biodiversity frameworks, and the growing infrastructure demands of AI, this discussion examines AI’s dual nature: its potential to accelerate environmental strain or become a powerful catalyst for climate and nature solutions. The session explores how AI can act as a system-wide optimizer across value chains—enabling smarter, more sustainable decisions from design to consumption—to help meet global Climate and Nature goals. For leaders across government, industry, academia, and community development, it provides a lens on how technology and nature can work together to unlock sustainable growth in a resource-constrained world. `
+                  },
+                  {
+                    title: "From Momentum to Movement: Building Fredericton's Next Innovation Chapter",
+                    speaker: 'Josh Waite',
+                    affiliation: `Knowledge Park`,
+                    speakerId: 'jwaite',
+                    desc: `Fredericton has established itself as one of Canada’s most promising small-city innovation ecosystems, with recognized strengths in cybersecurity, research, and talent development. But the next phase of growth will require more than momentum, it will demand greater coordination, sharper positioning, and a more deliberate approach to scaling what works.
+ 
+In this talk, Josh shares insights from recent strategic work and stakeholder engagement across industry, academia, and government, outlining both the opportunities and structural challenges shaping the region’s future. He will explore how Knowledge Park is evolving to play a more central role in this next stage, acting as a platform for alignment, investment attraction, and ecosystem development.
+ 
+The session will offer a candid look at what it takes to move from a strong regional ecosystem to a globally competitive innovation hub, and what Fredericton must do next to get there.`
+                  }
+                ]  
               },
               'd2-sovereign': {
                 type: 'Panel',
                 title: 'Sovereign Energy Data: the missing infrastructure for AI-ready electrification',
                 meta: 'Thursday, June 4 · 2:30 PM – 4:00 PM',
-                desc: 'This session is focused on building organizational AI capacity and practical skills.'
+                desc: 'This session is focused on building organizational AI capacity and practical skills.',
+                moderator: { name: 'Chris Dickie', affiliation: 'RNB', speakerId: 'cdickie' },
+                speakers: [
+                  { name: 'Paul Vallee',   affiliation: 'Tehama.io', speakerId: 'pvallee' },
+                  { name: 'Candace Pollack', affiliation: 'ResearchNB', speakerId: 'cpollack' },
+                  { name: 'Greg Robart', affiliation: 'SGIN', speakerId: 'grobart' },
+                  { name: 'Donna Curtis Maillet', affiliation: 'UNB', speakerId: 'dmaillet' },
+                ]
               },
               'd2-healthcare': {
                 type: 'Talks',
@@ -1005,6 +1057,13 @@ In this short talk, Tony Sheehan, Co-Founder and CTO of NorthBound Advisory, wil
 Anthropic's Economic Index — independent research analyzing real-world AI usage — finds that AI takes hold at the task layer, not the job layer. MNP Digital's own research, surveying 250 Canadian business leaders, finds 48% in operational AI use and only 4% transformational. The 44-point gap is the cost of strategy and execution never meeting at the task.
 Most AI adoption conversations start at the tool, the use case, or the role. All three are at the wrong altitude. Strategy without task-level grounding produces decks. Tasks without strategy produce disconnected pilots. Task-Level AI Discovery decomposes work to the unit where AI actually operates, then rolls it up — across the four AI value drivers of productivity, growth, risk-trust-governance, and insights — into transformation roadmaps that survive contact with the actual work.`
                   },
+                  {
+                    title: "The Agentic Shift: Preparing Atlantic Canada's Employers, Educators, and Emerging Talent for Autonomous AI",
+                    speaker: 'Robyn Stewart',
+                    affiliation: `Independent`,
+                    speakerId: 'rstewart',
+                    desc: `Generative AI gave organizations a productivity tool; agentic AI is poised to give them a workforce. As autonomous AI systems move from research labs into enterprise production over the next 12 to 24 months, this shift will reshape what employers buy, what universities teach, and what early-career professionals need to bring to the table. Drawing on hands-on experience building agentic AI frameworks and scaling enterprise AI delivery across Atlantic Canada, this talk offers a candid look at what agentic AI actually is (and isn't), where it will hit regional industries first, and the new questions it raises for everyone in the room: employers rethinking operating models and governance, educators redesigning curricula and applied research priorities, and students and job seekers positioning themselves for roles that don't yet have job titles. The goal is a shared, practical view of how Atlantic Canada's employers, post-secondary institutions, and emerging talent can move together to turn the agentic shift from a disruptive threat into a regional advantage.`
+                  },
                 ]  
               },
               'd3-governance': {
@@ -1012,7 +1071,12 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                 title: 'AI Governance and Ethics',
                 meta: 'Friday, June 5 · 11:30 AM – 12:45 PM',
                 desc: '',
-                location: 'McCain Atrium (2nd Floor)',
+                moderator: { name: 'Michael Zhang', affiliation: 'Saint Marys University', speakerId: 'mzhang' },
+                speakers: [
+                  { name: 'Adres Rojas',   affiliation: ' Vector Institute', speakerId: 'arojas' },
+                  { name: 'Rachor Hor', affiliation: 'IBM', speakerId: 'rhor' },
+                  { name: 'Noah Milton', affiliation: 'JD Irving', speakerId: 'nmilton' },
+                ]
               },
 
               'd3-education': {
@@ -1020,7 +1084,12 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                 title: 'Positioning Education for AI',
                 meta: 'Friday, June 5 · 11:30 AM – 12:45 PM',
                 desc: '',
-                location: 'McCain Atrium (2nd Floor)',
+                speakers: [
+                  { name: 'Sheldon Levy',   affiliation: 'UNF', speakerId: 'slevy' },
+                  { name: 'Wade Machlaclan', affiliation: 'UNB', speakerId: 'hmachlaclan' },
+                  { name: 'Hemant Kumar', affiliation: 'GNB', speakerId: 'hkumar' },
+                  { name: 'Matt McGuire', affiliation: 'University of New Brunswick', speakerId: 'mmcGuire' },
+                ]
               },
 
               'd3-boost': {
@@ -1028,7 +1097,11 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                 title: 'Digital Boost 3.0 – Learnings from 104 New Brunswick businesses on a pathway to applied AI',
                 meta: 'Friday, June 5 · 1:00 PM – 02:30 PM',
                 desc: '',
-                location: 'McCain Atrium (2nd Floor)',
+                moderator: { name: 'Cathy Simpson', affiliation: 'TechImpact', speakerId: 'csimpson' },
+                speakers: [
+                  { name: 'Bob Ouellette',   affiliation: 'NorthBound Advisory', speakerId: 'bouellette' },
+                  { name: 'Charles Gervais', affiliation: 'iTransform', speakerId: 'cgervais' },
+                ]
               },
 
               'd3-everywhere': {
@@ -1074,6 +1147,7 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                   {
                     title: "The Future of Universities in the Age of AI: Netflix, LinkedIn, Apprenticeships or Something Else?",
                     speaker: 'Shadi Aljendi',
+                    affiliation: 'University of Fredericton',
                     speakerId: 'saljendi',
                     desc: `The Future of Universities in the Age of AI: Netflix, LinkedIn, Apprenticeships or Something Else?
 As artificial intelligence reshapes industries, jobs, and the pace of change, universities are facing a defining moment. Learners increasingly expect education that is flexible, personalized, career-relevant, and available throughout their lives, not only during a traditional degree experience. At the same time, employers are demanding faster skill development, stronger human capabilities, and closer alignment between education and workforce needs.
