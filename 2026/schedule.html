@@ -63,14 +63,27 @@
               <div class="tab-pane active" id="day1">
                 <h3>Wednesday, June 3</h3>
                    <div class="sub-tab-buttons">
-                    <button class="sub-tab-btn active" data-subtab="connector">Opening Reception</button>
+                    <button class="sub-tab-btn active" data-subtab="connector">Opening Kick-off Event</button>
                     <button class="sub-tab-btn" data-subtab="youth">Youth AI Event</button>     
                   </div>
-
+                  
+                    
                   <div class="sub-tab-pane active" id="connector">
-                    <h4>Opening Reception</h4>
-                    <div class="timeline">
-
+                     <div class="slot">
+                    <div class="time">03:00 PM</div>
+                    <div class="slot-body">
+                      <div class="sched-card session" data-session="d1-connector">
+                        <div class="session-type">Workshop</div>
+                        <h3 class="card-title"> Pre-Kick-Off Academic-Business Connector</h3>
+                        <div class="card-desc">
+                          <p>A workshop connecting researchers with industry professionals to foster collaboration and knowledge exchange before the official conference kick-off.</p>
+                        </div>
+                        <span class="card-more">more details...</span>
+                      </div>
+                    </div>
+                  </div>
+                    <h4>Opening Kick-off Event</h4>
+                 
                       <div class="slot">
                         <div class="time">6:00 PM</div>
                         <div class="slot-body">
@@ -86,7 +99,7 @@
                           <div class="sched-card session">
                             <div class="session-type">Opening</div>
                             <h3 class="card-title">Opening Session</h3>
-                            <p class="card-desc">Welcoming Remarks from Premier Susan Holt, Kathy Wilson, Dave MaGee.</p>
+                            <p class="card-desc">Welcoming Remarks from Premier Susan Holt, Kathy Wilson (UNB Acting President), Dave MaGee (UNB Vice President Research), and organizers Aaloak Jaswal and Scott Bateman.</p>
                           </div>
                         </div>
                       </div>
@@ -419,6 +432,13 @@
           display: none;
         }
 
+        #session-modal-desc p {
+          margin: 0 0 0.8rem 0;
+        }
+        #session-modal-desc p:last-child {
+          margin-bottom: 0;
+        }
+
         /* SESSION MODAL */
 #session-modal-schedule:empty { display: none; }
 
@@ -681,7 +701,7 @@
                   <h2 id="session-modal-title"></h2>
                   <p id="session-modal-meta" class="session-modal-meta"></p>
                   <hr>
-                  <p id="session-modal-desc"></p>
+                  <div id="session-modal-desc"></div>
                   <div id="session-modal-schedule"></div>
                 </div>
               </div>
@@ -762,7 +782,12 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   }
                 ]
               },
-
+              'd1-connector': {
+                type: 'Workshop',
+                title: 'Pre-Kick-Off Academic-Business Connector',
+                meta: 'Wednesday, June 3 · 3:00 PM – 5:00 PM',
+                desc: 'A workshop connecting researchers with industry professionals to foster collaboration and knowledge exchange before the official conference kick-off. <br /><br /> Industry participants will have an opportunity to briefly introduce their organization, highlight current priorities and challenges, and explore collaboration, research, and talent opportunities with researchers. <br /><br /><em>Organized by Haridas Patel (Mitacs), Dave Kirkpatrick (Mitacs), and Marta Kryven (Dalhousie University).</em><br/ ><br/ >Additional registration is required for this event, and space is limited. All delegates should have received an email with registration details, but if you have not received this or have any questions, please contact <a href="mailto:hpatel@mitacs.ca">Haridas Patel &lt;hpatel@mitacs.ca&gt;</a>.'  
+              },
               'd3-keynote': {
                 type: 'Keynote',
                 title: 'Opening Keynote',
@@ -1250,6 +1275,23 @@ In this talk, we will focus on science and technology impacts that are emerging 
               }
             }
 
+            function renderDescHtml(desc) {
+              if (!desc) return '';
+              const raw = String(desc).trim();
+              if (!raw) return '';
+
+              // Allow authored HTML in sessionData desc fields.
+              const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(raw);
+              if (looksLikeHtml) return raw;
+
+              return raw
+                .split(/\n\s*\n/)
+                .map(function (para) {
+                  return '<p>' + para.replace(/\n/g, '<br>') + '</p>';
+                })
+                .join('');
+            }
+
             function openSessionById(sessionId, updateUrl = true) {
               const data = sessionData[sessionId];
               if (!data) return;
@@ -1259,7 +1301,7 @@ In this talk, we will focus on science and technology impacts that are emerging 
               document.getElementById('session-modal-type').textContent = data.type || '';
               document.getElementById('session-modal-title').textContent = data.title || '';
               document.getElementById('session-modal-meta').textContent = data.meta || '';
-              document.getElementById('session-modal-desc').textContent = data.desc || '';
+              document.getElementById('session-modal-desc').innerHTML = renderDescHtml(data.desc);
 
               // Render optional schedule details (location, moderator, and expandable sessions)
               const scheduleEl = document.getElementById('session-modal-schedule');
@@ -1319,10 +1361,7 @@ In this talk, we will focus on science and technology impacts that are emerging 
                     }
 
                     if (s.desc) {
-                      const paragraphs = s.desc.trim().split(/\n\s*\n/);
-                      paragraphs.forEach(function (para) {
-                        html += '<p>' + para.replace(/\n/g, '<br>') + '</p>';
-                      });
+                      html += renderDescHtml(s.desc);
                     }
 
                     html +=   '</div>';
