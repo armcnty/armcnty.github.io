@@ -562,6 +562,25 @@
 #session-modal-schedule .speakers-chip-list .speaker-tag {
   margin: 0;
 }
+
+
+#session-modal-schedule .session-synopsis-label {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 1rem 0 0.5rem 0;
+}
+#session-modal-schedule .session-synopsis {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+#session-modal-schedule .session-synopsis p {
+  margin: 0 0 0.8rem 0;
+}
+#session-modal-schedule .session-synopsis p:last-child {
+  margin-bottom: 0;
+}
         
         </style>
   
@@ -867,7 +886,38 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                 type: 'Panel',
                 title: "Turning AI into Impact: A Cross-Sector View on What's Working—and What's Not",
                 meta: 'Thursday, June 5 · 9:45 AM – 11:15 AM',
-                desc: 'Leaders from health, education, government, and industry share candid lessons from real AI deployments.'
+                moderator: { name: 'Chris Fevens', affiliation: 'SpringBoard Atlantic', speakerId: 'cfevens' },
+                speakers: [
+                  { name: 'Derek Newton',   affiliation: 'Mitacs', speakerId: 'dnewton' },
+                  { name: 'Anand Mehta',   affiliation: 'Sobeys', speakerId: 'amehta' },
+                ],
+                synopsis: `This panel will provide a cross-sector discussion on the current AI landscape in Canada, with a particular focus on the challenges and opportunities associated with moving AI from experimentation to meaningful real-world impact.
+
+Taking place on the second day of the summit, the session will also serve as an opportunity to reflect on key ideas, themes, and tensions emerging from Day 1 discussions, while helping frame the conversations and opportunities still ahead throughout the remainder of the event.
+
+Bringing together perspectives from industry, academia, government, and the innovation support ecosystem, the panel will explore:
+
+· where momentum is building,
+
+· where implementation continues to stall,
+
+· and what is preventing organizations from moving beyond pilots toward scaled adoption and measurable outcomes.
+
+The discussion will also examine the broader systems required to support AI success, including:
+
+· commercialization pathways,
+
+· industry-academic collaboration,
+
+· talent development,
+
+· organizational readiness,
+
+· public policy,
+
+· and ecosystem coordination.
+
+While the discussion will include strong Atlantic Canadian perspectives, the panel is also intended to position the region within the broader national AI landscape and explore where Canada is succeeding — and where gaps remain.`
               },
               'd2-principled': {
                 type: 'Talks',
@@ -895,15 +945,22 @@ Versions of this keynote have been delivered and received praise at MIT sAIpiens
                   },
                   {
                     title: 'Global Insights, Local Action: Responsible AI Use in the New Brunswick Classroom',
-                    speaker: 'Sarah Rankin, Amanda Comeau, Ryan Donaghy',
-                    speakerId: 'srankin',
+                    speakers: [
+                      { name: 'Sarah Rankin',   affiliation: 'Centre of Excellence', speakerId: 'srankin' },
+                      { name: 'Amanda Comeau',   affiliation: 'EECD', speakerId: 'acomeau' },
+                      { name: 'Ryan Donaghy',   affiliation: 'EECD', speakerId: 'rdonaghy' },
+                    ],
                     desc: `This session explores how global frameworks for responsible and ethical AI in education are shaping local action in New Brunswick classrooms. Drawing on guidance from UNESCO, the OECD, the European Commission, and other leading organizations, the presentation highlights key global trends such as AI literacy, curriculum reform, and system wide professional learning. It then showcases New Brunswick’s Digital and AI Framework, including its innovative “With, Through, About, and Without AI” approach and the integration of AI across K–12 digital literacy and curriculum documents. 
                     Centering the human elements of teaching and learning, this session demonstrates how New Brunswick is positioning itself as a leader in purposeful, ethical, and future focused AI use in education.`
                   },
                   {
                     title: "Common Ground: The Challenges, Opportunities and Future of Artificial Intelligence",
-                    speaker: 'Rose Boudreau, Sana Kashgouli ',
-                    speakerId: 'rboudreau',
+                    speaker: ',  ',
+                    speakerId: '',
+                    speakers: [
+                      { name: 'Rose Boudreau',   affiliation: 'CGI', speakerId: 'rboudreau' },
+                      { name: 'Sana Kashgouli',   affiliation: 'CGI', speakerId: 'skashgouli' },
+                    ],
                     desc: `The loudest conversations about AI tend to fixate on what we stand to lose. Jobs, agency, authenticity, the shape of daily work. Those concerns deserve serious engagement, but they have crowded out a more useful question: what is the work that genuinely needs doing, and where can AI carry weight that human attention cannot reach on its own?
 
 In this session, Rose Boudreau and Sana Kashgouli, co-leaders of CGI's AIx (AI Experience Lab), walk through the current landscape of AI controversy and offer a different frame for the future of work. The fears of mass displacement assume a fixed pool of meaningful labour. The reality looks different. Geopolitical instability, climate adaptation, macroeconomic restructuring, and an aging global population with shrinking workforces have produced a backlog of necessary work that current human capacity cannot address. At the same time, the institutions of everyday society still need to run.
@@ -948,9 +1005,10 @@ Canada must move quickly, with purpose and a vision that goes beyond investment 
                   },
                   {
                     title: 'Discover, Validate, and Launch - Supporting AI Startup',
-                    speaker: 'Brogan Regier, Emily Fenton',
-                    affiliation: 'AI2Market',
-                    speakerId: 'bregier',
+                    speakers: [
+                  { name: 'Brogan Regier',   affiliation: 'AI2Market', speakerId: 'bregier' },
+                  { name: 'Emily Fenton',   affiliation: 'ShiftKey Labs', speakerId: 'efenton' },
+                ],
                     desc: `AI2Market supports post-secondary students and recent graduates in accelerating innovation, driving commercial success, and unlocking the market potential of their ideas through the AI adoption. The program guides participants through a structured pathway — Discover, Validate, and Launch — helping them move from early-stage ideation to the development of market-ready ventures. Within the ongoing pilot, AI2Market has already seen early successes in supporting venture creation, validating AI-driven ideas, and helping participants progress toward real-world commercialization.`
                   },
                   {
@@ -1013,8 +1071,12 @@ The session will offer a candid look at what it takes to move from a strong regi
                   },
                   {
                     title: 'AI Governance in Healthcare',
-                    speaker: 'Arslan Idrees, Peter Bak',
-                    speakerId: 'aidrees',
+                    speaker: ', ',
+                    speakerId: '',
+                    speakers: [
+                      { name: 'Arslan Idrees',   affiliation: 'Deloitte', speakerId: 'aidrees' },
+                      { name: 'Peter Bak',   affiliation: 'Humber River Health', speakerId: 'pbak' },
+                    ],
                     desc: `This session explores how healthcare leaders can approach AI and emerging agentic systems with a focus on trust, safety, transparency, and accountability. Attendees will gain a high-level perspective on how to evaluate AI responsibly, align innovation with clinical realities, and build the governance needed for meaningful impact in healthcare settings. Session will also cover how a platform-based approach can help organizations orchestrate data, workflows, models, and agents more consistently and safely across the enterprise.`
                   },
                   {
@@ -1085,7 +1147,7 @@ Most AI adoption conversations start at the tool, the use case, or the role. All
                   {
                     title: "The Agentic Shift: Preparing Atlantic Canada's Employers, Educators, and Emerging Talent for Autonomous AI",
                     speaker: 'Robyn Stewart',
-                    affiliation: `Independent`,
+                    affiliation: `CGI`,
                     speakerId: 'rstewart',
                     desc: `Generative AI gave organizations a productivity tool; agentic AI is poised to give them a workforce. As autonomous AI systems move from research labs into enterprise production over the next 12 to 24 months, this shift will reshape what employers buy, what universities teach, and what early-career professionals need to bring to the table. Drawing on hands-on experience building agentic AI frameworks and scaling enterprise AI delivery across Atlantic Canada, this talk offers a candid look at what agentic AI actually is (and isn't), where it will hit regional industries first, and the new questions it raises for everyone in the room: employers rethinking operating models and governance, educators redesigning curricula and applied research priorities, and students and job seekers positioning themselves for roles that don't yet have job titles. The goal is a shared, practical view of how Atlantic Canada's employers, post-secondary institutions, and emerging talent can move together to turn the agentic shift from a disruptive threat into a regional advantage.`
                   },
@@ -1305,7 +1367,7 @@ In this talk, we will focus on science and technology impacts that are emerging 
 
               // Render optional schedule details (location, moderator, and expandable sessions)
               const scheduleEl = document.getElementById('session-modal-schedule');
-              if (data.location || (data.speakers && data.speakers.length) || (data.sessions && data.sessions.length)) {
+              if (data.location || data.synopsis || (data.speakers && data.speakers.length) || (data.sessions && data.sessions.length)) {
                 let html = '';
 
                 if (data.location) {
@@ -1352,12 +1414,24 @@ In this talk, we will focus on science and technology impacts that are emerging 
                     html +=   '</button>';
                     html +=   '<div class="presentation-desc">';
 
-                    if (s.speaker) {
-                      const href = s.speakerId ? 'speakers.html#' + s.speakerId : 'speakers.html';
-                      html += '<a class="speaker-tag" href="' + href + '">';
-                      html +=   '<svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>';
-                      html += s.speaker + ((s.affiliation)? ' - ' + s.affiliation : '');
-                      html += '</a><br/>';
+                    // allow an array for multi-speaker entries 
+                    let speakerList = [];
+                    if (Array.isArray(s.speakers)) {
+                      speakerList = s.speakers;
+                    } else if (s.speaker) {
+                      speakerList = [{ name: s.speaker, affiliation: s.affiliation, speakerId: s.speakerId }];
+                    }
+
+                    if (speakerList.length) {
+                      html += '<div class="speakers-chip-list" style="margin-bottom: 10px;">';
+                      speakerList.forEach(function (sp) {
+                        const href = sp.speakerId ? 'speakers.html#' + sp.speakerId : 'speakers.html';
+                        html += '<a class="speaker-tag" href="' + href + '">';
+                        html +=   '<svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>';
+                        html += sp.name + (sp.affiliation ? ' - ' + sp.affiliation : '');
+                        html += '</a>';
+                      });
+                      html += '</div>';
                     }
 
                     if (s.desc) {
@@ -1368,6 +1442,11 @@ In this talk, we will focus on science and technology impacts that are emerging 
                     html += '</div>';
                   });
                   html += '</div>';
+                }
+
+                if (data.synopsis) {
+                  html += '<p class="session-synopsis-label"><strong>Synopsis:</strong></p>';
+                  html += '<div class="session-synopsis">' + renderDescHtml(data.synopsis) + '</div>';
                 }
 
                 scheduleEl.innerHTML = html;
