@@ -1385,6 +1385,13 @@ In this talk, we will focus on science and technology impacts that are emerging 
                 .join('');
             }
 
+            function getPersonHref(person) {
+              if (!person) return 'speakers.html';
+              const page = person.type === 'organizer' ? 'organizer.html' : 'speakers.html';
+              const id = person.speakerId;
+              return id ? page + '#' + id : page;
+            }
+
             function openSessionById(sessionId, updateUrl = true) {
               const data = sessionData[sessionId];
               if (!data) return;
@@ -1409,7 +1416,7 @@ In this talk, we will focus on science and technology impacts that are emerging 
                   const moderator = typeof data.moderator === 'string' ? { name: data.moderator } : data.moderator;
                   html += '<p class="session-moderator"><strong>Moderator:</strong> ';
                   if (moderator.speakerId) {
-                    html += '<a class="speaker-link-inline" href="speakers.html#' + moderator.speakerId + '">';
+                    html += '<a class="speaker-link-inline" href="' + getPersonHref(moderator) + '">';
                     html += moderator.name;
                     html += '</a>';
                   } else {
@@ -1423,7 +1430,7 @@ In this talk, we will focus on science and technology impacts that are emerging 
                   html += '<p class="session-sublist-label"><strong>Speakers:</strong></p>';
                   html += '<div class="speakers-chip-list">';
                   data.speakers.forEach(function (sp) {
-                    const href = sp.speakerId ? 'speakers.html#' + sp.speakerId : 'speakers.html';
+                    const href = getPersonHref(sp);
                     html += '<a class="speaker-tag" href="' + href + '">';
                     html +=   '<svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>';
                     html += sp.name + (sp.affiliation ? ' - ' + sp.affiliation : '');
@@ -1456,7 +1463,7 @@ In this talk, we will focus on science and technology impacts that are emerging 
                     if (speakerList.length) {
                       html += '<div class="speakers-chip-list" style="margin-bottom: 10px;">';
                       speakerList.forEach(function (sp) {
-                        const href = sp.speakerId ? 'speakers.html#' + sp.speakerId : 'speakers.html';
+                        const href = getPersonHref(sp);
                         html += '<a class="speaker-tag" href="' + href + '">';
                         html +=   '<svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>';
                         html += sp.name + (sp.affiliation ? ' - ' + sp.affiliation : '');
