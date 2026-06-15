@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Atlantic AI Summit 2026</title>
+  <link rel="icon" type="png" sizes="32x32" href="favicon.png">
+  <meta name="description" content="Photos from the Atlantic AI Summit." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Atlantic AI Summit Home">
+        <img src="logo.jpg" alt="Atlantic AI Summit Logo" class="brand-logo">
+        <span class="brand-text"></span>
+      </a>
+      <nav class="nav nav-desktop" aria-label="Primary">
+        <div class="menubar">
+          <a href="index.html">Home</a>
+          <a href="organizer.html">Committee</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="sponsors.html">Sponsors</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </nav>
+      <details class="nav-mobile">
+        <summary aria-label="Open menu">Menu</summary>
+        <nav aria-label="Mobile primary">
+          <a href="index.html">Home</a>
+          <a href="organizer.html">Committee</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="sponsors.html">Sponsors</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+<main id="main" class="wrap">
+  <section id="schedule" class="section" style="padding-top: 4rem;">
+      <div class="wrap">
+        <h2 style="margin-bottom: 0.5ch;">Gallery</h2>
+        <p class="section-lede" style="margin-bottom: -2ch;"> <br>Moments from the Atlantic AI Summit.</p>
+      </div>
+  </section>
+
+  <button id="backBtn" class="gallery-back" style="display:none;">← Go Back</button>
+  <div class="folder-grid" id="folderGrid"></div>
+  <div class="gallery-grid" id="photoGrid" style="display:none;"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="logos/UNB_RIDSAI-RGB-W.png" alt="UNB RIDSAI Logo" class="footer-logo">
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">UNB RIDSAI</h4>
+        <p class="footer-address">
+          University of New Brunswick <br>
+          Information Technology Centre <br> 
+          550 Windsor Street <br>
+          Fredericton, NB <br> E3B 5A3
+        </p>
+        <p class="footer-contact">
+          <strong>General inquiries:</strong> <a href="mailto:ridsai@unb.ca">ridsai@unb.ca</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Connect</h4>
+        <ul class="footer-social">
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/showcase/ridsai/" target="_blank" rel="noopener">UNB Research Institute in Data Science and Artificial Intelligence</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Atlantic AI Summit. All rights reserved.</p>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="sponsors.html">Sponsors</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="mailto:ridsai@unb.ca">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Enlarged summit photo" id="lightboxImg">
+  </div>
+
+  <script>
+    // One entry per folder. cover = the big image on the card.
+    const folders = [
+      {
+        title: "Day 1",
+        folder: "gallery/day1/",
+        cover: "202606_RIDSAI_6304.jpg",
+        photos: [
+          "202606_RIDSAI_6289.jpg",
+          "202606_RIDSAI_6296.jpg",
+          "202606_RIDSAI_6303.jpg",
+          "202606_RIDSAI_6304.jpg",
+          "202606_RIDSAI_6306.jpg",
+          "202606_RIDSAI_6313.jpg",
+          "202606_RIDSAI_6315.jpg",
+          "202606_RIDSAI_6319.jpg",
+          "202606_RIDSAI_6320.jpg",
+          "202606_RIDSAI_6325.jpg",
+          "202606_RIDSAI_6326.jpg",
+          "202606_RIDSAI_6328.jpg",
+          "202606_RIDSAI_6335.jpg",
+          "202606_RIDSAI_6343.jpg",
+          "202606_RIDSAI_6350.jpg",
+          "202606_RIDSAI_6378.jpg",
+          "202606_RIDSAI_6385.jpg",
+          "202606_RIDSAI_6396.jpg",
+          "202606_RIDSAI_6411.jpg",
+          "202606_RIDSAI_6433.jpg",
+          "202606_RIDSAI_6439.jpg",
+          "202606_RIDSAI_6442.jpg",
+          "202606_RIDSAI_6449.jpg",
+          "202606_RIDSAI_6452.jpg",
+          "202606_RIDSAI_6453.jpg",
+          "202606_RIDSAI_6454.jpg",
+          "202606_RIDSAI_6457.jpg",
+          "202606_RIDSAI_6459.jpg",
+          "202606_RIDSAI_6461.jpg",
+          "202606_RIDSAI_6470.jpg",
+          "202606_RIDSAI_6474.jpg",
+          "202606_RIDSAI_6476.jpg",
+          "202606_RIDSAI_6478.jpg",
+          "202606_RIDSAI_6482.jpg",
+          "202606_RIDSAI_6486.jpg",
+          "202606_RIDSAI_6499.jpg",
+          "202606_RIDSAI_6501.jpg",
+          "202606_RIDSAI_6506.jpg",
+          "202606_RIDSAI_6511.jpg",
+          "202606_RIDSAI_6522.jpg",
+          "202606_RIDSAI_6525.jpg",
+          "202606_RIDSAI_6532.jpg",
+          "202606_RIDSAI_6553.jpg",
+          "202606_RIDSAI_6564.jpg",
+          "202606_RIDSAI_6570.jpg",
+          "202606_RIDSAI_6601.jpg",
+          "202606_RIDSAI_6607.jpg",
+          "202606_RIDSAI_6610.jpg",
+          "202606_RIDSAI_6612.jpg",
+          "202606_RIDSAI_6614.jpg",
+          "202606_RIDSAI_6618.jpg",
+          "202606_RIDSAI_6620.jpg",
+          "202606_RIDSAI_6622.jpg",
+          "202606_RIDSAI_6636.jpg",
+          "202606_RIDSAI_6659.jpg",
+          "202606_RIDSAI_6669.jpg",
+          "202606_RIDSAI_6670.jpg",
+          "202606_RIDSAI_6675.jpg",
+          "202606_RIDSAI_6681.jpg",
+          "202606_RIDSAI_6683.jpg",
+          "202606_RIDSAI_6686.jpg",
+          "202606_RIDSAI_6693.jpg",
+          "202606_RIDSAI_6695.jpg",
+          "202606_RIDSAI_6696.jpg",
+          "202606_RIDSAI_6697.jpg",
+          "202606_RIDSAI_6699.jpg",
+          "202606_RIDSAI_6700.jpg",
+          "202606_RIDSAI_6702.jpg",
+          "202606_RIDSAI_6704.jpg",
+          "202606_RIDSAI_6707.jpg",
+          "202606_RIDSAI_6713.jpg",
+          "202606_RIDSAI_6715.jpg",
+          "202606_RIDSAI_6723.jpg",
+          "202606_RIDSAI_6727.jpg",
+          "202606_RIDSAI_6730.jpg",
+          "202606_RIDSAI_6733.jpg",
+          "202606_RIDSAI_6735.jpg",
+          "202606_RIDSAI_6750.jpg",
+          "202606_RIDSAI_6754.jpg",
+          "202606_RIDSAI_6756.jpg",
+          "202606_RIDSAI_6768.jpg",
+          "202606_RIDSAI_6769.jpg",
+          "202606_RIDSAI_6770.jpg",
+          "202606_RIDSAI_6773.jpg",
+          "202606_RIDSAI_6776.jpg",
+          "202606_RIDSAI_6777.jpg",
+          "202606_RIDSAI_6780.jpg",
+          "202606_RIDSAI_6794.jpg",
+          "202606_RIDSAI_6802.jpg",
+          "202606_RIDSAI_6804.jpg",
+          "202606_RIDSAI_6806.jpg",
+          "202606_RIDSAI_6810.jpg",
+          "202606_RIDSAI_6818.jpg",
+          "202606_RIDSAI_6819.jpg",
+          "202606_RIDSAI_6828.jpg",
+          "202606_RIDSAI_6832.jpg",
+          "202606_RIDSAI_6833.jpg",
+          "202606_RIDSAI_6840.jpg",
+          "202606_RIDSAI_6843.jpg",
+          "202606_RIDSAI_6847.jpg",
+          "202606_RIDSAI_6854.jpg",
+          "202606_RIDSAI_6857.jpg",
+          "202606_RIDSAI_6858.jpg",
+          "202606_RIDSAI_6861.jpg",
+          "202606_RIDSAI_6863.jpg",
+          "202606_RIDSAI_6874.jpg",
+          "202606_RIDSAI_6876.jpg",
+          "202606_RIDSAI_6882.jpg",
+          "202606_RIDSAI_6883.jpg",
+          "202606_RIDSAI_6888.jpg",
+          "202606_RIDSAI_6894.jpg",
+          "202606_RIDSAI_6897.jpg",
+          "202606_RIDSAI_6898.jpg"
+        ]
+      },
+      {
+        title: "Day 2",
+        folder: "gallery/day2/",
+        cover: "202606_RIDSAI_6916.jpg",
+        photos: [
+          "202606_RIDSAI_2.jpg",
+          "202606_RIDSAI_2-13.jpg",
+          "202606_RIDSAI_2-23.jpg",
+          "202606_RIDSAI_2-27.jpg",
+          "202606_RIDSAI_2-28.jpg",
+          "202606_RIDSAI_2-29.jpg",
+          "202606_RIDSAI_2-30.jpg",
+          "202606_RIDSAI_2-38.jpg",
+          "202606_RIDSAI_2-39.jpg",
+          "202606_RIDSAI_2-40.jpg",
+          "202606_RIDSAI_2-50.jpg",
+          "202606_RIDSAI_2-54.jpg",
+          "202606_RIDSAI_2-55.jpg",
+          "202606_RIDSAI_2-58.jpg",
+          "202606_RIDSAI_2-60.jpg",
+          "202606_RIDSAI_2-61.jpg",
+          "202606_RIDSAI_6904.jpg",
+          "202606_RIDSAI_6911.jpg",
+          "202606_RIDSAI_6916.jpg",
+          "202606_RIDSAI_6923.jpg",
+          "202606_RIDSAI_6929.jpg",
+          "202606_RIDSAI_6937.jpg",
+          "202606_RIDSAI_6941.jpg",
+          "202606_RIDSAI_6945.jpg",
+          "202606_RIDSAI_6949.jpg",
+          "202606_RIDSAI_6951.jpg",
+          "202606_RIDSAI_6955.jpg",
+          "202606_RIDSAI_6956.jpg",
+          "202606_RIDSAI_6959.jpg",
+          "202606_RIDSAI_6961.jpg",
+          "202606_RIDSAI_6963.jpg",
+          "202606_RIDSAI_6971.jpg",
+          "202606_RIDSAI_6980.jpg",
+          "202606_RIDSAI_6988.jpg",
+          "202606_RIDSAI_7020.jpg",
+          "202606_RIDSAI_7021.jpg",
+          "202606_RIDSAI_7025.jpg",
+          "202606_RIDSAI_7043.jpg",
+          "202606_RIDSAI_7061.jpg",
+          "202606_RIDSAI_7063.jpg",
+          "202606_RIDSAI_7070.jpg",
+          "202606_RIDSAI_7072.jpg",
+          "202606_RIDSAI_7074.jpg",
+          "202606_RIDSAI_7077.jpg",
+          "202606_RIDSAI_7086.jpg",
+          "202606_RIDSAI_7099.jpg",
+          "202606_RIDSAI_7107.jpg",
+          "202606_RIDSAI_7113.jpg",
+          "202606_RIDSAI_7118.jpg",
+          "202606_RIDSAI_7120.jpg",
+          "202606_RIDSAI_7122.jpg",
+          "202606_RIDSAI_7127.jpg",
+          "202606_RIDSAI_7128.jpg",
+          "202606_RIDSAI_7134.jpg",
+          "202606_RIDSAI_7135.jpg",
+          "202606_RIDSAI_7138.jpg",
+          "202606_RIDSAI_7150.jpg",
+          "202606_RIDSAI_7154.jpg",
+          "202606_RIDSAI_7160.jpg",
+          "202606_RIDSAI_7164.jpg",
+          "202606_RIDSAI_7168.jpg",
+          "202606_RIDSAI_7178.jpg",
+          "202606_RIDSAI_7183.jpg",
+          "202606_RIDSAI_7186.jpg",
+          "202606_RIDSAI_7192.jpg",
+          "202606_RIDSAI_7210(1).jpg",
+          "202606_RIDSAI_7210.jpg",
+          "202606_RIDSAI_7213.jpg",
+          "202606_RIDSAI_7230.jpg",
+          "202606_RIDSAI_7234.jpg",
+          "202606_RIDSAI_7238.jpg",
+          "202606_RIDSAI_7244.jpg",
+          "202606_RIDSAI_7252.jpg",
+          "202606_RIDSAI_7255.jpg",
+          "202606_RIDSAI_7258.jpg",
+          "202606_RIDSAI_7260.jpg",
+          "202606_RIDSAI_7272.jpg",
+          "202606_RIDSAI_7307.jpg",
+          "202606_RIDSAI_7331.jpg",
+          "202606_RIDSAI_7338.jpg",
+          "202606_RIDSAI_7364.jpg",
+          "202606_RIDSAI_7369.jpg",
+          "202606_RIDSAI_7375.jpg",
+          "202606_RIDSAI_7396.jpg",
+          "202606_RIDSAI_7402.jpg",
+          "202606_RIDSAI_7406.jpg",
+          "202606_RIDSAI_7409.jpg",
+          "202606_RIDSAI_7411.jpg",
+          "202606_RIDSAI_7419.jpg",
+          "202606_RIDSAI_7429.jpg",
+          "202606_RIDSAI_7430.jpg",
+          "202606_RIDSAI_7441.jpg",
+          "202606_RIDSAI_7445.jpg",
+          "202606_RIDSAI_7446.jpg",
+          "202606_RIDSAI_7448.jpg",
+          "202606_RIDSAI_7450.jpg",
+          "202606_RIDSAI_7455.jpg",
+          "202606_RIDSAI_7456.jpg",
+          "202606_RIDSAI_7461.jpg",
+          "202606_RIDSAI_7463.jpg",
+          "202606_RIDSAI_7467.jpg",
+          "202606_RIDSAI_7468.jpg",
+          "202606_RIDSAI_7472.jpg",
+          "202606_RIDSAI_7480.jpg",
+          "202606_RIDSAI_7498.jpg",
+          "202606_RIDSAI_7502.jpg",
+          "202606_RIDSAI_7506.jpg",
+          "202606_RIDSAI_7513.jpg",
+          "202606_RIDSAI_7520.jpg",
+          "202606_RIDSAI_7529.jpg",
+          "202606_RIDSAI_7532.jpg",
+          "202606_RIDSAI_7533.jpg",
+          "202606_RIDSAI_7540.jpg"
+        ]
+      },
+      {
+        title: "Day 3",
+        folder: "gallery/day3/",
+        cover: "202606_RIDSAI_7570.jpg",
+        photos: [
+          "202606_RIDSAI_7546.jpg",
+          "202606_RIDSAI_2-12.jpg",
+          "202606_RIDSAI_2-9.jpg",
+          "202606_RIDSAI_2-4.jpg",
+          "202606_RIDSAI_2-6.jpg",
+          "202606_RIDSAI_7548.jpg",
+          "202606_RIDSAI_7552.jpg",
+          "202606_RIDSAI_7559.jpg",
+          "202606_RIDSAI_7564.jpg",
+          "202606_RIDSAI_7565.jpg",
+          "202606_RIDSAI_7570.jpg",
+          "202606_RIDSAI_7574.jpg",
+          "202606_RIDSAI_7579.jpg",
+          "202606_RIDSAI_7583.jpg",
+          "202606_RIDSAI_7588.jpg",
+          "202606_RIDSAI_7589.jpg",
+          "202606_RIDSAI_7590.jpg",
+          "202606_RIDSAI_7592.jpg",
+          "202606_RIDSAI_7594.jpg",
+          "202606_RIDSAI_7599.jpg",
+          "202606_RIDSAI_7603.jpg",
+          "202606_RIDSAI_7607.jpg",
+          "202606_RIDSAI_7610.jpg",
+          "202606_RIDSAI_7612.jpg",
+          "202606_RIDSAI_7615.jpg",
+          "202606_RIDSAI_7617.jpg",
+          "202606_RIDSAI_7622.jpg",
+          "202606_RIDSAI_7625.jpg",
+          "202606_RIDSAI_7626.jpg",
+          "202606_RIDSAI_7632.jpg",
+          "202606_RIDSAI_7634.jpg",
+          "202606_RIDSAI_7637.jpg",
+          "202606_RIDSAI_7644.jpg",
+          "202606_RIDSAI_7645.jpg",
+          "202606_RIDSAI_7650.jpg",
+          "202606_RIDSAI_7659.jpg",
+          "202606_RIDSAI_7661.jpg",
+          "202606_RIDSAI_7663.jpg",
+          "202606_RIDSAI_7666.jpg",
+          "202606_RIDSAI_7672.jpg",
+          "202606_RIDSAI_7676.jpg",
+          "202606_RIDSAI_7681.jpg",
+          "202606_RIDSAI_7685.jpg",
+          "202606_RIDSAI_7686.jpg",
+          "202606_RIDSAI_7690.jpg",
+          "202606_RIDSAI_7694.jpg",
+          "202606_RIDSAI_7699.jpg",
+          "202606_RIDSAI_7706.jpg",
+          "202606_RIDSAI_7709.jpg",
+          "202606_RIDSAI_7717.jpg",
+          "202606_RIDSAI_7718.jpg",
+          "202606_RIDSAI_7727.jpg",
+          "202606_RIDSAI_7729.jpg",
+          "202606_RIDSAI_7733.jpg",
+          "202606_RIDSAI_7736.jpg",
+          "202606_RIDSAI_7741.jpg",
+          "202606_RIDSAI_7742.jpg",
+          "202606_RIDSAI_7745.jpg",
+          "202606_RIDSAI_7754.jpg",
+          "202606_RIDSAI_7756.jpg",
+          "202606_RIDSAI_7757.jpg",
+          "202606_RIDSAI_7760.jpg",
+          "202606_RIDSAI_7761.jpg",
+          "202606_RIDSAI_7766.jpg",
+          "202606_RIDSAI_7769.jpg",
+          "202606_RIDSAI_7776.jpg",
+          "202606_RIDSAI_7790.jpg",
+          "202606_RIDSAI_7797.jpg",
+          "202606_RIDSAI_7800.jpg",
+          "202606_RIDSAI_7805.jpg",
+          "202606_RIDSAI_7807.jpg",
+          "202606_RIDSAI_7809.jpg",
+          "202606_RIDSAI_7810.jpg",
+          "202606_RIDSAI_7818.jpg",
+          "202606_RIDSAI_7825.jpg",
+          "202606_RIDSAI_7832.jpg",
+          "202606_RIDSAI_7835.jpg",
+          "202606_RIDSAI_7842.jpg",
+          "202606_RIDSAI_7850.jpg",
+          "202606_RIDSAI_7851.jpg",
+          "202606_RIDSAI_7857.jpg",
+          "202606_RIDSAI_7861.jpg",
+          "202606_RIDSAI_7865.jpg",
+          "202606_RIDSAI_7867.jpg",
+          "202606_RIDSAI_7870.jpg",
+          "202606_RIDSAI_7872.jpg",
+          "202606_RIDSAI_7875.jpg",
+          "202606_RIDSAI_7879-2.jpg",
+          "202606_RIDSAI_7882.jpg",
+          "202606_RIDSAI_7884.jpg",
+          "202606_RIDSAI_7887.jpg",
+          "202606_RIDSAI_7892.jpg",
+          "202606_RIDSAI_7895.jpg",
+          "202606_RIDSAI_7902.jpg",
+          "202606_RIDSAI_7905.jpg",
+          "202606_RIDSAI_7910.jpg",
+          "202606_RIDSAI_7916.jpg",
+          "202606_RIDSAI_7921.jpg",
+          "202606_RIDSAI_7923.jpg",
+          "202606_RIDSAI_7926.jpg",
+          "202606_RIDSAI_7928.jpg",
+          "202606_RIDSAI_7930.jpg",
+          "202606_RIDSAI_7935.jpg",
+          "202606_RIDSAI_7939.jpg",
+          "202606_RIDSAI_7943.jpg",
+          "202606_RIDSAI_7946.jpg"
+        ]
+      }
+    ];
+
+    const folderGrid = document.getElementById("folderGrid");
+    const photoGrid  = document.getElementById("photoGrid");
+    const backBtn    = document.getElementById("backBtn");
+    const heading    = document.getElementById("galleryHeading");
+    const sub        = document.getElementById("gallerySub");
+    const lightbox   = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+
+    // --- Build the folder cover cards ---
+    folders.forEach((f) => {
+      const card = document.createElement("div");
+      card.className = "folder-card";
+      card.style.backgroundImage = "url('" + f.folder + f.cover + "')";
+
+      const label = document.createElement("span");
+      label.className = "folder-label";
+      label.textContent = f.title;
+
+      card.appendChild(label);
+      card.addEventListener("click", () => openFolder(f));
+      folderGrid.appendChild(card);
+    });
+
+    // --- Show one folder's photos ---
+    function openFolder(f) {
+      photoGrid.innerHTML = "";          // clear any previous folder
+      f.photos.forEach((file) => {
+        const item = document.createElement("div");
+        item.className = "gallery-item";
+
+        const img = document.createElement("img");
+        img.src = f.folder + file;
+        img.alt = f.title + " — Atlantic AI Summit photo";
+        img.loading = "lazy";
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.classList.add("open");
+        });
+
+        item.appendChild(img);
+        photoGrid.appendChild(item);
+      });
+
+      // switch to the photo view
+      folderGrid.style.display = "none";
+      photoGrid.style.display = "grid";
+      backBtn.style.display = "inline-block";
+      heading.textContent = f.title;
+      sub.textContent = "Photos from " + f.title + ".";
+    }
+
+    // --- Back to the folder landing view ---
+    backBtn.addEventListener("click", () => {
+      photoGrid.style.display = "none";
+      folderGrid.style.display = "grid";
+      backBtn.style.display = "none";
+      heading.textContent = "Galleries";
+      sub.textContent = "Browse photos from the 2026 Atlantic AI Summit.";
+    });
+
+    lightbox.addEventListener("click", () => lightbox.classList.remove("open"));
+  </script>
+</body>
+</html>
