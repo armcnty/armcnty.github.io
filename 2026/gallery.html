@@ -100,7 +100,6 @@
   </div>
 
   <script>
-    // One entry per folder. cover = the big image on the card.
     const folders = [
       {
         title: "Day 1",
@@ -169,7 +168,6 @@
           "202606_RIDSAI_6683.jpg",
           "202606_RIDSAI_6686.jpg",
           "202606_RIDSAI_6693.jpg",
-          "202606_RIDSAI_6695.jpg",
           "202606_RIDSAI_6696.jpg",
           "202606_RIDSAI_6697.jpg",
           "202606_RIDSAI_6699.jpg",
@@ -482,7 +480,7 @@
 
     // --- Show one folder's photos ---
     function openFolder(f) {
-      photoGrid.innerHTML = "";          // clear any previous folder
+      photoGrid.innerHTML = ""; 
       f.photos.forEach((file) => {
         const item = document.createElement("div");
         item.className = "gallery-item";
