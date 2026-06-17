@@ -52,6 +52,10 @@
   <button id="backBtn" class="gallery-back" style="display:none;">← Go Back</button>
   <div class="folder-grid" id="folderGrid"></div>
   <div class="gallery-grid" id="photoGrid" style="display:none;"></div>
+  <div class="lightbox" id="lightbox">
+    <button class="modal-close" aria-label="Close" id="lightboxClose">✕</button>
+    <img src="" alt="summit photo" id="lightboxImg">
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -462,6 +466,11 @@
     const sub        = document.getElementById("gallerySub");
     const lightbox   = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
+    const closeBtn    = document.getElementById("lightboxClose");
+
+    closeBtn.addEventListener("click", (e) => {
+      lightbox.classList.remove("open");
+    });
 
     // --- Build the folder cover cards ---
     folders.forEach((f) => {
