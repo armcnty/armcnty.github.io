@@ -157,10 +157,28 @@
 
                 </div>
                 <div class="video-card">
-                    <div class="video-embed">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/IAo064mD7qo?si=B7LYRWsW1MEbUwz5&vq=hd1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>                 
+                  <div class="video-embed">
+                      <!-- Thumbnail Facade -->
+                      <div class="video-thumbnail" data-video-id="IAo064mD7qo">
+                          <img 
+                              src="https://img.youtube.com/vi/IAo064mD7qo/maxresdefault.jpg" 
+                              alt="The Opportunity AI Brings to Building a New Games Industry"
+                              loading="lazy"
+                              onerror="this.src='https://img.youtube.com/vi/IAo064mD7qo/hqdefault.jpg'"
+                          >
+                          <div class="play-button"></div>
+                      </div>
+                      <!-- Real iframe (initially hidden, loads on click) -->
+                      <iframe 
+                          src="" 
+                          title="YouTube video player" 
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          referrerpolicy="strict-origin-when-cross-origin" 
+                          allowfullscreen>
+                      </iframe>
+                  </div>
+              </div>                 
             </div>
             <div class="video-grid">
                 <div class="video-info">
@@ -560,7 +578,23 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Top-level day tabs
+      // --- YouTube Video Facade ---
+      document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+        thumbnail.addEventListener('click', function () {
+          const videoId = this.dataset.videoId;
+          const embedContainer = this.closest('.video-embed');
+          const iframe = embedContainer.querySelector('iframe');
+
+          // Load the actual YouTube iframe with HD quality
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&rel=0`;
+          iframe.classList.add('active');
+
+          // Hide thumbnail overlay
+          this.style.display = 'none';
+        });
+      });
+
+      // --- Top-level day tabs ---
       const tabButtons = document.querySelectorAll('.tab-btn');
       tabButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -571,8 +605,7 @@
         });
       });
 
-      // Panels / Talks sub-tabs — scoped per day so each day's
-      // buttons only control that day's panes.
+      // --- Panels / Talks sub-tabs ---
       document.querySelectorAll('.tab-pane').forEach(dayPane => {
         const subButtons = dayPane.querySelectorAll('.sub-tab-btn');
         const subPanes = dayPane.querySelectorAll('.sub-tab-pane');
@@ -590,7 +623,7 @@
         });
       });
     });
-  </script>
+</script>
 </body>
 </html>
 
