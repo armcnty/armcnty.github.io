@@ -157,28 +157,24 @@
 
                 </div>
                 <div class="video-card">
-                  <div class="video-embed">
-                      <!-- Thumbnail Facade -->
-                      <div class="video-thumbnail" data-video-id="IAo064mD7qo">
-                          <img 
-                              src="https://img.youtube.com/vi/IAo064mD7qo/maxresdefault.jpg" 
-                              alt="The Opportunity AI Brings to Building a New Games Industry"
-                              loading="lazy"
-                              onerror="this.src='https://img.youtube.com/vi/IAo064mD7qo/hqdefault.jpg'"
-                          >
-                          <div class="play-button"></div> 
-                      </div>
-                      <!-- Real iframe (initially hidden, loads on click) -->
-                      <iframe 
-                          src="" 
-                          title="YouTube video player" 
-                          frameborder="0" 
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                          referrerpolicy="strict-origin-when-cross-origin" 
-                          allowfullscreen>
-                      </iframe>
-                  </div>
-              </div>                 
+    <div class="video-embed">
+        <iframe 
+            src="https://www.youtube.com/embed/IAo064mD7qo?si=B7LYRWsW1MEbUwz5&vq=hd1080" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+        <div class="video-thumbnail">
+            <img 
+                src="https://img.youtube.com/vi/IAo064mD7qo/maxresdefault.jpg" 
+                alt="Video thumbnail"
+                onerror="this.src='https://img.youtube.com/vi/IAo064mD7qo/hqdefault.jpg'"
+            >
+        </div>
+    </div>
+</div>                
             </div>
             <div class="video-grid">
                 <div class="video-info">
@@ -579,19 +575,14 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // --- YouTube Video Facade ---
-      document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
-        thumbnail.addEventListener('click', function () {
-          const videoId = this.dataset.videoId;
-          const embedContainer = this.closest('.video-embed');
-          const iframe = embedContainer.querySelector('iframe');
-
-          // Load the actual YouTube iframe with HD quality
-          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&rel=0`;
-          iframe.classList.add('active');
-
-          // Hide thumbnail overlay
-          this.style.display = 'none';
-        });
+      document.querySelectorAll('.video-thumbnail').forEach(function(thumb) {
+          thumb.addEventListener('click', function() {
+              var iframe = this.parentElement.querySelector('iframe');
+              iframe.classList.add('active');
+              this.style.display = 'none';
+              var src = iframe.src;
+              iframe.src = src + '&autoplay=1';
+          });
       });
 
       // --- Top-level day tabs ---
