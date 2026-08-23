@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acadia University to Host the 2027 Atlantic AI Summit</title>
+  <style>
+    :root {
+      --acadia-blue: #173f73;
+      --acadia-red: #c63b3f;
+      --aida-purple: #4a4798;
+      --aida-green: #b7df67;
+      --text: #243042;
+      --muted: #5f6b7a;
+      --surface: #ffffff;
+      --soft: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--soft);
+      line-height: 1.6;
+    }
+
+    .summit-announcement {
+      max-width: 1100px;
+      margin: 48px auto;
+      background: var(--surface);
+      border-top: 6px solid var(--acadia-blue);
+      box-shadow: 0 10px 30px rgba(23, 63, 115, 0.10);
+      overflow: hidden;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 28px 40px 22px;
+      border-bottom: 1px solid #e7ebf0;
+      flex-wrap: wrap;
+    }
+
+    .brand-row img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .acadia-logo {
+      width: 315px;
+    }
+
+    .aida-logo {
+      width: 235px;
+    }
+
+    .announcement-body {
+      position: relative;
+      padding: 48px 40px 52px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--aida-purple);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      color: var(--acadia-blue);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .lead {
+      max-width: 880px;
+      margin: 0;
+      font-size: 1.12rem;
+      color: var(--text);
+    }
+
+    .event-details {
+      display: inline-flex;
+      gap: 10px 18px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      padding: 14px 18px;
+      background: #f7fafc;
+      border-left: 4px solid var(--aida-green);
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .event-details span + span::before {
+      content: "•";
+      margin-right: 18px;
+      color: var(--acadia-red);
+    }
+
+    @media (max-width: 700px) {
+      .summit-announcement {
+        margin: 0;
+        box-shadow: none;
+      }
+      .brand-row,
+      .announcement-body {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+      .brand-row {
+        justify-content: center;
+      }
+      .acadia-logo {
+        width: 270px;
+      }
+      .aida-logo {
+        width: 200px;
+      }
+      .event-details {
+        display: block;
+      }
+      .event-details span {
+        display: block;
+      }
+      .event-details span + span::before {
+        content: "";
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="summit-announcement" aria-labelledby="summit-title">
+    <div class="brand-row">
+      <img class="acadia-logo"
+           src="data:image/png;base64,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"
+           alt="Acadia University">
+      <img class="aida-logo"
+           src="aidalogo.png"
+           alt="Acadia Institute for Data Analytics">
+    </div>
+
+    <div class="announcement-body">
+      <p class="eyebrow">2027 Atlantic AI Summit</p>
+      <h1 id="summit-title">Acadia University to Host the 2027 Atlantic AI Summit</h1>
+      <p class="lead">
+        Acadia University is proud to announce that it has been selected as the host institution
+        for the 2027 Atlantic AI Summit. Through the Acadia Institute for Data Analytics (AIDA),
+        we look forward to welcoming researchers, students, industry leaders, entrepreneurs,
+        government partners, and the broader AI community from across Atlantic Canada for three
+        days of collaboration, innovation, and connection. We are excited to showcase Acadia's
+        growing leadership in applied artificial intelligence while providing a welcoming
+        environment for the conversations and partnerships that will help shape the future of AI
+        in our region.
+      </p>
+
+      <div class="event-details" aria-label="Event details">
+        <span>June 9-11, 2027</span>
+        <span>Wolfville, Nova Scotia</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
